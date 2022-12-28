@@ -1,15 +1,17 @@
 import React from "react";
-import "./Register.scss"
+import { Col, Container, Row } from "react-bootstrap";
+import "./Register.scss";
 
-
-const Register=() => {
-    
-    return (
-        <div className="registerDesign">
-            Soy el Register
-        </div>
-    )
-}
-
+const Register = () => {
+  return (
+    <Container fluid className="registerDesign">
+      <Row>
+        <Col>
+          <div>Soy el Register</div>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
 export default Register;
