@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { Col, Container, Row } from "react-bootstrap";
 
 
@@ -15,7 +15,7 @@ const App = () => {
     return (
       <Container fluid>
         <Row>
-          <Col>
+          <Col >
             <Form
               name="basic"
               labelCol={{
