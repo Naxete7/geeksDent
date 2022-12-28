@@ -12,7 +12,7 @@ import DOCTOR13 from "../../assets/img/DOCTOR13.jpg";
 import DOCTOR17 from "../../assets/img/DOCTOR17.jpg";
 import DOCTOR16 from "../../assets/img/DOCTOR16.jpg";
 
-const Home = () => {
+const Team = () => {
   return (
     <Container fluid>
       <h3>NUESTRO EQUIPO</h3>
@@ -38,7 +38,8 @@ const Home = () => {
             <h5>Odontopediatra</h5>
           </Card>
         </Col>
-      </Row>
+          </Row>
+          <br></br>
       <Row>
         <Col className="col-4">
           <Card>
@@ -61,18 +62,19 @@ const Home = () => {
             <h5>Periodoncista</h5>
           </Card>
         </Col>
-      </Row>
+          </Row>
+          <br></br>
       <Row>
         <Col className="col-4">
           <Card>
-            <img src={DOCTOR15} alt="" />
+            <img src={DOCTOR18} alt="" />
             <h3>Ana Campillo</h3>
             <h5>Higienista</h5>
           </Card>
         </Col>
         <Col className="col-4">
           <Card>
-            <img src={DOCTOR18} alt="" />
+            <img src={DOCTOR15} alt="" />
             <h3>Susana Garcia</h3>
             <h5>Higienista</h5>
           </Card>
@@ -89,4 +91,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Team;
