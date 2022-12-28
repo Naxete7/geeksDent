@@ -2,7 +2,7 @@ import React from "react";
 import "./Treatments.scss";
 import { Col, Container, Row } from "react-bootstrap";
 
-const Home = () => {
+const Treatments = () => {
   return (
     <Container fluid>
       <Row>
@@ -11,6 +11,9 @@ const Home = () => {
             <h1>GEEKSDENT</h1>
                       <h2>EN CONSTRUCCION...</h2>
                       <h3>TRATAMIENTOS</h3>
+
+
+                      
           </div>
         </Col>
       </Row>
@@ -18,4 +21,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Treatments;

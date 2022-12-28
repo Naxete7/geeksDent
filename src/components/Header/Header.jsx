@@ -7,6 +7,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Logo from "../../assets/img/Logo.png";
 import "../Button/ButtonDesign.scss";
+import "./Header.scss"
 
 function OffcanvasExample() {
   return (
@@ -14,32 +15,30 @@ function OffcanvasExample() {
       {["md"].map((expand) => (
         <Navbar
           key={expand}
-          bg="light"
+          //bg="light"
           expand={expand}
-          className="mb-3 navbarDesign"
+          className="mb-3 navbarDesign sticky-top "
         >
           <Container fluid>
             <img
               src={Logo}
-              width="110"
-              height="100"
-              className="  fluid"
+              //width="110"
+              //height="100"
+              className="  fluid logoDesign"
               alt="Clinica logo"
             />
             <Navbar.Brand href="/" className="titleDesign">
               GeeksDent
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle
+             
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+            />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
-                </Offcanvas.Title>
-              </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/knowus">Conócenos</Nav.Link>
