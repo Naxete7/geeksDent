@@ -1,0 +1,24 @@
+.buttonDesign {
+    //margin-top: 1em;
+    margin-bottom: 2em;
+    color: white;
+    border-radius: 1em;
+    cursor: pointer;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(to right, #39918c 0%, #39918c 19%, #39918c 60%, #39918c 100%);
+    margin: 0.2em;
+    text-decoration: none;
+    transition: 0.2s;
+    align-content: center;
+}
+
+.buttonDesign:hover {
+
+
+   
+    background-blend-mode: screen;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
