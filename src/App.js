@@ -3,10 +3,18 @@ import "./App.css";
 import Home from "./containers/Home/Home";
 import Login from "./containers/Login/Login";
 import Register from "./containers/Register/Register";
-import Header from "./components/Header/Header"
-import KnowUs from "./containers/KnowUs/KnowUs"
-import Team from "./containers/Team/Team"
-import Treatments from "./containers/Treatments/Treatments"
+import Header from "./components/Header/Header";
+import KnowUs from "./containers/KnowUs/KnowUs";
+import Team from "./containers/Team/Team";
+import Treatments from "./containers/Treatments/Treatments";
+import Endodoncia from "./containers/Treatments/Endodoncias";
+import Estetica from "./containers/Treatments/Estetica";
+import Implantes from "./containers/Treatments/Implantes";
+import Odontopediatria from "./containers/Treatments/Odontopediatria";
+import Ortodoncia from "./containers/Treatments/Ortodoncia";
+import Invisalign from "./containers/Treatments/Invisalign";
+import Periodoncia from "./containers/Treatments/Periodoncia";
+import Protesis from "./containers/Treatments/Protesis";
 //import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -19,8 +27,16 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/knowus" element={<KnowUs />} />
-          <Route path="/team" element={<Team/>} />
+          <Route path="/team" element={<Team />} />
           <Route path="/treatments" element={<Treatments />} />
+          <Route path="/endodoncia" element={<Endodoncia />} />
+          <Route path="/estetica" element={<Estetica />} />
+          <Route path="/implantes" element={<Implantes />} />
+          <Route path="/odontopediatria" element={<Odontopediatria />} />
+          <Route path="/ortodoncia" element={<Ortodoncia />} />
+          <Route path="/invisalign" element={<Invisalign />} />
+          <Route path="/periodoncia" element={<Periodoncia />} />
+          <Route path="/protesis" element={<Protesis />} />
         </Routes>
         {/*<Footer/>*/}
       </BrowserRouter>

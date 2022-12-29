@@ -51,28 +51,28 @@ function OffcanvasExample() {
                     <NavDropdown.Item href="/treatments">
                       Tratamientos
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action3">
+                    <NavDropdown.Item href="/endodoncia">
                       Endodoncia
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
+                    <NavDropdown.Item href="/estetica">
                       Estética Dental
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action5">
+                    <NavDropdown.Item href="/implantes">
                       Implantes
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action6">
+                    <NavDropdown.Item href="/odontopediatria">
                       Odontopediatria
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action7">
+                    <NavDropdown.Item href="/ortodoncia">
                       Ortodoncia
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action8">
+                    <NavDropdown.Item href="/invisalign">
                       Ortodoncia Invisible
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action8">
+                    <NavDropdown.Item href="/periodoncia">
                       Periodoncia
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action8">
+                    <NavDropdown.Item href="/protesis">
                       Prótesis
                     </NavDropdown.Item>
                   </NavDropdown>
