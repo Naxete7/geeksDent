@@ -26,7 +26,7 @@ const Treatments = () => {
             <img src={endo1} alt="" />
             <h3>Endodoncia</h3>
             <h6>
-              Contamos con la úlltima tecnologíay las técnicas mas vanguardistas
+              Contamos con la úlltima tecnología y las técnicas mas vanguardistas
               en endodoncia rotatoria, siempre avalado por nuestros expertos
               para dar a tus dientes el mejor de los tratamientos.
             </h6>

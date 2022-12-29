@@ -7,6 +7,7 @@ import Header from "./components/Header/Header"
 import KnowUs from "./containers/KnowUs/KnowUs"
 import Team from "./containers/Team/Team"
 import Treatments from "./containers/Treatments/Treatments"
+//import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/team" element={<Team/>} />
           <Route path="/treatments" element={<Treatments />} />
         </Routes>
+        {/*<Footer/>*/}
       </BrowserRouter>
     </div>
   );
