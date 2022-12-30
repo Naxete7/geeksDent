@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./containers/Home/Home";
-import Login from "./containers/Login/Login";
-import Register from "./containers/Register/Register";
+import Login from "./containers/User/Login/Login";
+import Register from "./containers/User/Register/Register";
 import Header from "./components/Header/Header";
 import KnowUs from "./containers/KnowUs/KnowUs";
 import Team from "./containers/Team/Team";

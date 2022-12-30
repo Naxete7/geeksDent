@@ -20,15 +20,15 @@ const Treatments = () => {
     <Container fluid>
       <h3>NUESTROS TRATAMIENTOS</h3>
       <Row>
-        <Col className="col-4">
-          
+        <Col className=" col-4 ">
           <Card className="cardHover">
             <img src={endo1} alt="" />
             <h3>Endodoncia</h3>
             <h6>
-              Contamos con la úlltima tecnología y las técnicas mas vanguardistas
-              en endodoncia rotatoria, siempre avalado por nuestros expertos
-              para dar a tus dientes el mejor de los tratamientos.
+              Contamos con la úlltima tecnología y las técnicas mas
+              vanguardistas en endodoncia rotatoria, siempre avalado por
+              nuestros expertos para dar a tus dientes el mejor de los
+              tratamientos.
             </h6>
           </Card>
         </Col>
