@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Input } from "antd";
 import { Col, Container, Row } from "react-bootstrap";
-
+import "../../../components/Button/ButtonDesign.scss"
 
 
 
 const App = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -15,14 +21,18 @@ const App = () => {
     return (
       <Container fluid>
         <Row>
-          <Col >
+          <Col className="col-9  ">
+            <br></br>
+            <br></br>
+            <br></br>
             <Form
+              className=" formDesign"
               name="basic"
               labelCol={{
-                span: 8
+                span: 11
               }}
               wrapperCol={{
-                span: 16
+                span: 10
               }}
               initialValues={{
                 remember: true
@@ -34,6 +44,8 @@ const App = () => {
               <Form.Item
                 label="Email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 rules={[
                   {
                     required: true,
@@ -47,6 +59,8 @@ const App = () => {
               <Form.Item
                 label="Password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 rules={[
                   {
                     required: true,
@@ -69,10 +83,14 @@ const App = () => {
               <Form.Item
                 wrapperCol={{
                   offset: 8,
-                  span: 16
+                  span: 14
                 }}
               >
-                <Button type="primary" htmlType="submit">
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="buttonDesign"
+                >
                   Submit
                 </Button>
               </Form.Item>
