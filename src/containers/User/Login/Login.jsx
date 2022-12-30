@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Input } from "antd";
 import { Col, Container, Row } from "react-bootstrap";
 import "../../../components/Button/ButtonDesign.scss"
@@ -6,6 +6,12 @@ import "../../../components/Button/ButtonDesign.scss"
 
 
 const App = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -38,6 +44,8 @@ const App = () => {
               <Form.Item
                 label="Email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 rules={[
                   {
                     required: true,
@@ -51,6 +59,8 @@ const App = () => {
               <Form.Item
                 label="Password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 rules={[
                   {
                     required: true,
