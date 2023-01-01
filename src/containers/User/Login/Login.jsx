@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Form, Input } from "antd";
 import { Col, Container, Row } from "react-bootstrap";
 import "../../../components/Button/ButtonDesign.scss"
+import { useDispatch } from "react-redux";
+import { login } from "../userSlice";
 
 
 
@@ -10,7 +12,18 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const dispatch = useDispatch();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(login({
+      email: email,
+      password: password,
+      loggedIn: true,
+    })
+    );
+  };
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -42,6 +55,7 @@ const App = () => {
               autoComplete="off"
             >
               <Form.Item
+                onSubmit={(e)=>handleSubmit(e)}
                 label="Email"
                 name="email"
                 value={email}
@@ -95,6 +109,25 @@ const App = () => {
                 </Button>
               </Form.Item>
             </Form>
+            {/*<div className="login">
+              <form className="loginForm">
+                <h1>Login Here</h1>
+                <input
+                  type="email"
+                  placeholder="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <input
+                  type="password"
+                  placeholder="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit" className="buttonDesign">Submit</button>
+              </form>
+            </div>*/}
           </Col>
         </Row>
       </Container>
