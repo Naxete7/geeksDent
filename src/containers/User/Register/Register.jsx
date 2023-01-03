@@ -28,10 +28,10 @@ const Register = () => {
       //console.log(res.res.message, "mensaje");
       try {
         loginUser(user).then((res) => {
+          //console.log(res.data.message, "dentro de if");
           //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
 
           if (res.data.message !== "Password or email is incorrect") {
-            console.log(res.data.message, "dentro de if");
             localStorage.setItem("SAVEJWT", JSON.stringify(res.data.jwt));
             localStorage.setItem("SAVEUSERMAIL", JSON.stringify(res.data.email));
             if (res.data.role === null) {

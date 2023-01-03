@@ -59,5 +59,9 @@ export const getAllUsers = () => {
 };
 
 
+export const logout = () => {
+  return axios.post(`localhost:8000/api/logout`);
+}
+
 
 
