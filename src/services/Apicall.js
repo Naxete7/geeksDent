@@ -4,11 +4,11 @@ export const loginUser = async (body, res) => {
   try {
     let resp = await axios.post(
       "localhost:8000/api/login",
-      body
-//      {
-//    "email":"nacho@nacho.es",
-//    "password":"nacho1234"
-//}
+      //body
+      //      {
+      //    "email":"nacho@nacho.es",
+      //    "password":"nacho1234"
+      //}
     );
 
     if (resp.data === "Password or email is incorrect") {
@@ -23,18 +23,18 @@ export const loginUser = async (body, res) => {
 
 export const registerUser = async (body) => {
   return axios.post(
-    "localhost:8000/api/register",
+    "http://localhost:8000/api/register",
     body
     // {
-        
-//            "name":"Ignacio",
-//            "surname":"García Valero",
-//             "email":"naxete7@hotmail.es",
-//            "password":"nacho1234",
-//            "phone":"633867214",
-//            "birth_date":"1986-09-23"
 
-//}
+    //            "name":"Ignacio",
+    //            "surname":"García Valero",
+    //             "email":"naxete7@hotmail.es",
+    //            "password":"nacho1234",
+    //            "phone":"633867214",
+    //            "birth_date":"1986-09-23"
+
+    //}
   );
 };
 
@@ -45,19 +45,23 @@ export const bringUserInfo = (email) => {
 };
 
 export const bringUserAppointments = (email) => {
-  return axios.get(`localhost:8000/api/myAppointments/${email}`);
+  return axios.get(`https://localhost:8000/api/myAppointments/${email}`);
 };
 
 
 export const getAllAppointments = () => {
-  return axios.get(`localhost:8000/api/appointments`);
+  return axios.get(`https://localhost:8000/api/appointments`);
 };
 
 
 export const getAllUsers = () => {
-  return axios.get(`localhost:8000/api/users`);
+  return axios.get(`https://localhost:8000/api/users`);
 };
 
+
+export const logout = () => {
+  return axios.post(`localhost:8000/api/logout`);
+}
 
 
 

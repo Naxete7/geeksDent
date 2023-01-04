@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import orto1 from "../../assets/img/orto1.jpg";
 import orto2 from "../../assets/img/orto2.jpg";
 import orto3 from "../../assets/img/orto3.jpg";
@@ -12,7 +12,11 @@ const Ortodoncia = () => {
     <Container>
       <Row>
         <Col>
-          <img src={orto1} alt="" className="imgDesign" />
+          <Card>
+
+          <img src={orto1} alt=""  />
+
+          </Card>
           <h2>ORTODONCIA INVISIBLE + ESCÁNER iTERO + SMILEVIEW</h2>
         </Col>
       </Row>
@@ -20,7 +24,10 @@ const Ortodoncia = () => {
       <br></br>
       <Row>
         <Col>
-          <img src={orto2} alt="" className="imgDesign" />
+          <Card>
+          <img src={orto2} alt=""  />
+
+          </Card>
         </Col>
         <Col>
           <h2>Ortodoncia Invisible</h2>
@@ -45,7 +52,10 @@ const Ortodoncia = () => {
       <br></br>
       <Row>
         <Col>
-          <img src={orto3} alt="" className="imgDesign" />
+          <Card>
+          <img src={orto3} alt=""  />
+
+          </Card>
         </Col>
         <Col>
           <h2>Descubre tu Nueva Sonrisa con iTero</h2>
@@ -98,7 +108,10 @@ const Ortodoncia = () => {
         <h1>PRUEBA UNA NUEVA SONRISA CON SMILEVIEW SIMULATOR</h1>
 
         <Col>
-          <img src={orto4} alt="" className="imgDesign" />
+          <Card>
+          <img src={orto4} alt=""  />
+
+          </Card>
         </Col>
         <Col>
           <h2>

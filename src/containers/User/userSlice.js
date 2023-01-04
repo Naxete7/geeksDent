@@ -3,34 +3,26 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    credentials: {
-      token: "",
-      mail: "",
-      role: ""
-    }
+    credentials: {}
   },
   reducers: {
     login: (state, action) => {
       return {
         ...state,
         ...action.payload,
-        loggedIn: true
       };
-    },
-    userout: (state, action) => {
-      // localStorage.removeItem('SAVEJWT')
-      // localStorage.removeItem('SAVEUSERROLE')
-      // localStorage.removeItem('SAVEUSERMAIL')
+    }, userout: (state, action) => {
       return {
         ...state,
         ...action.payload,
-        loggedIn: false
       };
-    }
-  }
+      },
+    },
 });
 
 export const { login, userout } = userSlice.actions;
+
+export const selectUser = (state) => state.user.user;
 
 export const userData = (state) => state.user;
 
