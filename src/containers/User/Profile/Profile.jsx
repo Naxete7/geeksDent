@@ -12,13 +12,13 @@ const Profile = () => {
 
      const logout = () => {
        localStorage.removeItem("SAVEUSERROLE");
-       localStorage.removeItem("SAVEUSERMAIL");
+       localStorage.removeItem("SAVEUSEREMAIL");
        localStorage.removeItem("SAVEJWT");
        dispatch(
          userout({
            credentials: {
              token: "",
-             mail: "",
+             email: "",
              role: ""
            }
          })
