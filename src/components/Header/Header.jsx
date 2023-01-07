@@ -5,22 +5,22 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Logo from "../../assets/img/Logo.png";
 import "../Button/ButtonDesign.scss";
 import "./Header.scss";
-import { userout } from "../../containers/User/userSlice";
+import { userout, userData } from "../../containers/User/userSlice";
 
 
 
 function OffcanvasExample() {
  
-let userMailHeader = JSON.parse(localStorage.getItem("SAVEUSERMAIL"));
+const credentialsUser = useSelector(userData);
 
 const dispatch = useDispatch();
 
 const logOut = () => {
-  localStorage.removeItem("SAVEUSERROLE");
+  //localStorage.removeItem("SAVEUSERROLE");
   localStorage.removeItem("SAVEUSERMAIL");
   localStorage.removeItem("SAVEJWT");
   dispatch(
@@ -37,7 +37,7 @@ const logOut = () => {
 
 
 
-  if (userMailHeader === null) {
+  if (!credentialsUser.active) {
     return (
       <>
         {["md"].map((expand) => (
@@ -58,7 +58,9 @@ const logOut = () => {
               <Navbar.Brand href="/" className="titleDesign">
                 GeeksDent
               </Navbar.Brand>
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+              <Navbar.Toggle
+                aria-controls={`offcanvasNavbar-expand-${expand}`}
+              />
               <Navbar.Offcanvas
                 id={`offcanvasNavbar-expand-${expand}`}
                 aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -194,9 +196,6 @@ const logOut = () => {
         </Navbar>
       ))}
     </>;
-  
-
-
   }
 }
 

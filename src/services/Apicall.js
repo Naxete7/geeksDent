@@ -1,24 +1,40 @@
 import axios from "axios";
 
-export const loginUser = async (body, res) => {
-  try {
-    let resp = await axios.post(
-      "localhost:8000/api/login",
-      //body
-      //      {
-      //    "email":"nacho@nacho.es",
-      //    "password":"nacho1234"
-      //}
-    );
+//export const loginUser = async (body,resp) => {
+//  try {
+//    let resp = await axios.post(
+//      "http://localhost:8000/api/login",
+//      body
+//      //      {
+//      //    "email":"nacho@nacho.es",
+//      //    "password":"Nacho1234"
+//      //}
+//    );
+//    //console.log(resp.data);
+   
+//    //} else if (resp.data.message === "Login successful") {
+//      return resp.data;
+    
+//  } catch (error) {
+//    return error.response;
+//  }
+//};
 
-    if (resp.data === "Password or email is incorrect") {
-      return "El email o la contraseña son incorrectos";
-    } else if (resp.data.message === "Login successful") {
-      return resp;
+export const loginUser = async (body) => {
+  return await axios.post(`http://localhost:8000/api/login`, body);
+  //      {
+  //    "email":"nacho@nacho.es",
+  //    "password":"Nacho1234"
+  //}
+};
+
+export const profileUser = async (token) => {
+  var config = {
+    headers: {
+      Authorization: "Bearer " + token
     }
-  } catch (error) {
-    return error.response;
-  }
+  };
+  return await axios.get(`http://localhost:8000/api/profile`, config);
 };
 
 export const registerUser = async (body) => {

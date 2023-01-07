@@ -9,7 +9,6 @@ import { errorCheck } from "../../../services/useful";
 import "../../../components/Button/ButtonDesign.scss";
 import { Button } from "react-bootstrap";
 
-
 const Login = () => {
   let navigate = useNavigate();
 
@@ -60,80 +59,77 @@ const Login = () => {
 
   const logMe = () => {
     //Estoy ejecutando loginUser y le paso el body (que en este caso es el hook user)
-    
-    try {
-      loginUser(user)
-        .then((res) => {
-        //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
-        //console.log(res.data.message, "dentro de if");
-         if (res.data.message === "Password or email is incorrect") {
-           setUserError((prevState) => ({
-             ...prevState,
-             LoginError: "El email o la contraseña son incorrectos"
-           }));
-         } else {
-           localStorage.setItem("SAVEJWT", JSON.stringify(res.data.jwt));
-           localStorage.setItem("SAVEUSEREMAIL",JSON.stringify(res.data.email));
-           if (res.data.role === null) {
-             localStorage.setItem("SAVEUSERROLE", "userRole");
-           } else {
-             localStorage.setItem("SAVEUSERROLE",JSON.stringify(res.data.role));
-           };
 
-           dispatch(
-             login({
-               credentials: {
-                 token: res.data.jwt,
-                 email: res.data.email,
-                 role: res.data.role
-               }
-             })
-           );
-           setUserError((prevState) => ({
-             ...prevState,
-             LoginError: ""
-           }));
-         }
+    try {
+      loginUser(user).then((res) => {
+        //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
+        if (res.data.message === "Password or email is incorrect") {
+          setUserError((prevState) => ({
+            ...prevState,
+            LoginError: "El email o la contraseña son incorrectos"
+          }));
+        } else {
+          console.log(res, "dentro de if");
+          localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
+          localStorage.setItem("SAVEUSEREMAIL", JSON.stringify(res.data.email));
+          //if (res.data.role === null) {
+          //  localStorage.setItem("SAVEUSERROLE", "userRole");
+          //} else {
+          //  localStorage.setItem("SAVEUSERROLE", JSON.stringify(res.data.role));
+          //}
+
+          dispatch(
+            login({
+              credentials: {
+                token: res.data.jwt,
+                email: res.data.email,
+                role: res.data.role
+              }
+            })
+          );
+          setUserError((prevState) => ({
+            ...prevState,
+            LoginError: ""
+          }));
+        }
       });
     } catch (error) {}
   };
 
-    return (
-      <div className="loginDesign">
-        <pre>Bienvenido de nuevo</pre>
+  return (
+    <div className="loginDesign">
+      <pre>Bienvenido de nuevo</pre>
 
-        <div className="inputsContainer">
-          <div className="errorInput">{userError.LoginError}</div>
-          <div>
-            <input
-              type="mail"
-              name="email"
-              placeholder="email"
-              onChange={(e) => inputHandler(e)}
-              onBlur={(e) =>
-                errorHandler(e.target.name, e.target.value, "email")
-              }
-            />
-            <div className="errorInput">{userError.mailError}</div>
-          </div>
-          <div>
-            <input
-              type="password"
-              name="password"
-              placeholder="password"
-              onChange={(e) => inputHandler(e)}
-              onBlur={(e) =>
-                errorHandler(e.target.name, e.target.value, "password")
-              }
-            />
-            <div className="errorInput">{userError.passwordError}</div>
-          </div>
+      <div className="inputsContainer">
+        <div className="errorInput">{userError.LoginError}</div>
+        <div>
+          <input
+            type="mail"
+            name="email"
+            placeholder="email"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
+          />
+          <div className="errorInput">{userError.mailError}</div>
         </div>
-        <Button onClick={() => logMe()} className="buttonDesign">
-          Login me!
-        </Button>
+        <div>
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) =>
+              errorHandler(e.target.name, e.target.value, "password")
+            }
+          />
+          <div className="errorInput">{userError.passwordError}</div>
+        </div>
       </div>
-    );
+      <Button onClick={() => logMe()} className="buttonDesign">
+        Login me!
+      </Button>
+    </div>
+  );
 };
 
 export default Login;
