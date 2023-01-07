@@ -23,7 +23,10 @@ const Treatments = () => {
         <Col className=" col-4 ">
           <Card className="cardHover">
             <img src={endo1} alt="" />
-            <h3>Endodoncia</h3>
+            <a href="/endodoncia">
+              <h3>Endodoncia</h3>
+            </a>
+
             <h6>
               Contamos con la úlltima tecnología y las técnicas mas
               vanguardistas en endodoncia rotatoria, siempre avalado por
@@ -35,7 +38,9 @@ const Treatments = () => {
         <Col className="col-4">
           <Card>
             <img src={blanque1} alt="" />
-            <h3>Estética Dental</h3>
+            <a href="/estetica">
+              <h3>Estética Dental</h3>
+            </a>
             <h6>
               Blanquemientos, carillas de porcelana, de composite, todo lo
               necesario para que luzcas la mejor de las sonrisas, siempre con el
@@ -46,7 +51,9 @@ const Treatments = () => {
         <Col className="col-4">
           <Card>
             <img src={implantes1} alt="" />
-            <h3>Implantes</h3>
+            <a href="/implantes">
+              <h3>Implantes</h3>
+            </a>
             <h6>
               La reposición de los dientes perdidos ha de tener la mayor de las
               garantías contamos con las técnicas más avanzadas y materiales de
@@ -61,7 +68,10 @@ const Treatments = () => {
         <Col className="col-4">
           <Card>
             <img src={Odontopediatria2} alt="" />
-            <h3>Odontopediatría</h3>
+            <a href="/odontopediatria">
+              {" "}
+              <h3>Odontopediatría</h3>
+            </a>
             <h5>
               Por que tus hijos se merecen el mejor de los cuidados para sus
               dientes contamos con especialistas en odontopediatria altamente
@@ -72,7 +82,9 @@ const Treatments = () => {
         <Col className="col-4">
           <Card>
             <img src={ORTODONCIA} alt="" />
-            <h3>Ortodoncia</h3>
+            <a href="/ortodoncia">
+              <h3>Ortodoncia</h3>
+            </a>
             <h6>
               Ortodoncia con brackets metálicos de porcelana y zafiro. Contamos
               con las últimas técnicas de alineadores invisibles como Smysecret
@@ -83,7 +95,9 @@ const Treatments = () => {
         <Col className="col-4">
           <Card>
             <img src={ORTODONCIA1} alt="" />
-            <h3>Ortodoncia Invisible</h3>
+            <a href="/invisalign">
+              <h3>Ortodoncia Invisible</h3>
+            </a>
             <h6>
               Los alineadores Invisalign son una secuencia de férulas
               transparentes donde cada férula tiene programado el movimiento que
@@ -97,14 +111,18 @@ const Treatments = () => {
         <Col className="col-4">
           <Card>
             <img src={peri2} alt="" />
-            <h3>Periodoncia</h3>
+            <a href="/periodoncia">
+              <h3>Periodoncia</h3>
+            </a>
             <h6>Todo para el cuidado de tus encías.</h6>
           </Card>
         </Col>
         <Col className="col-4">
           <Card>
             <img src={ortopedia1} alt="" />
-            <h3>Protesis</h3>
+            <a href="/protesis">
+              <h3>Protesis</h3>
+            </a>
             <h6>
               Trabajamos con los mejores laboratorios protésicos para devolver
               la función a tu boca con la máxima estética.
