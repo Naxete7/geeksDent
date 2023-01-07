@@ -33,7 +33,7 @@ const logOut = () => {
 };
   
 //console.log (userMailHeader)
-if (userMailHeader !== null) {
+if (userMailHeader === null) {
     console.log(userMailHeader,'dentro de if');
     return (
       <>
