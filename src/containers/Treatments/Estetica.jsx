@@ -4,7 +4,7 @@ import carilla from "../../assets/img/carilla.jpg";
 import coronas from "../../assets/img/coronas.jpg";
 import blanqueamiento from "../../assets/img/blanqueamiento.jpg"
 import { Card, Col, Container, Row } from "react-bootstrap";
-
+import esteticacabecera from "../../assets/img/esteticacabecera.jpg"
 
 const Estetica = () => {
     
@@ -12,6 +12,9 @@ const Estetica = () => {
       <Container>
         <Row>
           <Col>
+            <Card>
+              <img src={esteticacabecera} alt="implante" />
+            </Card>
             <h3>Carillas Dentales</h3>
             <p>
               Llamamos carilla a la colocación de un material (cerámica o

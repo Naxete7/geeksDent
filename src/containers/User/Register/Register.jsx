@@ -31,16 +31,17 @@ const Register = () => {
           //console.log(res.data.message, "dentro de if");
           //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
 
-          //if (res.data.message !== "Password or email is incorrect") {
+          if (res.data.message !== "Password or email is incorrect") {
             localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
             localStorage.setItem("SAVEUSERMAIL", JSON.stringify(res.data.email));
-            if (res.data.role === null) {
-              localStorage.setItem("SAVEUSERROLE", "userRole");
-            } else {
-              localStorage.setItem(
-                "SAVEUSERROLE",
-                JSON.stringify(res.data.role)
-              );
+          
+            //if (res.data.role === null) {
+            //  localStorage.setItem("SAVEUSERROLE", "userRole");
+            //} else {
+            //  localStorage.setItem(
+            //    "SAVEUSERROLE",
+            //    JSON.stringify(res.data.role)
+            //  );
             //}
   
             dispatch(

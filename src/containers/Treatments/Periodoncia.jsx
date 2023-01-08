@@ -3,13 +3,16 @@ import gingivitis from "../../assets/img/gingivitis.jpg";
 import periodontal from "../../assets/img/periodontal.png";
 import embarazo from "../../assets/img//embarazo.jpg";
 import { Card, Col, Container, Row } from "react-bootstrap";
-
+import periodonciacabecera from "../../assets/img/periodonciacabecera.jpg"
 
 const Periodoncia = () => {
     return (
       <Container>
         <Row>
           <Col>
+            <Card>
+              <img src={periodonciacabecera} alt="implante" />
+            </Card>
             <h3>¿Qué es?</h3>
             <p>
               La periodoncia es el área de la odontología que estudia la
