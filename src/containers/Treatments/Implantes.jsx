@@ -7,7 +7,7 @@ import imppost from "../../assets/img/imppost.jpg";
 import implantecarga from "../../assets/img/implantecarga.jpg";
 import elevacion from "../../assets/img/elevacion.jpg";
 import dosimplantes from "../../assets/img/dosimplantes-.jpg";
-
+import implantescabecera from "../../assets/img/implantescabecera.jpg"
 
 const Implantes = () => {
     
@@ -15,6 +15,9 @@ const Implantes = () => {
       <Container>
         <Row>
           <Col>
+            <Card>
+              <img src={implantescabecera} alt="implante" />
+            </Card>
             <div>
               <h2>¿Qué es?</h2>
               <p>

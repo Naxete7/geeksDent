@@ -4,7 +4,7 @@ import ortodonciaInfantil from "../../assets/img/ortodonciaInfantil.jpg";
 import invisalign from "../../assets/img/invisalign.jpg";
 import brackets from "../../assets/img/brackets.jpg";
 import { Card, Col, Container, Row } from "react-bootstrap";
-
+import ortodonciacabecera from "../../assets/img/ortodonciacabecera.jpg"
 
 const Ortodoncia = () => {
     
@@ -12,6 +12,9 @@ const Ortodoncia = () => {
       <Container>
         <Row>
           <Col>
+            <Card>
+              <img src={ortodonciacabecera} alt="implante" />
+            </Card>
             <h3>¿Qué es?</h3>
             La Ortodoncia es la especialidad dentro de la odontología que se
             encarga del diagnóstico y tratamiento de los diferentes problemas

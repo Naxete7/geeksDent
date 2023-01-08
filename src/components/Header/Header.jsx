@@ -32,7 +32,7 @@ const logOut = () => {
   );
 };
   
-//console.log (userMailHeader)
+console.log (userMailHeader)
 if (userMailHeader === null) {
     console.log(userMailHeader,'dentro de if');
     return (

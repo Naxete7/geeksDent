@@ -4,7 +4,7 @@ import odontope from "../../assets/img/odontope.jpg";
 import traumatismo from "../../assets/img/traumatismo.jpg";
 import interceptiva from "../../assets/img/interceptiva.jpg"
 import { Card, Col, Container, Row } from "react-bootstrap";
-
+import odontopecabecera from "../../assets/img/odontopecabecera.jpg"
 
 const Odontopediatria = () => {
     
@@ -12,6 +12,9 @@ const Odontopediatria = () => {
       <Container>
         <Row>
           <Col>
+            <Card>
+              <img src={odontopecabecera} alt="implante" />
+            </Card>
             <h3>¿Qué es?</h3>
             <p>
               La odontopediatría es la rama de la odontología que se ocupa
@@ -89,15 +92,13 @@ const Odontopediatria = () => {
             Uno de los tratamientos preventivos más populares es la aplicación
             de flúor, el cual funciona para restaurar la resistencia de las
             capas superiores del diente y evitar la aparición de infecciones y
-                    caries.
-                    Este procedimiento es completamente indoloro y puede ser
-                    llevado a cabo por medio de geles, barniz o espuma.
-                    Si quieres
-            acudir GeeksDent para que le realicemos una
-            revisión bucodental a tu hijo o hija, no dudes en ponerte en
-            contacto con nosotros. La prevención es fundamental para que los más
-            pequeños tengan unos dientes sanos y su desarrollo sea el correcto
-            hasta llegar a la edad adulta.
+            caries. Este procedimiento es completamente indoloro y puede ser
+            llevado a cabo por medio de geles, barniz o espuma. Si quieres
+            acudir GeeksDent para que le realicemos una revisión bucodental a tu
+            hijo o hija, no dudes en ponerte en contacto con nosotros. La
+            prevención es fundamental para que los más pequeños tengan unos
+            dientes sanos y su desarrollo sea el correcto hasta llegar a la edad
+            adulta.
           </p>
         </Row>
       </Container>
