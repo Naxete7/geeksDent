@@ -67,6 +67,7 @@ const Implantes = () => {
             </Col>
           </Row>
         </Card>
+        <br></br>
         <Card>
           {" "}
           <Row>
@@ -91,6 +92,7 @@ const Implantes = () => {
             </Col>
           </Row>
         </Card>
+        <br></br>
         <Card>
           {" "}
           <Row>
@@ -114,6 +116,7 @@ const Implantes = () => {
             </Col>
           </Row>
         </Card>
+        <br></br>
         <Card>
           {" "}
           <Row>
@@ -139,6 +142,7 @@ const Implantes = () => {
             </Col>
           </Row>
         </Card>
+        <br></br>
         <Card>
           {" "}
           <Row>
@@ -162,9 +166,11 @@ const Implantes = () => {
               <Card className="col-12">
                 <img src={implantecarga} alt="implante" />
               </Card>
+              <br></br>
             </Col>
           </Row>
         </Card>
+        <br></br>
         <Card>
           {" "}
           <Row>
@@ -193,6 +199,7 @@ const Implantes = () => {
             </Col>
           </Row>
         </Card>
+        <br></br>
         <Card>
           {" "}
           <Row>

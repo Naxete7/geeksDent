@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userout } from "../userSlice";
 import { logout } from "../../../services/Apicall";
+import Card from "antd/es/card/Card";
+import { profileUser } from "../../../services/Apicall";
 
 const Profile = () => {
     
@@ -25,12 +27,22 @@ const Profile = () => {
        );
      };
     return (
-        
-        <div>
-            Soy la pagina del usuario
-            <Button className="buttonDesign" href="/login" onClick={logout}>Logout</Button>
-    
-        </div>
+      <div>
+        Soy la pagina del usuario
+        <Button className="buttonDesign" href="/login" onClick={logout}>
+          Logout
+        </Button>
+        <Card style={{ width: "12rem" }} className="cards">
+          {/*<Card.Title>{}</Card.Title>*/}
+
+          <Button
+            className="buttonDesign"
+            onClick={() => navigate("/appointments")}
+          >
+            Pida su cita
+          </Button>
+        </Card>
+      </div>
     );
 }
 

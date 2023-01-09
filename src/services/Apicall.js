@@ -54,11 +54,6 @@ export const registerUser = async (body) => {
   );
 };
 
-export const bringUserInfo = (email) => {
-  return axios.get(
-    "https://geeksdent-backend-production.up.railway.app//users/id/" + email
-  );
-};
 
 export const bringUserAppointments = (email) => {
   return axios.get(`https://localhost:8000/api/myAppointments/${email}`);

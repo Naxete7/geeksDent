@@ -11,17 +11,10 @@ import { loginUser } from "../../../services/Apicall";
 import { Button, Form } from "antd";
 
 const Register = () => {
-  let dispatch = useDispatch();
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    let loged = localStorage.getItem("SAVEUSERMAIL");
-
-    if (loged) {
-      // TODO: redireccionar a una vista que diga que no puede acceder a registro si ya está logueado con un timeout y que luego redireccione a home
-      navigate("/profile");
-    }
-  });
+   
 
   const regMe = () => {
     registerUser(user).then((res) => {
@@ -33,7 +26,10 @@ const Register = () => {
 
           if (res.data.message !== "Password or email is incorrect") {
             localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
-            localStorage.setItem("SAVEUSERMAIL", JSON.stringify(res.data.email));
+            localStorage.setItem(
+              "SAVEUSEREMAIL",
+              JSON.stringify(res.data.email)
+            );
           
             //if (res.data.role === null) {
             //  localStorage.setItem("SAVEUSERROLE", "userRole");
@@ -58,7 +54,14 @@ const Register = () => {
       } catch (error) {}
     });
   };
+ useEffect(() => {
+   let loged = localStorage.getItem("SAVEUSEREMAIL");
 
+   if (loged) {
+     navigate("/profile");
+   }
+ });
+  
   const inputHandler = (e) => {
     //Aquí setearemos de forma DINÁMICA el BINDEO entre inputs y hook
     setUser((prevState) => ({

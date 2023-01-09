@@ -29,7 +29,7 @@ const Login = () => {
     let loged = localStorage.getItem("SAVEUSEREMAIL");
 
     if (loged) {
-      // TODO: redireccionar a una vista que diga que no puede acceder a registro si ya está logueado con un timeout y que luego redireccione a home
+     
       navigate("/profile");
     }
   });
