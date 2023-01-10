@@ -22,7 +22,7 @@ import axios from "axios";
 
 export const loginUser = async (body) => {
   return await axios.post(
-    `http://geeksdent-backend-production.up.railway.app/login`,
+    `https://geeksdent-backend-production.up.railway.app/login`,
     body
   );
   //return await axios.post(`http://localhost:8000/api/login`, body);
@@ -34,7 +34,8 @@ export const loginUser = async (body) => {
 
 export const bringUserInfo = (email) => {
   return axios.get(
-    "http://geeksdent-backend-production.up.railway.app/users/id/" + email
+     "https://geeksdent-backend-production.up.railway.app/users/id/" +
+      email
     //"https://proyecto04-videoclub-production-4de8.up.railway.app/users/id/" +
     //  email
   );
@@ -52,7 +53,7 @@ export const bringUserInfo = (email) => {
 export const registerUser = async (body) => {
   return axios.post(
     //"http://localhost:8000/api/register",
-    "http://geeksdent-backend-production.up.railway.app/register",
+    "https://geeksdent-backend-production.up.railway.app/register",
     body
     // {
 
@@ -76,21 +77,21 @@ export const bringUserAppointments = (email) => {
 
 export const getAllAppointments = () => {
   return axios.get(
-    `http://geeksdent-backend-production.up.railway.app/appointments`
+    `https://geeksdent-backend-production.up.railway.app/appointments`
   );
   //return axios.get(`https://localhost:8000/api/appointments`);
 };
 
 
 export const getAllUsers = () => {
-  return axios.get(`http://geeksdent-backend-production.up.railway.app/users`);
+  return axios.get(`https://geeksdent-backend-production.up.railway.app/users`);
   //return axios.get(`https://localhost:8000/api/users`);
 };
 
 
 export const logout = () => {
    return axios.post(
-     `http://geeksdent-backend-production.up.railway.app/logout`
+     `https://geeksdent-backend-production.up.railway.app/logout`
    );
   //return axios.post(`localhost:8000/api/logout`);
 }
