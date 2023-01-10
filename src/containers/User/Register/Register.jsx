@@ -11,6 +11,7 @@ import { loginUser } from "../../../services/Apicall";
 import { Button, Form } from "antd";
 
 const Register = () => {
+
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -199,7 +200,7 @@ const Register = () => {
           ]}
         >
           <input
-            type="date"
+            type= "date:Y-m-d"
             name="Birth_day"
             placeholder="Birth_day"
             onChange={(e) => inputHandler(e)}
