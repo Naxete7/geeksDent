@@ -74,6 +74,19 @@ export const bringUserAppointments = (email) => {
   //return axios.get(`https://localhost:8000/api/myAppointments/${email}`);
 };
 
+export const addAppointments = (body) => {
+  return axios.post(`https://localhost:8000/api/addAppointment`,
+    body
+  
+    // {"date":"2023-1-26",
+    //"duration":"1 hora",
+    //"reason":"Colocacion de brackets",
+    //"doctorsId":"2",
+    //"treatmentsId":"6"}
+    //}
+
+  );
+};
 
 export const getAllAppointments = () => {
   //return axios.get(

@@ -31,7 +31,7 @@ function App() {
           <Route path="/knowus" element={<KnowUs />} />
           <Route path="/team" element={<Team />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="=/appointments" element={<Appointments/>}/>
+          <Route path="/appointments" element={<Appointments/>}/>
           <Route path="/treatments" element={<Treatments />} />
           <Route path="/endodoncia" element={<Endodoncia />} />
           <Route path="/estetica" element={<Estetica />} />
