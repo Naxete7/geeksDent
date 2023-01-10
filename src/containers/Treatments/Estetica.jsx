@@ -15,7 +15,10 @@ const Estetica = () => {
             <Card>
               <img src={esteticacabecera} alt="implante" />
             </Card>
-            <h3>Carillas Dentales</h3>
+            <h1 className="subtitulos">
+              {" "}
+              <b>Carillas Dentales</b>
+            </h1>
             <p>
               Llamamos carilla a la colocación de un material (cerámica o
               composite) sobre la superficie del diente, para darle una mejor
@@ -24,7 +27,7 @@ const Estetica = () => {
               invasivo, permitiéndonos mantener prácticamente toda la estructura
               del mismo. Las carillas pueden ser:
             </p>
-            <h5>Carillas de Composite</h5>
+            <h4 className="subtitulos">Carillas de Composite</h4>
             <p>
               Se realiza en una sola sesión en clínica , colocando una fina capa
               de resina sobre el diente que nos permite modificar color y forma
@@ -32,7 +35,7 @@ const Estetica = () => {
               técnicas, de forma directa sobre el diente donde el odontólogo va
               dando la forma deseada insitu, o inyectadas.
             </p>
-            <h5>Carillas de Inyectadas de Composite</h5>
+            <h4 className="subtitulos">Carillas de Inyectadas de Composite</h4>
             <p>
               Están hechas también de resina pero el diseño se hace previamente
               por ordenador ( diseño de sonrisa), se envía al laboratorio
@@ -41,7 +44,7 @@ const Estetica = () => {
               boca del paciente, por lo tanto el paciente tiene la oportunidad
               de ver como va a quedar antes de realizar el tratamiento.
             </p>
-            <h5>Carillas de Cerámica</h5>
+            <h4 className="subtitulos">Carillas de Cerámica</h4>
             <p>
               Es una fina lamina de cerámica, que se adhieren al diente con un
               cemento y están libres de metal, se realiza la preparación del
@@ -60,7 +63,10 @@ const Estetica = () => {
         </Row>
         <Row>
           <Col>
-            <h3>Coronas Dentales</h3>
+            <h1 className="subtitulos">
+              {" "}
+              <b>Coronas Dentales</b>
+            </h1>
             <p>
               Consiste en una funda que se encarga de proteger los dientes en
               todas sus caras , dando al diente resistencia y estética . Las
@@ -86,7 +92,10 @@ const Estetica = () => {
         </Row>
         <Row>
           <Col>
-            <h3>Blanqueamiento Dental</h3>
+            <h1 className="subtitulos">
+              {" "}
+              <b>Blanqueamiento Dental</b>
+            </h1>
             <p>
               Es el tratamiento mediante el cual cambiamos el color del diente ,
               volviéndolo más blanco, mediante la utilización de un producto
@@ -105,7 +114,7 @@ const Estetica = () => {
         </Row>
         <Row>
           <Col>
-            <h5>Blanqueamiento de clínica</h5>
+            <h4 className="subtitulos">Blanqueamiento de clínica</h4>
             <p>
               Es el que realiza el dentista en la consulta, colocando el
               producto encima del diente durante un tiempo determinado,
@@ -113,13 +122,13 @@ const Estetica = () => {
               en una sesión, aunque puede repetirse el proceso en caso de ser
               necesario.
             </p>
-            <h5>Blanqueamiento domiciliario</h5>
+            <h4 className="subtitulos">Blanqueamiento domiciliario</h4>
             <p>
               Lo realiza el paciente en casa mediante unas férulas, se le
               entregan unas férulas hechas a medida con el producto y lo
               aplicara en casa, normalmente durante la noche para dormir.
             </p>
-            <h5>Blamwueamiento clínica+domiciliario</h5>
+            <h4 className="subtitulos">Blamqueamiento clínica+domiciliario</h4>
             <p>
               Para lograr el resultado máximo de blanco , recomendamos realizar
               el tratamiento combinado, el de clínica+ el domiciliario.
