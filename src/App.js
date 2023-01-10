@@ -16,6 +16,7 @@ import Invisalign from "./containers/Treatments/Invisalign";
 import Periodoncia from "./containers/Treatments/Periodoncia";
 import Protesis from "./containers/Treatments/Protesis";
 import Profile from "./containers/User/Profile/Profile";
+import Appointments from "./containers/User/Appointments/Appointments";
 //import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/knowus" element={<KnowUs />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="=/appointments" element={<Appointments/>}/>
           <Route path="/treatments" element={<Treatments />} />
           <Route path="/endodoncia" element={<Endodoncia />} />
           <Route path="/estetica" element={<Estetica />} />

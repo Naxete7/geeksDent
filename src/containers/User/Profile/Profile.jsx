@@ -13,10 +13,10 @@ import { useSelector } from "react-redux";
 const Profile = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  const [userInfo, setUserInfo] = useState([]);
-  const [error, setError] = useState("");
-  const user = useSelector(userData);
-  const userMail = JSON.parse(localStorage.getItem("SAVEUSERMAIL"));
+  //const [userInfo, setUserInfo] = useState([]);
+  //const [error, setError] = useState("");
+  //const user = useSelector(userData);
+  //const userMail = JSON.parse(localStorage.getItem("SAVEUSERMAIL"));
 
 //  useEffect(() => {
 //    //This function is triggered when the component is mounted for the first time.
@@ -109,24 +109,16 @@ const Profile = () => {
           {" "}
           <Card
             style={{ width: "12rem" }}
-            className="cards d-flex align-content-center justify-content-center"
-          >
-            <Card.Body>
-              <Card.Title>{userInfo.email}</Card.Title>
-              <Card.Text>garcia</Card.Text>
-              <Button variant="warning" onClick={() => navigate("/films")}>
-                Alquilar películas
-              </Button>
-            </Card.Body>
-            {/*<h2 className="cards d-flex align-content-center justify-content-center">
+            className="cards d-flex align-content-center justify-content-center">
+            <h2 className="cards d-flex align-content-center justify-content-center">
             NACHO
-            </h2>*/}
-            {/*<Button
+            </h2>
+            <Button
               className="buttonDesign"
               onClick={() => navigate("/appointments")}
             >
               Pida su cita
-            </Button>*/}
+            </Button>
           </Card>
         </Col>
       </Row>
