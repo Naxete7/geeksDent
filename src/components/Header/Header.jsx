@@ -29,6 +29,10 @@ function OffcanvasExample() {
     setCriteria(e.target.value);
   }
 
+  const goProfile = () => {
+  navigate("/profile")
+}
+
   //Funciones
 
   const logOut = () => {
@@ -86,7 +90,7 @@ function OffcanvasExample() {
                 </Offcanvas.Header>
                 <Offcanvas.Body className="justify-content-end">
                   <Nav className="justify-content-end flex-grow-2 pe-5">
-                    <Nav.Link href="/profile">
+                    <Nav.Link onClick={()=>goProfile()}>
                       {userCredentials?.credentials?.name}
                     </Nav.Link>
                     <Nav.Link href="/appointments">Pide tu cita</Nav.Link>

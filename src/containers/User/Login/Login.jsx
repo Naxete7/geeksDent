@@ -52,7 +52,7 @@ const Login = () => {
     //let loged = localStorage.getItem("SAVEUSEREMAIL");
 
     if (userCredentials?.token !== "") {
-      navigate("/appointments");
+      navigate("/profile");
     }
   });
 

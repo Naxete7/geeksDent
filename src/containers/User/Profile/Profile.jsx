@@ -4,27 +4,27 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userout } from "../userSlice";
 import { logout, profile } from "../../../services/Apicall";
+import { AntDesignOutlined, UserOutlined,ScheduleOutlined} from "@ant-design/icons";
 
-import { useInternalNotification } from "antd/es/notification/useNotification";
 
-import userData from "../userSlice";
+import { userData } from "../userSlice";
 import { useSelector } from "react-redux";
+import { Avatar } from "antd";
 
 const Profile = () => {
   
   const [userInfo, setUserInfo] = useState([]);
   const [error, setError] = useState("");
-  //const user = useSelector(userData);
-  const userEmail = JSON.parse(localStorage.getItem("SAVEUSEREMAIL"));
+  const userCredentials = useSelector(userData);
+ 
   const navigate = useNavigate();
 
   useEffect(() => {
     //This function is triggered when the component is mounted for the first time.
 
-    if (userInfo.length === 0) {
+    if (userCredentials?.token !== "") {
      
-      profile(userEmail)
-      //console.log(res,'holaaa');
+      profile(userCredentials.token)
         .then((res) => {
           setUserInfo(res.data);
         })
@@ -32,28 +32,57 @@ const Profile = () => {
           setError(error.response?.data || "ups intentalo de nuevo");
         });
     }
-  }, [userInfo]);
+  }, [userCredentials]);
 
-  if (error) {
-    return <h2>{error.repeat(1)} </h2>;
-  }
+  //if (error) {
+  //  return <h2>{error.repeat(1)} </h2>;
+  //}
 
   return (
-    <Container>
-      <Row className="d-flex justify-content-center">
-        <Card style={{ width: "12rem" }} className="cards">
-          <Card.Img className="imgCards" variant="top" />
-          <Card.Body>
-            <Card.Title>{userInfo.name}</Card.Title>
-            <Card.Text>{userInfo.email}</Card.Text>
-          <Button
+    <Container className="d-flex align-content-center justify-content-center">
+      <Row className="d-flex align-content-center justify-content-center mt-5">
+        <Col className="d-flex align-content-center justify-content-center">
+          <Card style={{ width: "22rem" }} className="cards">
+            <Card.Img className="imgCards" variant="top" />
+            <Card.Body>
+              <Avatar size={64} icon={<UserOutlined />} styling="big" />
+              <Card.Title>
+                {userCredentials?.credentials?.name}{" "}
+                {userCredentials?.credentials?.surname}
+              </Card.Title>
+              <Card.Text>{userCredentials?.credentials?.email}</Card.Text>
+              <Card.Text>{userCredentials?.credentials?.phone}</Card.Text>
+              <button
+                className="buttonDesign"
+                onClick={() => navigate("/updateProfile")}
+              >
+                Modifique sus datos
+              </button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: "20rem" }} className="cards">
+            <Card.Img className="imgCards" variant="top" />
+            <Card.Body>
+              <Avatar
+                size={64}
+                icon={<ScheduleOutlined />}
+                styling="big"
+                className=" "
+              />
+              <Card.Title>¿Tiene molestias?</Card.Title>
+              <Card.Text>¿Necesita de nuestra atención?</Card.Text>
+              <Card.Text>Coja cita y le atenderemos encantados</Card.Text>
+              <Button
                 className="buttonDesign"
                 onClick={() => navigate("/appointments")}
               >
-                Pida su cita
+                Coja su cita
               </Button>
-          </Card.Body>
-        </Card>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
     </Container>
   );
