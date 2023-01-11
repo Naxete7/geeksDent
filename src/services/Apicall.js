@@ -1,42 +1,26 @@
 import axios from "axios";
 
-//export const loginUser = async (body,resp) => {
-//  try {
-//    let resp = await axios.post(
-//      "http://localhost:8000/api/login",
-//      body
-//      //      {
-//      //    "email":"nacho@nacho.es",
-//      //    "password":"Nacho1234"
-//      //}
-//    );
-//    //console.log(resp.data);
-   
-//    //} else if (resp.data.message === "Login successful") {
-//      return resp.data;
-    
-//  } catch (error) {
-//    return error.response;
-//  }
-//};
 
 export const loginUser = async (body) => {
+  //return await axios.post(
+  //  `https://geeksdent-backend-production.up.railway.app/login`,
+  //  body
+  //);
   return await axios.post(
-    `https://geeksdent-backend-production.up.railway.app/login`,
+    `https://geeksdent-backend-production.up.railway.app/api/login`,
     body
   );
-  //return await axios.post(`http://localhost:8000/api/login`, body);
   //      {
   //    "email":"nacho@nacho.es",
   //    "password":"Nacho1234"
   //}
 };
 
-export const bringUserInfo = () => {
+export const bringUserInfo = (id) => {
   return axios.get(
-     "https://geeksdent-backend-production.up.railway.app/users/id/" 
-      //email
-    //"localhost:8000/api/profile"
+     "https://geeksdent-backend-production.up.railway.app/api/users/id/"
+    //email
+    //"http://localhost:8000/api/profile/" + id
   );
 };
 
@@ -92,21 +76,21 @@ export const addAppointments = (body) => {
 
 export const getAllAppointments = () => {
   return axios.get(
-    `https://geeksdent-backend-production.up.railway.app/appointments`
+    `https://geeksdent-backend-production.up.railway.app/api/appointments`
   );
   //return axios.get(`https://localhost:8000/api/appointments`);
 };
 
 
 export const getAllUsers = () => {
-  return axios.get(`https://geeksdent-backend-production.up.railway.app/users`);
+  return axios.get(`https://geeksdent-backend-production.up.railway.app/api/users`);
   //return axios.get(`https://localhost:8000/api/users`);
 };
 
 
 export const logout = () => {
    return axios.post(
-     `https://geeksdent-backend-production.up.railway.app/logout`
+     `https://geeksdent-backend-production.up.railway.app/api/logout`
    );
   //return axios.post(`localhost:8000/api/logout`);
 }
