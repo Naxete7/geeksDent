@@ -32,12 +32,11 @@ export const loginUser = async (body) => {
   //}
 };
 
-export const bringUserInfo = (email) => {
+export const bringUserInfo = () => {
   return axios.get(
     // "https://geeksdent-backend-production.up.railway.app/users/id/" +
     //  email
-    //"https://proyecto04-videoclub-production-4de8.up.railway.app/users/id/" +
-    //  email
+    "localhost:8000/api/profile"
   );
 };
 
@@ -69,8 +68,8 @@ export const registerUser = async (body) => {
 };
 
 
-export const bringUserAppointments = (email) => {
-  return axios.get(`https://localhost:8000/api/myAppointments/${email}`);
+export const bringUserAppointments = () => {
+  return axios.get(`https://localhost:8000/api/myAppointments`);
   //return axios.get(`https://localhost:8000/api/myAppointments/${email}`);
 };
 
@@ -109,5 +108,15 @@ export const logout = () => {
   return axios.post(`localhost:8000/api/logout`);
 }
 
+
+export const updateUser = () => {
+  
+  return axios.put(`localhost:8000/api/updateUser`);
+}
+
+export const deleteUser = () => {
+  
+  return axios.delete(`localhost:8000/api/deleteuser/{id}`);
+}
 
 
