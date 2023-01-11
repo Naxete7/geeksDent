@@ -6,31 +6,57 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Logo from "../../assets/img/Logo.png";
 import "../Button/ButtonDesign.scss";
 import "./Header.scss";
-import { userout } from "../../containers/User/userSlice";
+import { userout, userData } from "../../containers/User/userSlice";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 
 function OffcanvasExample() {
-  let userMailHeader = JSON.parse(localStorage.getItem("SAVEUSEREMAIL"));
 
+  const [criteria, setCriteria] = useState("");
+  //let userMailHeader = JSON.parse(localStorage.getItem("SAVEUSEREMAIL"));
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+ const userCredentials = useSelector(userData);
+
+  //Handlers
+
+  const criteriaHandler = (e) => {
+    setCriteria(e.target.value);
+  }
+
+  const goProfile = () => {
+  navigate("/myAccount")
+}
+
+  //Funciones
 
   const logOut = () => {
-    localStorage.removeItem("SAVEUSEREMAIL");
-    localStorage.removeItem("SAVEJWT");
-    dispatch(
-      userout({
-        credentials: {
-          token: "",
-          mail: ""
-        }
-      })
-    );
+
+    dispatch(userout({credentials:{},token:"", active:false}))
+
+    return navigate("/");
+
+
+   
+
+    //localStorage.removeItem("SAVEUSEREMAIL");
+    //localStorage.removeItem("SAVEJWT");
+    //dispatch(
+    //  userout({
+    //    credentials: {
+    //      token: "",
+    //      mail: ""
+    //    }
+    //  })
+    //);
   };
 
-  if (userMailHeader !== null) {
+  if (userCredentials?.active ) {
     return (
       <>
         {["lg"].map((expand) => (
@@ -64,7 +90,9 @@ function OffcanvasExample() {
                 </Offcanvas.Header>
                 <Offcanvas.Body className="justify-content-end">
                   <Nav className="justify-content-end flex-grow-2 pe-5">
-                    <Nav.Link href="/profile">{userMailHeader}</Nav.Link>
+                    <Nav.Link onClick={()=>goProfile()}>
+                      {userCredentials?.credentials?.name}
+                    </Nav.Link>
                     <Nav.Link href="/appointments">Pide tu cita</Nav.Link>
                     <Nav.Link href="/team">Nuestro Equipo</Nav.Link>
                     <NavDropdown
