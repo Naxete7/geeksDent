@@ -30,7 +30,7 @@ function OffcanvasExample() {
   }
 
   const goProfile = () => {
-  navigate("/profile")
+  navigate("/myAccount")
 }
 
   //Funciones

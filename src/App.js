@@ -19,6 +19,7 @@ import Profile from "./containers/User/Profile/Profile";
 import UpdateProfile from "./containers/User/UpdateProfile/UpdateProfile"
 import MyAccount from "./containers/MyAccount/MyAccount";
 import Appointments from "./containers/User/Appointments/Appointments";
+
 //import Footer from "./components/Footer/Footer";
 
 function App() {
