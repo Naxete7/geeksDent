@@ -15,15 +15,16 @@ const Profile = () => {
   const [userInfo, setUserInfo] = useState([]);
   const [error, setError] = useState("");
   //const user = useSelector(userData);
-  const userEMail = JSON.parse(localStorage.getItem("SAVEUSERMAIL"));
+  const userEmail = JSON.parse(localStorage.getItem("SAVEUSEREMAIL"));
   const navigate = useNavigate();
 
   useEffect(() => {
     //This function is triggered when the component is mounted for the first time.
 
     if (userInfo.length === 0) {
-    // console.log(res.data);
-      bringUserInfo(userEMail)
+     
+      bringUserInfo(userEmail)
+      //console.log(res,'holaaa');
         .then((res) => {
           setUserInfo(res.data);
         })
