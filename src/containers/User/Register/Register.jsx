@@ -9,6 +9,7 @@ import "../../../components/Button/ButtonDesign.scss";
 import { loginUser } from "../../../services/Apicall";
 
 import { Button, Form } from "antd";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 const Register = () => {
 
@@ -23,12 +24,10 @@ const Register = () => {
       try {
         loginUser(user).then((res) => {
           //console.log(res.data.message, "dentro de if");
-          //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
-
+         
           if (res.data.message !== "Password or email is incorrect") {
             localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
-            localStorage.setItem(
-              "SAVEUSEREMAIL",
+            localStorage.setItem("SAVEUSEREMAIL",
               JSON.stringify(res.data.email)
             );
           
@@ -55,6 +54,7 @@ const Register = () => {
       } catch (error) {}
     });
   };
+
  useEffect(() => {
    let loged = localStorage.getItem("SAVEUSEREMAIL");
 
@@ -82,157 +82,138 @@ const Register = () => {
   const onFinish = (values) => {};
   const onFinishFailed = (errorInfo) => {};
   return (
-    <div className="registerDesign">
-      <Form
-        name="basic"
-        labelCol={{
-          span: 8
-        }}
-        wrapperCol={{
-          span: 16
-        }}
-        initialValues={{
-          remember: true
-        }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-      >
-        <h1 className=" mb-3 ">REGISTER</h1>
-        <Form.Item
-          //label="Username"
-          name="name"
-          rules={[
-            {
-              required: true,
-              message: "Please input your name!"
-            }
-          ]}
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="name"
-            onChange={(e) => inputHandler(e)}
-          />
-        </Form.Item>
+    <Container>
+      <Row>
+        <Col>
+          
+          <br></br>
+          <Card className="d-flex align-items-center">
+            <Form
+              //name="basic"
+              labelCol={{
+                span: 12
+              }}
+              wrapperCol={{
+                span: 50
+              }}
+              initialValues={{
+                remember: true
+              }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+            >
+              <h1 className=" mb-3 ">REGISTER</h1>
+              <Form.Item
+                //label="Username"
+                //name="name"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your name!"
+                  }
+                ]}
+              >
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  onChange={(e) => inputHandler(e)}
+                />
+              </Form.Item>
 
-        <Form.Item
-          //label="Username"
-          name="surname"
-          rules={[
-            {
-              required: true,
-              message: "Please input your surname!"
-            }
-          ]}
-        >
-          <input
-            type="text"
-            name="surname"
-            placeholder="surname"
-            onChange={(e) => inputHandler(e)}
-          />
-        </Form.Item>
+              <Form.Item
+                //label="Username"
+                //name="surname"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your surname!"
+                  }
+                ]}
+              >
+                <input
+                  type="text"
+                  name="surname"
+                  placeholder="surname"
+                  onChange={(e) => inputHandler(e)}
+                />
+              </Form.Item>
 
-        <Form.Item
-          //label="email"
-          name="email"
-          rules={[
-            {
-              required: true,
-              message: "Please input your email!"
-            }
-          ]}
-        >
-          <input
-            type="mail"
-            name="email"
-            placeholder="email"
-            onChange={(e) => inputHandler(e)}
-          />
-        </Form.Item>
+              <Form.Item
+                //label="email"
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your email!"
+                  }
+                ]}
+              >
+                <input
+                  type="mail"
+                  name="email"
+                  placeholder="email"
+                  onChange={(e) => inputHandler(e)}
+                />
+              </Form.Item>
 
-        <Form.Item
-          //label="Password"
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: "Please input your password!"
-            }
-          ]}
-        >
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            onChange={(e) => inputHandler(e)}
-          />
-        </Form.Item>
+              <Form.Item
+                //label="Password"
+                //name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your password!"
+                  }
+                ]}
+              >
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  onChange={(e) => inputHandler(e)}
+                />
+              </Form.Item>
 
-        <Form.Item
-          //label="Username"
-          name="phone"
-          rules={[
-            {
-              required: true,
-              message: "Please input your phone!"
-            }
-          ]}
-        >
-          <input
-            type="text"
-            name="phone"
-            placeholder="phone"
-            onChange={(e) => inputHandler(e)}
-          />
-        </Form.Item>
+              <Form.Item
+                //label="Username"
+                //name="phone"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your phone!"
+                  }
+                ]}
+              >
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="phone"
+                  onChange={(e) => inputHandler(e)}
+                />
+              </Form.Item>
 
-        <Form.Item
-          //label="Username"
-          name="birth_date"
-          rules={[
-            {
-              required: true,
-              message: "Please input your BirthDay!"
-            }
-          ]}
-        >
-          <input
-            type= "date:Y-m-d"
-            name="Birth_day"
-            placeholder="Birth_day"
-            onChange={(e) => inputHandler(e)}
-          />
-        </Form.Item>
-
-        <Form.Item
-          name="remember"
-          valuePropName="checked"
-          wrapperCol={{
-            offset: 8,
-            span: 16
-          }}
-        ></Form.Item>
-
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16
-          }}
-        >
-          <Button
-            className="buttonDesign   d-flex justify-content-center col-5  "
-            type="primary"
-            htmlType="submit"
-            onClick={() => regMe()}
-          >
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
-    </div>
+              <Form.Item
+                wrapperCol={{
+                  offset: 2,
+                  span: 16
+                }}
+              >
+                <Button
+                  className="buttonDesign d-flex  justify-content-center align-item-center col-12  "
+                  type="primary"
+                  htmlType="submit"
+                  onClick={() => regMe()}
+                >
+                  Submit
+                </Button>
+              </Form.Item>
+            </Form>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
