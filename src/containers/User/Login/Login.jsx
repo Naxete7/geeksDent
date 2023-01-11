@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Login.scss";
-import { loginUser } from "../../../services/Apicall";
+import { loginUser, profile } from "../../../services/Apicall";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../userSlice";
@@ -58,28 +58,53 @@ const Login = () => {
 
   //Funciones
 
-  const logMe = () => {
-    //Estoy ejecutando loginUser y le paso el body (que en este caso es el hook user)
+const logMe = () => {
+  //Estoy ejecutando loginUser y le paso el body (que en este caso es el hook user)
 
-    loginUser(user)
-      .then(data => {
-          
-      })
-      .catch()
+  try {
+    loginUser(user).then((res) => {
+      //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
+      if (res.data.message === "Password or email is incorrect") {
+        setUserError((prevState) => ({
+          ...prevState,
+          LoginError: "El email o la contraseña son incorrectos"
+        }));
+      } else {
+        //console.log(res, "dentro de if");
+        //localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
+        //localStorage.setItem("SAVEUSEREMAIL", JSON.stringify(res.data.email));
+        //if (res.data.role === null) {
+        //  localStorage.setItem("SAVEUSERROLE", "userRole");
+        //} else {
+        //  localStorage.setItem("SAVEUSERROLE", JSON.stringify(res.data.role));
+        //}
 
+        dispatch(
+          login({
+            credentials: {
+              token: res.data.token,
+              //email: res.data.email,
+              //role: res.data.role
+            }
+          })
+        );
+        const token = res.data.token;
+        profile(token)
+          .then((res) => {
+            dispatch(
+            login({token, credentials:res.data, active:true})
+          )
+        })
 
-    dispatch(login({ credentials: {} }));
-    
-
-    setTimeout(() => {
-      navigate("/appointments");
-    }, 1000);
-    setUserError((prevState) => ({
-      ...prevState,
-      LoginError: ""
-    }));
-  };
-    
+        setUserError((prevState) => ({
+          ...prevState,
+          LoginError: ""
+        }));
+      }
+    });
+  } catch (error) {}
+};
+  
     return (
       <div className="loginDesign">
         <pre>Bienvenido de nuevo</pre>

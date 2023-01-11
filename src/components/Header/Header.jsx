@@ -33,7 +33,7 @@ function OffcanvasExample() {
 
   const logOut = () => {
 
-    dispatch(userout({credentials:{}}))
+    dispatch(userout({credentials:{},token:"", active:false}))
 
     return navigate("/");
 
@@ -52,7 +52,7 @@ function OffcanvasExample() {
     //);
   };
 
-  if (userCredentials?.credentials?.token !== undefined) {
+  if (userCredentials?.active ) {
     return (
       <>
         {["lg"].map((expand) => (

@@ -3,10 +3,10 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userout } from "../userSlice";
-import { logout } from "../../../services/Apicall";
-//import { profileUser } from "../../../services/Apicall";
+import { logout, profile } from "../../../services/Apicall";
+
 import { useInternalNotification } from "antd/es/notification/useNotification";
-import { bringUserInfo } from "../../../services/Apicall";
+
 import userData from "../userSlice";
 import { useSelector } from "react-redux";
 
@@ -23,7 +23,7 @@ const Profile = () => {
 
     if (userInfo.length === 0) {
      
-      bringUserInfo(userEmail)
+      profile(userEmail)
       //console.log(res,'holaaa');
         .then((res) => {
           setUserInfo(res.data);

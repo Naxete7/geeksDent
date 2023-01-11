@@ -16,22 +16,26 @@ export const loginUser = async (body) => {
   //}
 };
 
-export const bringUserInfo = (id) => {
-  return axios.get(
-    // "https://geeksdent-backend-production.up.railway.app/api/users/id/"
+//export const profile = (id) => {
+//  return axios.get(
+//    // "https://geeksdent-backend-production.up.railway.app/api/users/id/"
    
-    "http://localhost:8000/api/profile/" + id
-  );
-};
-
-//export const profileUser = async (token) => {
-//  var config = {
-//    headers: {
-//      Authorization: "Bearer " + token
-//    }
-//  };
-//  return await axios.get(`http://localhost:8000/api/profile`, config);
+//    "http://localhost:8000/api/profile/" + id
+//  );
 //};
+
+export const profile = async (token) => {
+  var config = {
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  };
+  return await axios.get(`http://localhost:8000/api/profile`, config);
+  // return await axios.get(
+  //   `https://geeksdent-backend-production.up.railway.app/api/profile`,
+  //   config
+  // );
+};
 
 export const registerUser = async (body) => {
   return axios.post(
