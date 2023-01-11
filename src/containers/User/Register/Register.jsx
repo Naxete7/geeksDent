@@ -2,66 +2,85 @@ import React, { useState, useEffect } from "react";
 import "./Register.scss";
 
 import { useNavigate } from "react-router-dom";
-import { registerUser } from "../../../services/Apicall";
-import { login } from "../userSlice";
-import { useDispatch } from "react-redux";
+import { registerUser, loginUser, profile } from "../../../services/Apicall";
+import { login, userData } from "../userSlice";
+import { useDispatch, useSelector } from "react-redux";
 import "../../../components/Button/ButtonDesign.scss";
-import { loginUser } from "../../../services/Apicall";
+
 
 import { Button, Form } from "antd";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 const Register = () => {
+const userCredentials = useSelector(userData);
+
 
   let navigate = useNavigate();
+
+
   const dispatch = useDispatch();
 
-   
+
+  
+   const [userError, setUserError] = useState({
+     emailError: "",
+     passwordError: "",
+     LoginError: ""
+   });
+
+useEffect(() => {
+ 
+  if (userCredentials?.token !== "") {
+    navigate("/appointments");
+  }
+});
 
   const regMe = () => {
     registerUser(user).then((res) => {
       //console.log(res.res.message, "mensaje");
       try {
         loginUser(user).then((res) => {
-          //console.log(res.data.message, "dentro de if");
-         
-          if (res.data.message !== "Password or email is incorrect") {
-            localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
-            localStorage.setItem("SAVEUSEREMAIL",
-              JSON.stringify(res.data.email)
-            );
-          
+          //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
+          if (res.data.message === "Password or email is incorrect") {
+            setUserError((prevState) => ({
+              ...prevState,
+              LoginError: "El email o la contraseña son incorrectos"
+            }));
+          } else {
+            //console.log(res, "dentro de if");
+            //localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
+            //localStorage.setItem("SAVEUSEREMAIL", JSON.stringify(res.data.email));
             //if (res.data.role === null) {
             //  localStorage.setItem("SAVEUSERROLE", "userRole");
             //} else {
-            //  localStorage.setItem(
-            //    "SAVEUSERROLE",
-            //    JSON.stringify(res.data.role)
-            //  );
+            //  localStorage.setItem("SAVEUSERROLE", JSON.stringify(res.data.role));
             //}
-  
+
             dispatch(
               login({
                 credentials: {
-                  token: res.data.jwt,
-                  email: res.data.email,
+                  token: res.data.token
+                  //email: res.data.email,
                   //role: res.data.role
                 }
               })
             );
-          } 
+            const token = res.data.token;
+            profile(token).then((res) => {
+              dispatch(login({ token, credentials: res.data, active: true }));
+            });
+
+            setUserError((prevState) => ({
+              ...prevState,
+              LoginError: ""
+            }));
+          }
         });
       } catch (error) {}
     });
   };
 
- useEffect(() => {
-   let loged = localStorage.getItem("SAVEUSEREMAIL");
 
-   if (loged) {
-     navigate("/profile");
-   }
- });
   
   const inputHandler = (e) => {
     //Aquí setearemos de forma DINÁMICA el BINDEO entre inputs y hook
@@ -77,10 +96,14 @@ const Register = () => {
     email: "",
     password: "",
     phone: "",
-    Birth_day:""
+   
   });
   const onFinish = (values) => {};
   const onFinishFailed = (errorInfo) => {};
+
+
+
+
   return (
     <Container>
       <Row>
