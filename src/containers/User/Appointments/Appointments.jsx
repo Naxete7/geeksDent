@@ -4,13 +4,23 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addAppointments } from "../../../services/Apicall";
 import "./Appointments.scss";
+ import { DatePicker, Space } from "antd";
+ import dayjs from "dayjs";
+ import customParseFormat from "dayjs/plugin/customParseFormat";
 
 
+dayjs.extend(customParseFormat);
+const { RangePicker } = DatePicker;
+const range = (start, end) => {
+  const result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+};
 
 
-
-
-
+// eslint-disable-next-line arrow-body-style
 
 const Appointment=()=> {
 
