@@ -30,7 +30,7 @@ const Update = () => {
   //});
 
   const updateMe = () => {
-    updateUser(userCredentials.token).then((res) => {
+    updateUser(userCredentials?.token).then((res) => {
       //console.log(res.res.message, "mensaje");
       try {
         loginUser(user).then((res) => {
