@@ -2,39 +2,28 @@ import "./MyAccount.scss";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Profile from "../User/Profile/Profile";
-import AllUsers from "../../components/Admin/AllUsers";
+import AllUsers from "../../components/Admin/AllUsers/AllUsers";
 import { userData } from "../User/userSlice";
 import { Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import Admin from "../User/Admin/VistaAdmin/Admin";
-
-
-
-
+import AllApointments from "../../components/Admin/AllApointments/AllApointments";
+import UserAppointments from "../User/UserAppointments/UserAppointments";
 
 const MyAccount = () => {
   let navigate = useNavigate();
- const userCredentials = useSelector(userData);
-  //const userRole = localStorage.getItem("SAVEUSERROLE");
-
-  // const userRole = undefined
-
-  // const userRole = "admin"
+  const userCredentials = useSelector(userData);
 
   useEffect(() => {
-    
-
     if (
-      userCredentials?.credentials?.role === "null" ||  userCredentials?.credentials?.role === null
+      userCredentials?.credentials?.role === "null" ||
+      userCredentials?.credentials?.role === null
     ) {
-      
       navigate("/");
     }
   });
 
-  if (
-    userCredentials?.credentials?.role === "2" ||  userCredentials?.credentials?.role === "1"
-  ) {
+  if (userCredentials?.credentials?.role === 2) {
     return (
       <div className="myAccountDesign">
         <Container>
@@ -46,12 +35,10 @@ const MyAccount = () => {
             <Profile />
           </Row>
           <Row>
-            <h2>Citas en activo</h2>
+            <h2>Todas mis citas</h2>
           </Row>
-          <Row> </Row>
           <Row>
-            <h2>Todos mis citas</h2>
-          </Row>
+          <UserAppointments/></Row>
         </Container>
       </div>
     );
@@ -72,7 +59,9 @@ const MyAccount = () => {
         <Row>
           <h2>Todos los citas</h2>
         </Row>
-        <Row></Row>
+        <Row>
+          <AllApointments />
+        </Row>
         <Row>
           <h2>Todos los usuarios</h2>
         </Row>

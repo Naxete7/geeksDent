@@ -23,11 +23,11 @@ const Update = () => {
     LoginError: ""
   });
 
-  useEffect(() => {
-    if (userCredentials?.token !== "") {
-      navigate("/appointments");
-    }
-  });
+  //useEffect(() => {
+  //  if (userCredentials?.token !== "") {
+  //    navigate("/appointments");
+  //  }
+  //});
 
   const updateMe = () => {
     updateUser(userCredentials.token).then((res) => {

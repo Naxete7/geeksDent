@@ -2,27 +2,20 @@ import axios from "axios";
 
 
 export const loginUser = async (body) => {
-  //return await axios.post(
-  //  `http://localhost:8000/api/login`,
-  //  body
-  //);
   return await axios.post(
-    `https://geeksdent-backend-production.up.railway.app/api/login`,
+    `http://localhost:8000/api/login`,
     body
   );
+  //return await axios.post(
+  //  `https://geeksdent-backend-production.up.railway.app/api/login`,
+  //  body
+  //);
   //      {
   //    "email":"nacho@nacho.es",
   //    "password":"Nacho1234"
   //}
 };
 
-//export const profile = (id) => {
-//  return axios.get(
-//    // "https://geeksdent-backend-production.up.railway.app/api/users/id/"
-   
-//    "http://localhost:8000/api/profile/" + id
-//  );
-//};
 
 export const profile = async (token) => {
   var config = {
@@ -30,17 +23,17 @@ export const profile = async (token) => {
       Authorization: "Bearer " + token
     }
   };
-  //return await axios.get(`http://localhost:8000/api/profile`, config);
-   return await axios.get(
-     `https://geeksdent-backend-production.up.railway.app/api/profile`,
-     config
-   );
+  return await axios.get(`http://localhost:8000/api/profile`, config);
+  // return await axios.get(
+  //   `https://geeksdent-backend-production.up.railway.app/api/profile`,
+  //   config
+  // );
 };
 
 export const registerUser = async (body) => {
   return axios.post(
-    //"http://localhost:8000/api/register",
-    "https://geeksdent-backend-production.up.railway.app/api/register",
+    "http://localhost:8000/api/register",
+    //"https://geeksdent-backend-production.up.railway.app/api/register",
     body
     // {
 
@@ -56,15 +49,20 @@ export const registerUser = async (body) => {
 };
 
 
-export const bringUserAppointments = () => {
-  return axios.get(`https://localhost:8000/api/myAppointments`);
+export const myAppointments = async (token) => {
+  var config = {
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  };
+  return axios.get(`http://localhost:8000/api/myAppointments`,config);
   //return axios.get(
-  //  `https://geeksdent-backend-production.up.railway.app/api/myAppointments/`
+  //  `https://geeksdent-backend-production.up.railway.app/api/myAppointments/`,config
   //);
 };
 
 export const addAppointments = (body) => {
-  return axios.post(`https://localhost:8000/api/addAppointment`,
+  return axios.post(`http://localhost:8000/api/addAppointment`,
     // return axios.post(
     //   `https://geeksdent-backend-production.up.railway.app/api/addAppointment`,
        body
@@ -78,33 +76,48 @@ export const addAppointments = (body) => {
      );
 };
 
-export const getAllAppointments = () => {
+export const getAllAppointments = (token) => {
+  var config = {
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  };
   //return axios.get(
-  //  `https://geeksdent-backend-production.up.railway.app/api/appointments`
+  //  `https://geeksdent-backend-production.up.railway.app/api/appointments`, config
   //);
-  return axios.get(`https://localhost:8000/api/appointments`);
+  return axios.get(`http://localhost:8000/api/appointments`,config);
 };
 
 
-export const getAllUsers = () => {
-  //return axios.get(`https://geeksdent-backend-production.up.railway.app/api/users`);
-  return axios.get(`https://localhost:8000/api/users`);
+export const getAllUsers = (token) => {
+  var config = {
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  };
+
+  //return axios.get(`https://geeksdent-backend-production.up.railway.app/api/users`,config);
+  return axios.get(`http://localhost:8000/api/users`,config);
 };
 
 
 export const logout = () => {
-   return axios.post(
-     `https://geeksdent-backend-production.up.railway.app/api/logout`
-   );
-  //return axios.post(`localhost:8000/api/logout`);
+  // return axios.post(
+  //   `https://geeksdent-backend-production.up.railway.app/api/logout`
+  // );
+  return axios.post(`http://localhost:8000/api/logout`);
 }
 
 
-export const updateUser = () => {
-  
-  return axios.put(`localhost:8000/api/updateUser`);
+export const updateUser = (token, body) => {
+  var config = {
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  };
+  return axios.put(`http://localhost:8000/api/updateUser`, body, config);
   // return axios.put(
-  //   `https://geeksdent-backend-production.up.railway.app/api/updateUser`
+  //   `https://geeksdent-backend-production.up.railway.app/api/updateUser`,,body,config
   // );
 }
 

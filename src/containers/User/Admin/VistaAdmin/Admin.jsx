@@ -29,7 +29,7 @@ const Admin = () => {
           setUserInfo(res.data);
         })
         .catch((error) => {
-          setError(error.response?.data || "ups intentalo de nuevo");
+          setError(error.response?.data || "errooooor");
         });
     }
   }, [userCredentials]);
@@ -58,7 +58,7 @@ const Admin = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        {/*<Col>
           <Card style={{ width: "20rem" }} className="cards">
             <Card.Img className="imgCards" variant="top" />
             <Card.Body>
@@ -79,7 +79,7 @@ const Admin = () => {
               </Button>
             </Card.Body>
           </Card>
-        </Col>
+        </Col>*/}
       </Row>
       <Row className="mt-5">
         <h1>Mis citas</h1>
