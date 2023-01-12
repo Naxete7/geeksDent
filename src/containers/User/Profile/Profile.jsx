@@ -29,7 +29,7 @@ const Profile = () => {
           setUserInfo(res.data);
         })
         .catch((error) => {
-          setError(error.response?.data || "ups intentalo de nuevo");
+          setError(error.response?.data || "no vaaaaa");
         });
     }
   }, [userCredentials]);
@@ -39,13 +39,13 @@ const Profile = () => {
   //}
 
   return (
-    <Container >
+    <Container>
       <Row className="d-flex align-content-center justify-content-center mt-5">
         <h1>Perfil del paciente</h1>
       </Row>
       <Row className="d-flex align-content-center justify-content-center mt-5">
         <Col className="d-flex align-content-center justify-content-center">
-          <Card style={{ width: "22rem" }} className="cards">
+          <Card style={{ width: "20rem" }} className="cards">
             <Card.Img className="imgCards" variant="top" />
             <Card.Body>
               <Avatar size={64} icon={<UserOutlined />} styling="big" />
@@ -55,16 +55,16 @@ const Profile = () => {
               </Card.Title>
               <Card.Text>{userCredentials?.credentials?.email}</Card.Text>
               <Card.Text>{userCredentials?.credentials?.phone}</Card.Text>
-              <button
+              <Button
                 className="buttonDesign"
                 onClick={() => navigate("/updateProfile")}
               >
                 Modifique sus datos
-              </button>
+              </Button>
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col className="d-flex align-content-center justify-content-center">
           <Card style={{ width: "20rem" }} className="cards">
             <Card.Img className="imgCards" variant="top" />
             <Card.Body>
@@ -89,11 +89,11 @@ const Profile = () => {
       </Row>
       <Row className="mt-5">
         <h1>Mis citas</h1>
-        <button className="buttonDesign" onClick={()=>navigate("/myAccount")}>My Account</button>
+        <button className="buttonDesign" onClick={() => navigate("/myAccount")}>
+          My Account
+        </button>
       </Row>
-      <Row>
-
-      </Row>
+      <Row></Row>
     </Container>
   );
 };

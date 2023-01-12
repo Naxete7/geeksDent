@@ -29,7 +29,7 @@ const Admin = () => {
           setUserInfo(res.data);
         })
         .catch((error) => {
-          setError(error.response?.data || "ups intentalo de nuevo");
+          setError(error.response?.data || "errooooor");
         });
     }
   }, [userCredentials]);
