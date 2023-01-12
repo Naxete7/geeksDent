@@ -4,7 +4,7 @@ import "./UserAppointments.scss";
 import { myAppointments } from "../../../services/Apicall";
 import { userData } from "../userSlice";
 import { useSelector } from "react-redux";
-import { Card } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 const UserAppointments = () => {
     
@@ -15,14 +15,14 @@ const UserAppointments = () => {
     const userCredentials = useSelector(userData);
 
     const appointments = () => {
-        myAppointments(userCredentials?.credentials?.token)
+        myAppointments(userCredentials?.token)
         .then((res) => {
-                console.log(res, "adios")
-                setUserAppointments(res.data);
+               
+                setUserAppointments(res.data.data);
             
             })
             .catch((error) => {
-                console.log(error,"holaaa")
+                
                 setError(
               error.response?.data ||
                 "No se pueden ver las citas"
@@ -38,28 +38,35 @@ const UserAppointments = () => {
     }
     if (userAppointments.lenght !== 0) {
         return (
-            <div>
-                {userAppointments.map((allAppointments) => {
+            <Container>
+                <Row>
+                    <Col className="d-flex m-2 ">
+                        {userAppointments.map((userAppointments) => {
     
-                    return (
-                        <Card
-                            style={{ width: "12rem" }}
-                            className="cards"
-                            key={allAppointments.mail}
-                        >
-                            <Card.Body>
-                                <Card.Title>{allAppointments.name}</Card.Title>
-                              
-                            </Card.Body>
-                        </Card>
-                    );
+                            return (
+                                <Card
+                                    style={{ width: "12rem" }}
+                                    className="cards"
+                                    key={userAppointments.date}
+                                >
+                                    <Card.Body>
+                                        <Card.Title>{userAppointments.date}</Card.Title>
+                                        <Card.Text>{userAppointments.duration}</Card.Text>
+                                        <Card.Text>{userAppointments.reason}</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            );
                     
-                })}
+                        })}
 
-            </div>
-        )
-    } else {
-        return <h2>No hay datos</h2>
+           
+     
+
+
+                    </Col>
+                </Row>
+            </Container>
+        );
     }
 };
 

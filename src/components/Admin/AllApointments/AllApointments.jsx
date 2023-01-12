@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./AllApointments.scss";
 import { getAllAppointments } from "../../../services/Apicall";
 
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { userData } from "../../../containers/User/userSlice";
 import { useNavigate } from "react-router-dom";
@@ -18,10 +18,10 @@ const AllApointments = () => {
 
     const appointments = () => {
         
-        getAllAppointments(userCredentials?.credentials?.token)
+        getAllAppointments(userCredentials?.token)
           .then((res) => {
             console.log(res);
-            setAllAppointments(res.data);
+            setAllAppointments(res.data.data);
           })
           .catch((error) => {
             setError(
@@ -41,29 +41,29 @@ const AllApointments = () => {
     }
     if (allAppointments.lenght !== 0) {
         return (
-            <div>
+          <Container>
+            <Row>
+              <Col className="d-flex  col-12">
                 {allAppointments.map((allAppointments) => {
-    
-                    return (
-                        <Card
-                            style={{ width: "12rem" }}
-                            className="cards"
-                            key={allAppointments.mail}
-                        >
-                            <Card.Body>
-                                <Card.Title>{allAppointments.name}</Card.Title>
-                                <Card.Text>{allAppointments.mail}</Card.Text>
-                            </Card.Body>
-                        </Card>
-                    );
-                    
+                  return (
+                    <Card
+                      style={{ width: "12rem" }}
+                      className="cards"
+                      key={allAppointments.date}
+                    >
+                      <Card.Body>
+                        <Card.Title>{allAppointments.date}</Card.Title>
+                        <Card.Title>{allAppointments.duration}</Card.Title>
+                        <Card.Title>{allAppointments.reason}</Card.Title>
+                      </Card.Body>
+                    </Card>
+                  );
                 })}
-
-            </div>
-        )
-    } else {
-        return <h2>No hay datos</h2>
+              </Col>
+            </Row>
+          </Container>
+        );
     }
-};
+}
 
 export default AllApointments;
