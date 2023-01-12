@@ -2,27 +2,20 @@ import axios from "axios";
 
 
 export const loginUser = async (body) => {
-  //return await axios.post(
-  //  `http://localhost:8000/api/login`,
-  //  body
-  //);
   return await axios.post(
-    `https://geeksdent-backend-production.up.railway.app/api/login`,
+    `http://localhost:8000/api/login`,
     body
   );
+  //return await axios.post(
+  //  `https://geeksdent-backend-production.up.railway.app/api/login`,
+  //  body
+  //);
   //      {
   //    "email":"nacho@nacho.es",
   //    "password":"Nacho1234"
   //}
 };
 
-//export const profile = (id) => {
-//  return axios.get(
-//    // "https://geeksdent-backend-production.up.railway.app/api/users/id/"
-   
-//    "http://localhost:8000/api/profile/" + id
-//  );
-//};
 
 export const profile = async (token) => {
   var config = {
@@ -30,17 +23,17 @@ export const profile = async (token) => {
       Authorization: "Bearer " + token
     }
   };
-  //return await axios.get(`http://localhost:8000/api/profile`, config);
-   return await axios.get(
-     `https://geeksdent-backend-production.up.railway.app/api/profile`,
-     config
-   );
+  return await axios.get(`http://localhost:8000/api/profile`, config);
+  // return await axios.get(
+  //   `https://geeksdent-backend-production.up.railway.app/api/profile`,
+  //   config
+  // );
 };
 
 export const registerUser = async (body) => {
   return axios.post(
-    //"http://localhost:8000/api/register",
-    "https://geeksdent-backend-production.up.railway.app/api/register",
+    "http://localhost:8000/api/register",
+    //"https://geeksdent-backend-production.up.railway.app/api/register",
     body
     // {
 
@@ -88,21 +81,21 @@ export const getAllAppointments = () => {
 
 export const getAllUsers = () => {
   //return axios.get(`https://geeksdent-backend-production.up.railway.app/api/users`);
-  return axios.get(`https://localhost:8000/api/users`);
+  return axios.get(`http://localhost:8000/api/users`);
 };
 
 
 export const logout = () => {
-   return axios.post(
-     `https://geeksdent-backend-production.up.railway.app/api/logout`
-   );
-  //return axios.post(`localhost:8000/api/logout`);
+  // return axios.post(
+  //   `https://geeksdent-backend-production.up.railway.app/api/logout`
+  // );
+  return axios.post(`http://localhost:8000/api/logout`);
 }
 
 
 export const updateUser = () => {
   
-  return axios.put(`localhost:8000/api/updateUser`);
+  return axios.put(`http://localhost:8000/api/updateUser`);
   // return axios.put(
   //   `https://geeksdent-backend-production.up.railway.app/api/updateUser`
   // );

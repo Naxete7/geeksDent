@@ -72,7 +72,10 @@ function OffcanvasExample() {
                 className="  fluid logoDesign"
                 alt="Clinica logo"
               />
-              <Navbar.Brand className="titleDesign" href="/">
+              <Navbar.Brand
+                className="titleDesign"
+                onClick={() => navigate("/")}
+              >
                 GeeksDent
               </Navbar.Brand>
               <Navbar.Toggle
@@ -90,50 +93,52 @@ function OffcanvasExample() {
                 </Offcanvas.Header>
                 <Offcanvas.Body className="justify-content-end">
                   <Nav className="justify-content-end flex-grow-2 pe-5">
-                    <Nav.Link onClick={()=>goProfile()}>
+                    <Nav.Link onClick={() => goProfile()}>
                       {userCredentials?.credentials?.name}
                     </Nav.Link>
-                    <Nav.Link href="/appointments">Pide tu cita</Nav.Link>
-                    <Nav.Link href="/team">Nuestro Equipo</Nav.Link>
+                    <Nav.Link onClick={()=>navigate("/appointments")}>Pide tu cita</Nav.Link>
+                    <Nav.Link onClick={() => navigate("/team")}>
+                      Nuestro Equipo
+                    </Nav.Link>
                     <NavDropdown
                       title="Tratamientos"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
                     >
                       {" "}
-                      <NavDropdown.Item href="/treatments">
+                      <NavDropdown.Item onClick={() => navigate("/treatments")}>
                         Tratamientos
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/endodoncia">
+                      <NavDropdown.Item onClick={() => navigate("/endodoncia")}>
                         Endodoncia
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/estetica">
+                      <NavDropdown.Item onClick={() => navigate("/estetica")}>
                         Estética Dental
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/implantes">
+                      <NavDropdown.Item onClick={() => navigate("/implantes")}>
                         Implantes
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/odontopediatria">
+                      <NavDropdown.Item
+                        onClick={() => navigate("/odontopediatria")}
+                      >
                         Odontopediatria
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/ortodoncia">
+                      <NavDropdown.Item onClick={() => navigate("/ortodoncia")}>
                         Ortodoncia
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/invisalign">
+                      <NavDropdown.Item onClick={() => navigate("/invisalign")}>
                         Ortodoncia Invisible
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/periodoncia">
+                      <NavDropdown.Item
+                        onClick={() => navigate("/periodoncia")}
+                      >
                         Periodoncia
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/protesis">
+                      <NavDropdown.Item onClick={() => navigate("/protesis")}>
                         Prótesis
                       </NavDropdown.Item>
                     </NavDropdown>
                     <Form className="d-flex">
-                      <Button
-                        className="buttonDesign"
-                        onClick={logOut}
-                        href="/"
-                      >
+                      <Button className="buttonDesign" onClick={logOut}>
                         Logout
                       </Button>
                     </Form>
@@ -161,7 +166,10 @@ function OffcanvasExample() {
                 className="  fluid logoDesign"
                 alt="Clinica logo"
               />
-              <Navbar.Brand className="titleDesign" href="/">
+              <Navbar.Brand
+                className="titleDesign"
+                onClick={() => navigate("/")}
+              >
                 GeeksDent
               </Navbar.Brand>
               <Navbar.Toggle
@@ -179,48 +187,64 @@ function OffcanvasExample() {
                 </Offcanvas.Header>
                 <Offcanvas.Body className="justify-content-end">
                   <Nav className="justify-content-end flex-grow-2 pe-5">
-                    <Nav.Link href="/team">Nuestro Equipo</Nav.Link>
-                    <Nav.Link href="/knowus">Conócenos</Nav.Link>
+                    <Nav.Link onClick={() => navigate("/team")}>
+                      Nuestro Equipo
+                    </Nav.Link>
+                    <Nav.Link onClick={() => navigate("/knowus")}>
+                      Conócenos
+                    </Nav.Link>
                     <NavDropdown
                       title="Tratamientos"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
                     >
-                      <NavDropdown.Item href="/treatments">
+                      <NavDropdown.Item onClick={() => navigate("/treatments")}>
                         Tratamientos
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/endodoncia">
+                      <NavDropdown.Item onClick={() => navigate("/endodoncia")}>
                         Endodoncia
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/estetica">
+                      <NavDropdown.Item onClick={() => navigate("/estetica")}>
                         Estética Dental
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/implantes">
+                      <NavDropdown.Item onClick={() => navigate("/implantes")}>
                         Implantes
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/odontopediatria">
+                      <NavDropdown.Item
+                        onClick={() => navigate("/odontopediatria")}
+                      >
                         Odontopediatria
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/ortodoncia">
+                      <NavDropdown.Item onClick={() => navigate("/ortodoncia")}>
                         Ortodoncia
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/invisalign">
+                      <NavDropdown.Item onClick={() => navigate("/invisalign")}>
                         Ortodoncia Invisible
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/periodoncia">
+                      <NavDropdown.Item
+                        onClick={() => navigate("/periodoncia")}
+                      >
                         Periodoncia
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/protesis">
+                      <NavDropdown.Item
+                        onClick={() => navigate("/protesis")}
+                      >
                         Prótesis
                       </NavDropdown.Item>
                     </NavDropdown>
                     <Form className="d-flex">
-                      <Button className="buttonDesign" href="/login">
+                      <Button
+                        className="buttonDesign"
+                        onClick={() => navigate("/login")}
+                      >
                         Login
                       </Button>
                     </Form>
 
                     <Form className="d-flex ">
-                      <Button href="/register" className="buttonDesign">
+                      <Button
+                        onClick={() => navigate("/register")}
+                        className="buttonDesign"
+                      >
                         Regístrate
                       </Button>
                     </Form>

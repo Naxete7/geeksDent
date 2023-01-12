@@ -19,16 +19,16 @@ const AllUsers = () => {
           setAllUsers(res.data);
         })
         .catch((error) => {
+          console.log(error);
           setError(error.response?.data || "ups intentalo");
         });
     });
   };
-
-  useEffect(() => {
-    //This function is triggered when the component is mounted for the first time.
+  const users = () => {
+  
     getAllUsers()
         .then((res) => {
-          console.log(res);
+          
         setAllUsers(res.data);
       })
       .catch((error) => {
@@ -37,10 +37,15 @@ const AllUsers = () => {
             "Solo el Administrador puede ver a todos los usuarios"
         );
       });
+
+}
+
+  useEffect(() => { users()
+    //This function is triggered when the component is mounted for the first time.
   }, []);
 
   if (error) {
-    return <h2>{error.repeat(999)} </h2>;
+    return <h2>{error.repeat(1)} </h2>;
   }
   if (allUsers.length !== 0) {
     return (

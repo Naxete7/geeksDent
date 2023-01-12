@@ -33,7 +33,7 @@ const MyAccount = () => {
   });
 
   if (
-    userCredentials?.credentials?.role === "2" ||  userCredentials?.credentials?.role === "1"
+    userCredentials?.credentials?.role === "1" ||  userCredentials?.credentials?.role === "2"
   ) {
     return (
       <div className="myAccountDesign">

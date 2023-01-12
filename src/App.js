@@ -35,7 +35,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/updateProfile" element={<UpdateProfile />} />
-          <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/myAccount" element={<MyAccount />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/treatments" element={<Treatments />} />
           <Route path="/endodoncia" element={<Endodoncia />} />
