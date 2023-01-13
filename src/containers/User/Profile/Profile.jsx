@@ -100,36 +100,4 @@ const Profile = () => {
 
 
 
-//  return (
-//    <Container>
-//      <Row className="cards d-flex align-content-center justify-content-center">
-//        <Col>
-//          <h1>BIENVENIDO DE VUELTA A GEEKSDENT</h1>
-//        </Col>
-//      </Row>
-//      <br></br>
-//      <Row>
-//        <Col className="cards d-flex align-content-center justify-content-center flex-wrap">
-//          {" "}
-//          <Card
-//            style={{ width: "12rem" }}
-//            className="cards d-flex align-content-center justify-content-center"
-//          >
-//            <Card.Body>
-//              <Card.Title>NACHO</Card.Title>
-//              <Card.Text>{ bringUserInfo}</Card.Text>
-//              <Button
-//                className="buttonDesign"
-//                onClick={() => navigate("/appointments")}
-//              >
-//                Pida su cita
-//              </Button>
-//            </Card.Body>
-//          </Card>
-//        </Col>
-//      </Row>
-//    </Container>
-//  );
-//};
-
 export default Profile;

@@ -51,10 +51,10 @@ const Admin = () => {
               <Avatar size={64} icon={<UserOutlined />} styling="big" />
               <Card.Title>
                 {userCredentials?.credentials?.name}{" "}
-                {userCredentials?.credentials?.surname}
+                {/*{userCredentials?.credentials?.surname}*/}
               </Card.Title>
               <Card.Text>{userCredentials?.credentials?.email}</Card.Text>
-              <Card.Text>{userCredentials?.credentials?.phone}</Card.Text>
+              {/*<Card.Text>{userCredentials?.credentials?.phone}</Card.Text>*/}
             </Card.Body>
           </Card>
         </Col>
