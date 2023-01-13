@@ -22,6 +22,18 @@ const AllUsers = () => {
   const navigate = useNavigate();
   
 
+  const deleteMe = (userDelete) => {
+    deleteUser(userDelete).then((res) => {
+      getAllUsers()
+        .then((res) => {
+          setAllUsersInfo(res.data);
+        })
+        .catch((error) => {
+          setError(error.response?.data || "ups intentalo de nuevo");
+        });
+    });
+  };
+
   useEffect(() => {
     
     if (userCredentials?.token !== "") {
@@ -39,31 +51,11 @@ const AllUsers = () => {
 
   }, [userCredentials])
 
-  //const users = () => {
-  //  getAllUsers()
-  //    .then((res) => {
-      
-  //      setAllUsers(res.data);
-  //    })
-  //    .catch((error) => {
-  //      setError(
-  //        error.response?.data ||
-  //        "Solo el Administrador pude ver todos los usuarios"
-  //      );
-  //    });
-  //}
-
-  //useEffect(() => {
-  //  users()
-  //}, []);
-  //if (error) {
-  //  return <h2>{error.repeat(1)}</h2>;
-  //}
 
 
   if (allUsersInfo.length !== 0) {
     return (
-      // <pre>{JSON.stringify(allUsers, null, 2)}</pre>
+       
       <div >
             {allUsersInfo.map((allUser) => {
             console.log(AllUsers)
@@ -73,17 +65,17 @@ const AllUsers = () => {
               className="cards"
               key={allUser.mail}
             >
-             
               <Card.Body>
                 <Card.Title>{allUser.name}</Card.Title>
                 <Card.Text>{allUser.mail}</Card.Text>
+            
 
-                {/*<Button
+                <Button
                   variant="warning"
                   onClick={() => deleteMe(allUser.mail)}
                 >
                   Delete
-                </Button>*/}
+                </Button>
               </Card.Body>
             </Card>
           );

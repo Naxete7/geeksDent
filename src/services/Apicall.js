@@ -61,11 +61,17 @@ export const myAppointments = async (token) => {
   //);
 };
 
-export const addAppointments = (body) => {
+export const addAppointments = (body, token) => {
+var config = {
+  headers: {
+    Authorization: "Bearer " + token
+  }
+};
+  
   return axios.post(`http://localhost:8000/api/addAppointment`,
     // return axios.post(
     //   `https://geeksdent-backend-production.up.railway.app/api/addAppointment`,
-       body
+       body,config
 
        // {"date":"2023-1-26",
        //"duration":"1 hora",
@@ -129,4 +135,14 @@ export const deleteUser = () => {
   //);
 }
 
+
+export const doctors = () => {
+  return axios.get(`http://localhost:8000/api/doctors`);
+  //return axios.get(`https://geeksdent-backend-production.up.railway.app/api/doctors`)
+}
+
+export const treatments = () => {
+  return axios.get(`http://localhost:8000/api/treatments`);
+  //return axios.get(`https://geeksdent-backend-production.up.railway.app/api/treatments`)
+}
 

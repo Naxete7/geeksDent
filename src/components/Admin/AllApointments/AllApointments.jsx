@@ -53,7 +53,7 @@ const AllApointments = () => {
                     >
                       <Card.Body>
                         <Card.Title>{allAppointments.date}</Card.Title>
-                        <Card.Title>{allAppointments.duration}</Card.Title>
+                        <Card.Title>{allAppointments.usersId}</Card.Title>
                         <Card.Title>{allAppointments.reason}</Card.Title>
                       </Card.Body>
                     </Card>
