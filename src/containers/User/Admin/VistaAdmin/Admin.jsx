@@ -4,12 +4,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userout, userData } from "../../userSlice";
 import { logout, profile } from "../../../../services/Apicall";
-import {
-  AntDesignOutlined,
-  UserOutlined,
-  ScheduleOutlined
-} from "@ant-design/icons";
-
+import {  UserOutlined} from "@ant-design/icons";
+import "../../../../components/Cards/Cards.scss";
 import { useSelector } from "react-redux";
 import { Avatar } from "antd";
 
@@ -34,9 +30,6 @@ const Admin = () => {
     }
   }, [userCredentials]);
 
-  //if (error) {
-  //  return <h2>{error.repeat(1)} </h2>;
-  //}
 
   return (
     <Container>

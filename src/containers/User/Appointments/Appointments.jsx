@@ -158,9 +158,8 @@ const Appointment = () => {
   }, []);
 
   const createAppointment = () => {
-    addAppointments(userCredentials?.token)
-    .then((res) => { console.log(res)
-      ("cita reada");
+    addAppointments(userCredentials?.token, ).then((res) => {
+      console.log(res)("cita reada");
     });
   };
 
@@ -179,10 +178,13 @@ const Appointment = () => {
             <br></br>
             <h6>Elija su doctor</h6>
 
-            <Form.Select size="ml" name="doctorId">
+            <Form.Select
+              size="ml"
+              name="doctorId"
+              onChange={(e) => setTreatmentsId(e.target.value)}
+            >
               {allDoctors.map((doctors) => {
-             
-                return <option>{doctors.name}</option>;
+                return <option value={doctors.id}>{doctors.name}</option>;
               })}
             </Form.Select>
           </Col>
@@ -191,10 +193,17 @@ const Appointment = () => {
         <Row className="d-flex align-content-center justify-content-center">
           <Col className="col-8">
             <h6>Elija su tratamiento</h6>
-            <Form.Select size="ml" name="treatmentId" onChange={e=>setTreatmentsId(e.target.value)}>
+            <Form.Select size="ml" name="treatmentId">
               {allTreatments.map((treatments) => {
-                console.log(treatments.id);
-                return <option value={{treatmentsId}}>{treatments.name}</option>;
+                {/*console.log(setTreatmentsId);*/}
+                return (
+                  <option
+                    onChange={() => setTreatmentsId(treatments.id)}
+                    value={treatments.id}>
+                    {treatments.name}
+                  </option>
+                 
+                ); 
               })}
             </Form.Select>
           </Col>

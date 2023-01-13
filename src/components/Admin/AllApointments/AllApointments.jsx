@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./AllApointments.scss";
 import { getAllAppointments } from "../../../services/Apicall";
-
+import "../../../components/Cards/Cards.scss";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { userData } from "../../../containers/User/userSlice";
@@ -42,8 +42,8 @@ const AllApointments = () => {
     if (allAppointments.lenght !== 0) {
         return (
           <Container>
-            <Row>
-              <Col className="d-flex  col-12">
+            <Row className="d-flex">
+              <Col className="d-flex col-12 wrap  justify-content-center">
                 {allAppointments.map((allAppointments) => {
                   return (
                     <Card
