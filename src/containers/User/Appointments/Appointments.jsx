@@ -159,7 +159,7 @@ const Appointment = () => {
 
   const createAppointment = () => {
     addAppointments(userCredentials?.token)
-    .then((res) => {
+    .then((res) => { console.log(res)
       ("cita reada");
     });
   };

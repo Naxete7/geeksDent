@@ -15,8 +15,8 @@ const AllUsers = () => {
 
 const userCredentials = useSelector(userData);
 
-  const deleteMe = (userDelete) => {
-    deleteUser(userDelete).then((res) => {
+  const deleteMe = () => {
+    deleteUser(userCredentials.token).then((res) => {
       getAllUsers()
         .then((res) => {
           setAllUsers(res.data);
@@ -61,12 +61,12 @@ const userCredentials = useSelector(userData);
                     <Card.Text>{allUser.surname}</Card.Text>
                     <Card.Text>{allUser.email}</Card.Text>
                     <Card.Text>{allUser.phone}</Card.Text>
-                    {/*<Button
+                    <Button
                   variant="warning"
-                  onClick={() => deleteMe(allUser.mail)}
+                  onClick={() => deleteMe()}
                 >
                   Delete
-                </Button>*/}
+                </Button>
                   </Card.Body>
                 </Card>
               );

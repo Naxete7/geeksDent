@@ -30,8 +30,8 @@ const Update = () => {
   //});
 
   const updateMe = () => {
-    updateUser(userCredentials?.token).then((res) => {
-      //console.log(res.res.message, "mensaje");
+    updateUser(userCredentials?.token, user).then((res) => {
+      console.log(res, "mensaje");
       try {
         loginUser(user).then((res) => {
           //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
@@ -41,14 +41,7 @@ const Update = () => {
               LoginError: "El email o la contraseña son incorrectos"
             }));
           } else {
-            //console.log(res, "dentro de if");
-            //localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
-            //localStorage.setItem("SAVEUSEREMAIL", JSON.stringify(res.data.email));
-            //if (res.data.role === null) {
-            //  localStorage.setItem("SAVEUSERROLE", "userRole");
-            //} else {
-            //  localStorage.setItem("SAVEUSERROLE", JSON.stringify(res.data.role));
-            //}
+            
 
             dispatch(
               login({
@@ -114,8 +107,8 @@ const Update = () => {
             >
               <h1 className=" mb-3 ">Modifique sus datos</h1>
               <Form.Item
-                //label="Username"
-                //name="name"
+                label="Nombre"
+                name="name"
                 rules={[
                   {
                     required: true,
@@ -132,8 +125,8 @@ const Update = () => {
               </Form.Item>
 
               <Form.Item
-                //label="Username"
-                //name="surname"
+                label="Username"
+                name="surname"
                 rules={[
                   {
                     required: true,
@@ -150,8 +143,8 @@ const Update = () => {
               </Form.Item>
 
               <Form.Item
-                //label="Password"
-                //name="password"
+                label="Password"
+                name="password"
                 rules={[
                   {
                     required: true,
@@ -168,8 +161,8 @@ const Update = () => {
               </Form.Item>
 
               <Form.Item
-                //label="Username"
-                //name="phone"
+                label="phone"
+                name="phone"
                 rules={[
                   {
                     required: true,

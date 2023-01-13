@@ -58,36 +58,9 @@ const Admin = () => {
             </Card.Body>
           </Card>
         </Col>
-        {/*<Col>
-          <Card style={{ width: "20rem" }} className="cards">
-            <Card.Img className="imgCards" variant="top" />
-            <Card.Body>
-              <Avatar
-                size={64}
-                icon={<ScheduleOutlined />}
-                styling="big"
-                className=" "
-              />
-              <Card.Title>¿Tiene molestias?</Card.Title>
-              <Card.Text>¿Necesita de nuestra atención?</Card.Text>
-              <Card.Text>Coja cita y le atenderemos encantados</Card.Text>
-              <Button
-                className="buttonDesign"
-                onClick={() => navigate("/appointments")}
-              >
-                Coja su cita
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>*/}
+       
       </Row>
-      <Row className="mt-5">
-        <h1>Mis citas</h1>
-        <button className="buttonDesign" onClick={() => navigate("/myAccount")}>
-          My Account
-        </button>
-      </Row>
-      <Row></Row>
+      
     </Container>
   );
 };

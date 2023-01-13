@@ -61,7 +61,7 @@ export const myAppointments = async (token) => {
   //);
 };
 
-export const addAppointments = (body, token) => {
+export const addAppointments = (token, body) => {
 var config = {
   headers: {
     Authorization: "Bearer " + token
@@ -71,7 +71,7 @@ var config = {
   return axios.post(`http://localhost:8000/api/addAppointment`,
     // return axios.post(
     //   `https://geeksdent-backend-production.up.railway.app/api/addAppointment`,
-       body,config
+       config, body
 
        // {"date":"2023-1-26",
        //"duration":"1 hora",
@@ -121,15 +121,20 @@ export const updateUser = (token, body) => {
       Authorization: "Bearer " + token
     }
   };
-  return axios.put(`http://localhost:8000/api/updateUser`, body, config);
+  return axios.put(`https://localhost:8000/api/updateUser`, config, body);
   // return axios.put(
-  //   `https://geeksdent-backend-production.up.railway.app/api/updateUser`,,body,config
+  //   `https://geeksdent-backend-production.up.railway.app/api/updateUser`,config,body
   // );
 }
 
-export const deleteUser = () => {
-  
-  return axios.delete(`localhost:8000/api/deleteuser/{id}`);
+export const deleteUser = (token) => {
+    var config = {
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    };
+
+  return axios.delete(`http://localhost:8000/api/deleteuser/{id}`, config);
   //return axios.delete(
   //  `https://geeksdent-backend-production.up.railway.app/api/deleteuser/{id}`
   //);
