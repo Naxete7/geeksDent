@@ -35,9 +35,6 @@ const MyAccount = () => {
             <Profile />
           </Row>
           <Row>
-            <h2>Todas mis citas</h2>
-          </Row>
-          <Row>
           <UserAppointments/></Row>
         </Container>
       </div>
@@ -57,7 +54,7 @@ const MyAccount = () => {
         </Row>
         <Row> </Row>
         <Row>
-          <h2>Todos los citas</h2>
+          <h2>Todas las citas</h2>
         </Row>
         <Row>
           <AllApointments />

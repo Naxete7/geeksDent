@@ -30,7 +30,8 @@ const Update = () => {
   //});
 
   const updateMe = () => {
-    updateUser(userCredentials?.token).then((res) => {
+    updateUser(userCredentials?.token, user).then((res) => {
+      console.log(res, "estoy aqui");
       //console.log(res.res.message, "mensaje");
       try {
         loginUser(user).then((res) => {
@@ -41,15 +42,6 @@ const Update = () => {
               LoginError: "El email o la contraseña son incorrectos"
             }));
           } else {
-            //console.log(res, "dentro de if");
-            //localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
-            //localStorage.setItem("SAVEUSEREMAIL", JSON.stringify(res.data.email));
-            //if (res.data.role === null) {
-            //  localStorage.setItem("SAVEUSERROLE", "userRole");
-            //} else {
-            //  localStorage.setItem("SAVEUSERROLE", JSON.stringify(res.data.role));
-            //}
-
             dispatch(
               login({
                 credentials: {
@@ -85,7 +77,6 @@ const Update = () => {
   const [user, setUser] = useState({
     name: "",
     surname: "",
-    password: "",
     phone: ""
   });
   const onFinish = (values) => {};
@@ -114,8 +105,8 @@ const Update = () => {
             >
               <h1 className=" mb-3 ">Modifique sus datos</h1>
               <Form.Item
-                //label="Username"
-                //name="name"
+                label="name"
+                name="name"
                 rules={[
                   {
                     required: true,
@@ -124,7 +115,7 @@ const Update = () => {
                 ]}
               >
                 <input
-                  type="text"
+                  type="string"
                   name="name"
                   placeholder="name"
                   onChange={(e) => inputHandler(e)}
@@ -132,8 +123,8 @@ const Update = () => {
               </Form.Item>
 
               <Form.Item
-                //label="Username"
-                //name="surname"
+                label="surname"
+                name="surname"
                 rules={[
                   {
                     required: true,
@@ -142,34 +133,17 @@ const Update = () => {
                 ]}
               >
                 <input
-                  type="text"
+                  type="string"
                   name="surname"
                   placeholder="surname"
                   onChange={(e) => inputHandler(e)}
                 />
               </Form.Item>
 
-              <Form.Item
-                //label="Password"
-                //name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your password!"
-                  }
-                ]}
-              >
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  onChange={(e) => inputHandler(e)}
-                />
-              </Form.Item>
 
               <Form.Item
-                //label="Username"
-                //name="phone"
+                label="phone"
+                name="phone"
                 rules={[
                   {
                     required: true,
@@ -178,7 +152,7 @@ const Update = () => {
                 ]}
               >
                 <input
-                  type="text"
+                  type="string"
                   name="phone"
                   placeholder="phone"
                   onChange={(e) => inputHandler(e)}

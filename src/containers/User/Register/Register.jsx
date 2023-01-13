@@ -31,7 +31,7 @@ const userCredentials = useSelector(userData);
 useEffect(() => {
  
   if (userCredentials?.token !== "") {
-    navigate("/appointments");
+    navigate("/myAccount");
   }
 });
 
@@ -47,21 +47,12 @@ useEffect(() => {
               LoginError: "El email o la contraseña son incorrectos"
             }));
           } else {
-            //console.log(res, "dentro de if");
-            //localStorage.setItem("SAVEJWT", JSON.stringify(res.data.token));
-            //localStorage.setItem("SAVEUSEREMAIL", JSON.stringify(res.data.email));
-            //if (res.data.role === null) {
-            //  localStorage.setItem("SAVEUSERROLE", "userRole");
-            //} else {
-            //  localStorage.setItem("SAVEUSERROLE", JSON.stringify(res.data.role));
-            //}
-
+          
             dispatch(
               login({
                 credentials: {
                   token: res.data.token
-                  //email: res.data.email,
-                  //role: res.data.role
+              
                 }
               })
             );

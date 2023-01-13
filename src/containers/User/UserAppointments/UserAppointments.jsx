@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./UserAppointments.scss";
-
+import "../../../components/Cards/Cards.scss"
 import { myAppointments } from "../../../services/Apicall";
 import { userData } from "../userSlice";
 import { useSelector } from "react-redux";
@@ -38,34 +38,27 @@ const UserAppointments = () => {
     }
     if (userAppointments.lenght !== 0) {
         return (
-            <Container>
-                <Row>
-                    <Col className="d-flex m-2 ">
-                        {userAppointments.map((userAppointments) => {
-    
-                            return (
-                                <Card
-                                    style={{ width: "12rem" }}
-                                    className="cards"
-                                    key={userAppointments.date}
-                                >
-                                    <Card.Body>
-                                        <Card.Title>{userAppointments.date}</Card.Title>
-                                        <Card.Text>{userAppointments.duration}</Card.Text>
-                                        <Card.Text>{userAppointments.reason}</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            );
-                    
-                        })}
-
-           
-     
-
-
-                    </Col>
-                </Row>
-            </Container>
+          <Container>
+            <Row>
+              <Col className="d-flex col-12 wrap  justify-content-center">
+                {userAppointments.map((userAppointments) => {
+                  return (
+                    <Card
+                      style={{ width: "12rem" }}
+                      className="cards"
+                      key={userAppointments.date}
+                    >
+                      <Card.Body>
+                        <Card.Title>{userAppointments.date}</Card.Title>
+                        <Card.Text>{userAppointments.duration}</Card.Text>
+                        <Card.Text>{userAppointments.reason}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  );
+                })}
+              </Col>
+            </Row>
+          </Container>
         );
     }
 };

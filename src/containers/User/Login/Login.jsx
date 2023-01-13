@@ -11,7 +11,7 @@ import { Button } from "react-bootstrap";
 
 const Login = () => {
   let navigate = useNavigate();
-
+const [messageError, setMessageError] = useState("");
   const dispatch = useDispatch();
 
   const userCredentials = useSelector(userData);
@@ -65,10 +65,7 @@ const logMe = () => {
     loginUser(user).then((res) => {
       //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
       if (res.data.message === "Password or email is incorrect") {
-        setUserError((prevState) => ({
-          ...prevState,
-          LoginError: "El email o la contraseña son incorrectos"
-        }));
+        setMessageError("Email o contraseña no válidos.")
       } else {
       
         dispatch(

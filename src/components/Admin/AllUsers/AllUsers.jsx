@@ -15,8 +15,8 @@ const AllUsers = () => {
 
 const userCredentials = useSelector(userData);
 
-  const deleteMe = (userDelete) => {
-    deleteUser(userDelete).then((res) => {
+  const deleteMe = (id) => {
+    deleteUser(userCredentials.token, id).then((res) => {
       getAllUsers()
         .then((res) => {
           setAllUsers(res.data);
@@ -32,11 +32,11 @@ const userCredentials = useSelector(userData);
 
     if (userCredentials?.token !== "") {
       getAllUsers(userCredentials.token)
-        .then((res) => {console.log(res)
+        .then((res) => {
           setAllUsers(res.data.data);
         })
         .catch((error) => {
-          setError(error.response?.data || "no vaaaaa");
+          setError(error.response?.data || "error al recuperar los usuarios");
         });
     }
   },[userCredentials]);
@@ -47,8 +47,8 @@ const userCredentials = useSelector(userData);
   if (allUsers.length !== 0) {
     return (
       <Container>
-        <Row >
-          <Col className="d-flex wrap">
+        <Row>
+          <Col className="d-flex col-12 wrap  justify-content-center">
             {allUsers.map((allUser) => {
               return (
                 <Card
@@ -61,10 +61,7 @@ const userCredentials = useSelector(userData);
                     <Card.Text>{allUser.surname}</Card.Text>
                     <Card.Text>{allUser.email}</Card.Text>
                     <Card.Text>{allUser.phone}</Card.Text>
-                    {/*<Button
-                  variant="warning"
-                  onClick={() => deleteMe(allUser.mail)}
-                >
+                    {/*<Button variant="warning" onClick={() => deleteMe(allUser.id)} >
                   Delete
                 </Button>*/}
                   </Card.Body>

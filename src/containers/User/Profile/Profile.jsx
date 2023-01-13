@@ -88,9 +88,9 @@ const Profile = () => {
         </Col>
       </Row>
       <Row className="mt-5">
-        <h1>Mis citas</h1>
-        <button className="buttonDesign" onClick={() => navigate("/myAccount")}>
-          My Account
+       
+        <button className="buttonDesign">
+         Todas mis citas
         </button>
       </Row>
       <Row></Row>
