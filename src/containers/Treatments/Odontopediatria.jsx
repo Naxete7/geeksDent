@@ -9,7 +9,7 @@ import odontopecabecera from "../../assets/img/odontopecabecera.jpg"
 const Odontopediatria = () => {
     
     return (
-      <Container>
+      <Container fluid className="treatmentsDesign">
         <Row>
           <Col>
             <Card>
@@ -77,18 +77,21 @@ const Odontopediatria = () => {
             espacio con sellador y evitar cualquier inflamación y dolor.
           </p>
         </Row>
-        <Row>
-          <h5>Ortodóncia</h5>
-          <p>
-            La ortodoncia interceptiva u ortodoncia infantil muy popular entre
-            los niños. Con ella se consigue mediante la ayuda de aparatos
-            funcionales que ejercen distintas fuerzas, disponer del espacio
-            maxilar adecuado para que los dientes de leche sigan desarrollándose
-            debidamente, sin perjudicar la llegada de las piezas permanentes.
-          </p>
-          <Card>
-            <img src={interceptiva} alt="interceptiva" />
-          </Card>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <h5>Ortodóncia</h5>
+            <p>
+              La ortodoncia interceptiva u ortodoncia infantil muy popular entre
+              los niños. Con ella se consigue mediante la ayuda de aparatos
+              funcionales que ejercen distintas fuerzas, disponer del espacio
+              maxilar adecuado para que los dientes de leche sigan
+              desarrollándose debidamente, sin perjudicar la llegada de las
+              piezas permanentes.
+            </p>
+            <Card>
+              <img src={interceptiva} alt="interceptiva" />
+            </Card>
+          </Col>
         </Row>
         <Row>
           <h5>Aplicación de Flúor</h5>
