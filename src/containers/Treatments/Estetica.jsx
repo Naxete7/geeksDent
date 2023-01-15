@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Treatments.scss";
 import carilla from "../../assets/img/carilla.jpg";
 import coronas from "../../assets/img/coronas.jpg";
 import blanqueamiento from "../../assets/img/blanqueamiento.jpg"
@@ -9,8 +9,11 @@ import esteticacabecera from "../../assets/img/esteticacabecera.jpg"
 const Estetica = () => {
     
     return (
-      <Container>
-        <Row>
+      <Container
+        fluid
+        className="treatmentsDesign d-flex flex-wrap justify-content-center"
+      >
+        <Row className="col-12 d-flex flex-wrap justify-content-center">
           <Col>
             <Card>
               <img src={esteticacabecera} alt="implante" />
@@ -56,13 +59,19 @@ const Estetica = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={carilla} alt="carilla" />
-          </Card>
-        </Row>
-        <Row>
+        <Row className="col-6 d-flex flex-wrap justify-content-center">
           <Col>
+            <Card className="cardStyle">
+              <img
+                src={carilla}
+                alt="carilla"
+                className="d-flex flex-wrap justify-content-center"
+              />
+            </Card>
+          </Col>
+        </Row>
+        <Row className="col-8 d-flex flex-wrap justify-content-center">
+          <Col className="">
             <h1 className="subtitulos">
               {" "}
               <b>Coronas Dentales</b>
@@ -85,12 +94,16 @@ const Estetica = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={coronas} alt="coronas" />
+        <Row className="col-8 d-flex flex-wrap justify-content-center">
+          <Card className="cardStyle">
+            <img
+              src={coronas}
+              alt="coronas"
+              className="d-flex flex-wrap justify-content-center"
+            />
           </Card>
         </Row>
-        <Row>
+        <Row className="col-8 d-flex flex-wrap justify-content-center">
           <Col>
             <h1 className="subtitulos">
               {" "}
@@ -107,11 +120,18 @@ const Estetica = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={blanqueamiento} alt="blanqueamiento" />
+        <br></br>
+        <Row className="col-8 d-flex flex-wrap justify-content-center">
+          <Card className="cardStyle">
+            <img
+              src={blanqueamiento}
+              alt="blanqueamiento"
+              className="d-flex flex-wrap justify-content-center"
+            />
           </Card>
+          <br></br>
         </Row>
+        <br></br>
         <Row>
           <Col>
             <h4 className="subtitulos">Blanqueamiento de clínica</h4>

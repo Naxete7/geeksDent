@@ -6,7 +6,9 @@ transform: scale(1.1);
 
 .cardStyle{
 box-shadow: 18px 18px 10px rgba(6, 6, 6, 0.3);
-
+display: flex;
+justify-content: center;
+background: rgba(255, 255, 255, 0.056);
 }
 .subtitulos{
     text-decoration: underline;
@@ -14,4 +16,16 @@ box-shadow: 18px 18px 10px rgba(6, 6, 6, 0.3);
 
 .textDesign{
     font-family: Comfortaa;
+}
+
+.treatmentsDesign {
+
+    background: url("../../assets/img/fondo2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0%;
+}
+
+.cardDesign{
+    width: 50vw;
+  
 }

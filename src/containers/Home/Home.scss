@@ -1,12 +1,13 @@
 .homeDesign{
-width: auto;
-height: 93vh;
-background-color: linear-gradient(75deg, #f6d365 0%, #fda085 100%);
+
+background: url("../../assets/img/fondo2.jpg") no-repeat center center fixed ;
+background-size: cover;
+margin: 0%;
 }
 
 .carouselDesign{
-    width: 85vw;
-    height: 80vh;
+    width: 50vw;
+    height: auto;
 }
 
 .textDesign {

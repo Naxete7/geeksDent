@@ -39,7 +39,7 @@ const Profile = () => {
   //}
 
   return (
-    <Container>
+    <Container className="profileDesign">
       <Row className="d-flex align-content-center justify-content-center mt-5">
         <h1>Perfil del paciente</h1>
       </Row>

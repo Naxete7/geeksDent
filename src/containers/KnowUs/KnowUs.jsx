@@ -1,15 +1,15 @@
 import React from "react";
 import "./KnowUs.scss";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import im21 from "../../assets/img/im21.jpeg";
+import conocenos from "../../assets/img/conocenos.jpg";
 
 const Home = () => {
   return (
-    <Container fluid>
+    <Container fluid className="knowUsDesign">
       <Row>
         <Col className="col-12 d-flex align-content-center justify-content-center  ">
           <Card>
-            <img src={im21} alt="" />
+            <img src={conocenos} alt="" />
           </Card>
         </Col>
       </Row>

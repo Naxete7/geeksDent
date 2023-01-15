@@ -15,7 +15,7 @@ const Odontopediatria = () => {
             <Card>
               <img src={odontopecabecera} alt="implante" />
             </Card>
-            <h3>¿Qué es?</h3>
+            <h3>¿Qué es?</h3>z
             <p>
               La odontopediatría es la rama de la odontología que se ocupa
               principalmente del cuidado y tratamiento de la salud bucodental en
@@ -24,22 +24,24 @@ const Odontopediatria = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={odontope} alt="odontope" />
-          </Card>
-          <p>
-            Esta especialidad trata de controlar y tratar las posibles lesiones
-            y anomalías que puedan surgir durante este tiempo. El objetivo de la
-            odontopediatría es dar un tratamiento diferente y más específico a
-            los más pequeños; ya que sus dientes son todavía muy sensibles, al
-            tratarse de dientes de leche y lo que se pretende es preservar lo
-            máximo posible estos dientes naturales en buenas condiciones hasta
-            que erupcionen los dientes definitivos.
-          </p>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card>
+              <img src={odontope} alt="odontope" />
+            </Card>
+            <p>
+              Esta especialidad trata de controlar y tratar las posibles
+              lesiones y anomalías que puedan surgir durante este tiempo. El
+              objetivo de la odontopediatría es dar un tratamiento diferente y
+              más específico a los más pequeños; ya que sus dientes son todavía
+              muy sensibles, al tratarse de dientes de leche y lo que se
+              pretende es preservar lo máximo posible estos dientes naturales en
+              buenas condiciones hasta que erupcionen los dientes definitivos.
+            </p>
+          </Col>
         </Row>
-        <Row>
-          <Col>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
             <h3>Los principales tratamientos en odontopediatría son:</h3>
             <h5>Empastes u Obturaciones:</h5>
             <p>
@@ -58,10 +60,12 @@ const Odontopediatria = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={traumatismo} alt="traumatismo" />
-          </Card>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card>
+              <img src={traumatismo} alt="traumatismo" />
+            </Card>
+          </Col>
         </Row>
         <Row>
           <h5>Pulpotomía y pulpectomía</h5>

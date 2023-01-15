@@ -15,7 +15,7 @@ import "../../components/Button/ButtonDesign.scss"
 
 const Treatments = () => {
   return (
-    <Container fluid>
+    <Container fluid className="treatmentsDesign">
       <h3>NUESTROS TRATAMIENTOS</h3>
       <Row>
         <Col className="d-flex col-12 flex-wrap justify-content-center">

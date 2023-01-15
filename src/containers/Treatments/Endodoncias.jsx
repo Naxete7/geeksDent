@@ -2,11 +2,12 @@ import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import endodoncia from "../../assets/img/endodoncia.png";
 import endodonciacabecera from "../../assets/img/endodonciacabecera.jpg"
+import "./Treatments.scss";
 
 const Endodoncia=() => {
 
     return (
-      <Container>
+      <Container fluid className="treatmentsDesign">
         <Row>
           <Col>
             <Card>
@@ -26,13 +27,14 @@ const Endodoncia=() => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Col>
-            <Card>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card className="cardStyle">
               <img src={endodoncia} alt="endodoncia" />
             </Card>
           </Col>
         </Row>
+        <br></br>
         <Row>
           <Col>
             <h3>¿En qué consiste la endodoncia?</h3>

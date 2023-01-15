@@ -14,7 +14,7 @@ import DOCTOR16 from "../../assets/img/DOCTOR16.jpg";
 
 const Team = () => {
   return (
-    <Container fluid>
+    <Container fluid className="teamDesign">
       <h3>NUESTRO EQUIPO</h3>
       <Row>
         <Col className="d-flex col-12 flex-wrap justify-content-center">

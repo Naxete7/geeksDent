@@ -7,7 +7,7 @@ import "./Appointments.scss";
 import { DatePicker, Space } from "antd";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import {  doctors,  treatments} from "../../../services/Apicall";
+import { doctors, treatments } from "../../../services/Apicall";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
@@ -83,23 +83,29 @@ const Appointment = () => {
   const [error, setError] = useState("");
   const userCredentials = useSelector(userData);
   const [treatmentsId, setTreatmentsId] = useState();
-  
-  
+
   const [appointment, setappointment] = useState({
     doctorsId: "",
     treatmentsId: "",
-    date:"",
-    reason:"",
-    });
+    date: "",
+    reason: ""
+  });
 
-   const inputHandler = (e) => {
-     //Aqui setearemos DINÁMICAMENTE el BINDEO entre inputs y hook.
-     setappointment((prevState) => ({
-       ...prevState,
-       [e.target.name]: e.target.value
-     }));
-   };
-  
+  const inputHandler = (e) => {
+    //Aqui setearemos DINÁMICAMENTE el BINDEO entre inputs y hook.
+    setappointment((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  // useState = ({ name, value, checked, type }) => {
+  //   this.setState(() => {
+  //     return { [name]: type === "checkbox" ? checked : value };
+  //   });
+  // };
+
+
   //DatePicker
 
   const disabledDate = (current) => {
@@ -141,7 +147,6 @@ const Appointment = () => {
   const getDoctors = () => {
     doctors(userCredentials?.token)
       .then((res) => {
-       
         setAllDoctors(res.data.data);
       })
       .catch((error) => {
@@ -158,7 +163,6 @@ const Appointment = () => {
   const getTreatments = () => {
     treatments(userCredentials?.token)
       .then((res) => {
-       
         setAllTreatments(res.data.data);
       })
       .catch((error) => {
@@ -172,17 +176,13 @@ const Appointment = () => {
     getTreatments();
   }, []);
 
-
   const createAppointment = () => {
     console.log(appointment, userCredentials?.token);
-    addAppointment(appointment, userCredentials?.token).then((res) => {
-      
-    });
+    addAppointment(appointment, userCredentials?.token).then((res) => {});
   };
 
-
   return (
-    <Container>
+    <Container className="appointmentsDesign">
       <Row>
         <Col>
           <h2>Seleccione la cita que desee</h2>
@@ -196,9 +196,9 @@ const Appointment = () => {
             <h6>Elija su doctor</h6>
 
             <Form.Select
+              onChange={(event) => this.valueToState(event.target)}
               size="ml"
               name="doctorsId"
-              onChange={(e) => inputHandler(e)}
             >
               {allDoctors.map((doctors) => {
                 return <option value={doctors.id}>{doctors.name}</option>;
@@ -249,6 +249,7 @@ const Appointment = () => {
           <Col className="col-8">
             <h6>Elija el dia y la hora que desee</h6>
             <DatePicker
+              as="timpstamp"
               name="date"
               format="YYYY-MM-DD HH:mm:ss"
               disabledDate={disabledDate}

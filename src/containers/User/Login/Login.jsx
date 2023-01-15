@@ -63,7 +63,7 @@ const logMe = () => {
 
   try {
     loginUser(user).then((res) => {
-      //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
+      
       if (res.data.message === "Password or email is incorrect") {
         setMessageError("Email o contraseña no válidos.")
       } else {
@@ -72,8 +72,7 @@ const logMe = () => {
           login({
             credentials: {
               token: res.data.token,
-              //email: res.data.email,
-              //role: res.data.role
+             
             }
           })
         );
@@ -95,7 +94,9 @@ const logMe = () => {
 };
   
     return (
-      <div className="loginDesign">
+      <div className="loginDesign ">
+        <br></br>
+        <br></br>
         <pre>Bienvenido de nuevo</pre>
 
         <div className="inputsContainer">
@@ -106,7 +107,9 @@ const logMe = () => {
               name="email"
               placeholder="email"
               onChange={(e) => inputHandler(e)}
-              onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "email")
+              }
             />
             <div className="errorInput">{userError.mailError}</div>
           </div>

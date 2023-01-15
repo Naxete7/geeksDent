@@ -1,44 +1,38 @@
 import React from "react";
 import "./Footer.scss"
-import Navbar from "react-bootstrap/Nav";
-import { Container, Row, Col } from react - bootstrap;
+import Nav from "react-bootstrap/Nav";
+
 
 function BasicExample() {
   return (
-    <Navbar
-     
-      bg="#a18cd1"
-     
-      className=" navbarDesign sticky-top "
+    <Nav
+      className="footerDesign"
+      activeKey="/home"
+      onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
-      <Container fluid>
-        <img src={Logo} className="  fluid logoDesign" alt="Clinica logo" />
-        <Navbar.Brand className="titleDesign" >
-          GeeksDent
-        </Navbar.Brand>
-
-       
-          <Offcanvas.Body className="justify-content-end">
-            <Nav className="justify-content-end flex-grow-2 pe-5">
-              <Nav.Link >
-                Nuestro Equipo
-              </Nav.Link>
-              <Nav.Link >Conócenos</Nav.Link>
-
-              <Form className="d-flex">
-                <h5>Regístrate</h5>
-              </Form>
-
-              <Form className="d-flex ">
-                <h5>Regístrate</h5>
-              </Form>
-            </Nav>
-          </Offcanvas.Body>
-        
-      </Container>
-    </Navbar>
-  );}
-     
-  
+      <Nav.Item>
+        <Nav.Link eventKey="disabled" disabled>
+          Copyright All Rights Reserved GeeksDent © 2023
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link
+          eventKey="disabled"
+          disabled
+          className="footerText justify-content-end flex-grow-2 pe-5"
+        >
+          <h6> Direccion:</h6>
+          <h6>Calle Ave del paraiso 23, Valencia</h6>
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="disabled" disabled>
+          <h5>Teléfono</h5>
+          <h6>654321987</h6>
+        </Nav.Link>
+      </Nav.Item>
+    </Nav>
+  );
+}
 
 export default BasicExample;

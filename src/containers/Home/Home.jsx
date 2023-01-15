@@ -2,22 +2,22 @@ import React from "react";
 import "./Home.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
-import imagen1 from "../../assets/img/imagen1.png";
-import invisalign from "../../assets/img/invisalign.jpg";
-import im4 from "../../assets/img/im4.jpeg";
-import fondo from "../../assets/img/fondo.jpg";
+import carru1 from "../../assets/img/carru1.jpg";
+import carru2 from "../../assets/img/carru2.jpg";
+import carru3 from "../../assets/img/carru3.jpg";
+
 
 
 function IndividualIntervalsExample() {
   return (
-    <Container className="homeDesign">
-      <Row>
-        <Col className="carouselDesign col-12">
-          <Carousel>
+    <Container fluid className="teamDesign ">
+      <Row className="carouselDesign d-flex col-12 justify-content-center">
+        <Col className="carouselDesign col-12 d-flex justify-content-center">
+          <Carousel className="carouselDesign d-flex col-12 justify-content-center">
             <Carousel.Item interval={1000}>
               <img
-                className="d-block w-80 carouselDesign fluid"
-                src={im4}
+                className="d-block  carouselDesign fluid"
+                src={carru1}
                 alt="First slide"
               />
               <Carousel.Caption>
@@ -27,23 +27,23 @@ function IndividualIntervalsExample() {
             </Carousel.Item>
             <Carousel.Item interval={500}>
               <img
-                className="d-block w-95 carouselDesign fluid"
-                src={invisalign}
+                className="d-block  carouselDesign fluid"
+                src={carru2}
                 alt="Second slide"
               />
-              <Carousel.Caption className="textDesign">
-                <h3 className="textDesign">
+              <Carousel.Caption className="">
+                <h3 className="">
                   En GeeksDent sientete como en casa
                 </h3>
-                <p className="textDesign">
+                <p className="">
                   Regístrate, coge cita y ven a vernos sin compromiso
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img
-                className="d-block w-80 carouselDesign fluid"
-                src={imagen1}
+                className="d-block  carouselDesign fluid"
+                src={carru3}
                 alt="Third slide"
               />
               <Carousel.Caption>

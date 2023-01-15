@@ -9,13 +9,11 @@ import "./Treatments.scss"
 
 const Ortodoncia = () => {
   return (
-    <Container>
+    <Container fluid className="treatmentsDesign">
       <Row>
         <Col>
           <Card>
-
-          <img src={orto1} alt=""  />
-
+            <img src={orto1} alt="" />
           </Card>
           <h2>ORTODONCIA INVISIBLE + ESCÁNER iTERO + SMILEVIEW</h2>
         </Col>
@@ -25,8 +23,7 @@ const Ortodoncia = () => {
       <Row>
         <Col>
           <Card>
-          <img src={orto2} alt=""  />
-
+            <img src={orto2} alt="" />
           </Card>
         </Col>
         <Col>
@@ -53,8 +50,7 @@ const Ortodoncia = () => {
       <Row>
         <Col>
           <Card>
-          <img src={orto3} alt=""  />
-
+            <img src={orto3} alt="" />
           </Card>
         </Col>
         <Col>
@@ -109,8 +105,7 @@ const Ortodoncia = () => {
 
         <Col>
           <Card>
-          <img src={orto4} alt=""  />
-
+            <img src={orto4} alt="" />
           </Card>
         </Col>
         <Col>

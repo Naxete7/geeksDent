@@ -96,12 +96,11 @@ useEffect(() => {
 
 
   return (
-    <Container>
+    <Container className="registerDesign">
       <Row>
         <Col>
-          
           <br></br>
-          <Card className="d-flex align-items-center">
+          <Card className="cardDesign d-flex align-items-center">
             <Form
               //name="basic"
               labelCol={{

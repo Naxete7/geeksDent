@@ -53,7 +53,7 @@ const Update = () => {
   const onFinishFailed = (errorInfo) => {};
 
   return (
-    <Container>
+    <Container className="upadateDesign">
       <Row>
         <Col>
           <br></br>

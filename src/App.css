@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+.appDesign {
+  width: 100vw;
+  height: 100vh;
+  background: url("../src/assets/img/fondo2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0%;
+}
