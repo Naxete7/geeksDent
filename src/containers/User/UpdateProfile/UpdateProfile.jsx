@@ -17,52 +17,21 @@ const Update = () => {
 
   const dispatch = useDispatch();
 
+  const [user, setUser] = useState({
+    name: "",
+    surname: "",
+    phone: ""
+  });
+
   const [userError, setUserError] = useState({
     emailError: "",
     passwordError: "",
     LoginError: ""
   });
 
-  //useEffect(() => {
-  //  if (userCredentials?.token !== "") {
-  //    navigate("/appointments");
-  //  }
-  //});
-
   const updateMe = () => {
-    updateUser(userCredentials?.token, user).then((res) => {
-      console.log(res, "estoy aqui");
-      //console.log(res.res.message, "mensaje");
-      try {
-        loginUser(user).then((res) => {
-          //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
-          if (res.data.message === "Password or email is incorrect") {
-            setUserError((prevState) => ({
-              ...prevState,
-              LoginError: "El email o la contraseña son incorrectos"
-            }));
-          } else {
-            dispatch(
-              login({
-                credentials: {
-                  token: res.data.token
-                  //email: res.data.email,
-                  //role: res.data.role
-                }
-              })
-            );
-            const token = res.data.token;
-            profile(token).then((res) => {
-              dispatch(login({ token, credentials: res.data, active: true }));
-            });
-
-            setUserError((prevState) => ({
-              ...prevState,
-              LoginError: ""
-            }));
-          }
-        });
-      } catch (error) {}
+    updateUser(user, userCredentials?.token).then((res) => {
+      console.log(user, "estoy aqui");
     });
   };
 
@@ -74,11 +43,12 @@ const Update = () => {
     }));
   };
 
-  const [user, setUser] = useState({
-    name: "",
-    surname: "",
-    phone: ""
-  });
+  //useEffect(() => {
+  //  if (userCredentials?.token !== "") {
+  //    navigate("/myAccount");
+  //  }
+  //});
+
   const onFinish = (values) => {};
   const onFinishFailed = (errorInfo) => {};
 
@@ -139,7 +109,6 @@ const Update = () => {
                   onChange={(e) => inputHandler(e)}
                 />
               </Form.Item>
-
 
               <Form.Item
                 label="phone"

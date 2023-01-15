@@ -1,14 +1,17 @@
 .cardhover{
-transition: 2seg;
-    zoom: 1;
+transform: scale(1.1);
+    box-shadow: 14px 14px 20px 0 rgba(20, 20, 20, 0.3);
+    transition: 0.7s;
 }
 
-.imgDesign{
+.cardStyle{
+box-shadow: 18px 18px 10px rgba(6, 6, 6, 0.3);
 
-    width: 20em;
-    height: 15em;
 }
-
 .subtitulos{
     text-decoration: underline;
+}
+
+.textDesign{
+    font-family: Comfortaa;
 }

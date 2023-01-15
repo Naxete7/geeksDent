@@ -1,21 +1,44 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import "./Footer.scss"
+import Navbar from "react-bootstrap/Nav";
+import { Container, Row, Col } from react - bootstrap;
 
+function BasicExample() {
+  return (
+    <Navbar
+     
+      bg="#a18cd1"
+     
+      className=" navbarDesign sticky-top "
+    >
+      <Container fluid>
+        <img src={Logo} className="  fluid logoDesign" alt="Clinica logo" />
+        <Navbar.Brand className="titleDesign" >
+          GeeksDent
+        </Navbar.Brand>
 
-function Footer() {
-    
-    return (
-      <Container className="fluid footerDesign">
-        <Row className="row-12">
-          <Col className="col-12"></Col>
-          <Col></Col>
-          <Col></Col>
-          <Col></Col>
-        </Row>
+       
+          <Offcanvas.Body className="justify-content-end">
+            <Nav className="justify-content-end flex-grow-2 pe-5">
+              <Nav.Link >
+                Nuestro Equipo
+              </Nav.Link>
+              <Nav.Link >Conócenos</Nav.Link>
+
+              <Form className="d-flex">
+                <h5>Regístrate</h5>
+              </Form>
+
+              <Form className="d-flex ">
+                <h5>Regístrate</h5>
+              </Form>
+            </Nav>
+          </Offcanvas.Body>
+        
       </Container>
-    );
+    </Navbar>
+  );}
+     
+  
 
-}
-
-export default Footer;
+export default BasicExample;

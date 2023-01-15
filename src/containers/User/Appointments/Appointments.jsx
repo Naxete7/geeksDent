@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addAppointments } from "../../../services/Apicall";
+import { addAppointment } from "../../../services/Apicall";
 import "./Appointments.scss";
 import { DatePicker, Space } from "antd";
 import dayjs from "dayjs";
@@ -83,8 +83,23 @@ const Appointment = () => {
   const [error, setError] = useState("");
   const userCredentials = useSelector(userData);
   const [treatmentsId, setTreatmentsId] = useState();
+  
+  
+  const [appointment, setappointment] = useState({
+    doctorsId: "",
+    treatmentsId: "",
+    date:"",
+    reason:"",
+    });
 
-
+   const inputHandler = (e) => {
+     //Aqui setearemos DINÁMICAMENTE el BINDEO entre inputs y hook.
+     setappointment((prevState) => ({
+       ...prevState,
+       [e.target.name]: e.target.value
+     }));
+   };
+  
   //DatePicker
 
   const disabledDate = (current) => {
@@ -157,9 +172,11 @@ const Appointment = () => {
     getTreatments();
   }, []);
 
+
   const createAppointment = () => {
-    addAppointments(userCredentials?.token, ).then((res) => {
-      console.log(res)("cita reada");
+    console.log(appointment, userCredentials?.token);
+    addAppointment(appointment, userCredentials?.token).then((res) => {
+      
     });
   };
 
@@ -180,8 +197,8 @@ const Appointment = () => {
 
             <Form.Select
               size="ml"
-              name="doctorId"
-              onChange={(e) => setTreatmentsId(e.target.value)}
+              name="doctorsId"
+              onChange={(e) => inputHandler(e)}
             >
               {allDoctors.map((doctors) => {
                 return <option value={doctors.id}>{doctors.name}</option>;
@@ -193,17 +210,16 @@ const Appointment = () => {
         <Row className="d-flex align-content-center justify-content-center">
           <Col className="col-8">
             <h6>Elija su tratamiento</h6>
-            <Form.Select size="ml" name="treatmentId">
+            <Form.Select size="ml" name="treatmentsId">
               {allTreatments.map((treatments) => {
-                {/*console.log(setTreatmentsId);*/}
                 return (
                   <option
-                    onChange={() => setTreatmentsId(treatments.id)}
-                    value={treatments.id}>
+                    onChange={(e) => inputHandler(e)}
+                    value={treatments.id}
+                  >
                     {treatments.name}
                   </option>
-                 
-                ); 
+                );
               })}
             </Form.Select>
           </Col>
@@ -218,7 +234,13 @@ const Appointment = () => {
               <Form.Label>
                 <h6>Ponga el motivo de la cita</h6>
               </Form.Label>
-              <Form.Control as="textarea" rows={3} name="reason" />
+
+              <Form.Control
+                as="textarea"
+                rows={3}
+                name="reason"
+                onChange={(e) => inputHandler(e)}
+              />
             </Form.Group>
           </Col>
         </Row>
@@ -231,6 +253,7 @@ const Appointment = () => {
               format="YYYY-MM-DD HH:mm:ss"
               disabledDate={disabledDate}
               disabledTime={disabledDateTime}
+              //onChange={(e) => inputHandler(e)}
               showTime={{
                 defaultValue: dayjs("00:00:00", "HH:mm:ss")
               }}

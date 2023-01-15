@@ -17,73 +17,85 @@ const Team = () => {
     <Container fluid>
       <h3>NUESTRO EQUIPO</h3>
       <Row>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR1} alt="" />
-            <h3>Juan Pedro Quiles</h3>
-            <h5>Endodoncias/Prótesis</h5>
+        <Col className="d-flex col-12 flex-wrap justify-content-center">
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR1} />
+            <Card.Body>
+              <Card.Title>Juan Pedro Quiles</Card.Title>
+              <Card.Text>Endodoncias/Prótesis</Card.Text>
+            </Card.Body>
+          </Card>
+
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR3} />
+            <Card.Body>
+              <Card.Title>Faustino Sala</Card.Title>
+              <Card.Text>Cirujano/Implantes</Card.Text>
+            </Card.Body>
+          </Card>
+
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR11} />
+            <Card.Body>
+              <Card.Title>Laura Barchino</Card.Title>
+              <Card.Text>Odontopediatra</Card.Text>
+            </Card.Body>
           </Card>
         </Col>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR3} alt="" />
-            <h3>Faustino Sala</h3>
-            <h5>Cirujano/Implantes</h5>
-          </Card>
-        </Col>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR11} alt="" />
-            <h3>María Castillo</h3>
-            <h5>Odontopediatra</h5>
-          </Card>
-        </Col>
-          </Row>
-          <br></br>
+      </Row>
+      <br></br>
       <Row>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR12} alt="" />
-            <h3>Javier Flors</h3>
-            <h5>Ortodoncista</h5>
+        <Col className="d-flex col-12 flex-wrap justify-content-center">
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR12} />
+            <Card.Body>
+              <Card.Title>Javier Flors</Card.Title>
+              <Card.Text>Ortodoncista</Card.Text>
+            </Card.Body>
+          </Card>
+
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR17} />
+            <Card.Body>
+              <Card.Title>Olivia García</Card.Title>
+              <Card.Text>Estética Dental/Prótesis</Card.Text>
+            </Card.Body>
+          </Card>
+
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR13} />
+            <Card.Body>
+              <Card.Title>Maite Catalá</Card.Title>
+              <Card.Text>Periodoncista</Card.Text>
+            </Card.Body>
           </Card>
         </Col>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR17} alt="" />
-            <h3>Olivia García</h3>
-            <h5>Estética Dental/Prótesis</h5>
-          </Card>
-        </Col>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR13} alt="" />
-            <h3>Maite Catalá</h3>
-            <h5>Periodoncista</h5>
-          </Card>
-        </Col>
-          </Row>
-          <br></br>
+      </Row>
+      <br></br>
       <Row>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR18} alt="" />
-            <h3>Ana Campillo</h3>
-            <h5>Higienista</h5>
+        <Col className="d-flex col-12 flex-wrap justify-content-center">
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR18} />
+            <Card.Body>
+              <Card.Title>Ana Campillo</Card.Title>
+              <Card.Text>Higienista</Card.Text>
+            </Card.Body>
           </Card>
-        </Col>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR15} alt="" />
-            <h3>Susana Garcia</h3>
-            <h5>Higienista</h5>
+  
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR15} />
+            <Card.Body>
+              <Card.Title>Susana Garcia</Card.Title>
+              <Card.Text>Higienista</Card.Text>
+            </Card.Body>
           </Card>
-        </Col>
-        <Col className="col-4">
-          <Card>
-            <img src={DOCTOR16} alt="" />
-            <h3>Ethel Ferrer</h3>
-            <h5>Recepción</h5>
+
+          <Card className="cardStyle m-4" style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={DOCTOR16} />
+            <Card.Body>
+              <Card.Title>Ethel Ferrer</Card.Title>
+              <Card.Text>Recepción</Card.Text>
+            </Card.Body>
           </Card>
         </Col>
       </Row>
