@@ -11,7 +11,7 @@ import { doctors, treatments } from "../../../services/Apicall";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+
 
 dayjs.extend(customParseFormat);
 const { RangePicker } = DatePicker;
@@ -82,7 +82,7 @@ const Appointment = () => {
   const [allTreatments, setAllTreatments] = useState([]);
   const [error, setError] = useState("");
   const userCredentials = useSelector(userData);
-  const [treatmentsId, setTreatmentsId] = useState();
+  
 
   const [appointment, setappointment] = useState({
     doctorsId: "",
@@ -92,7 +92,7 @@ const Appointment = () => {
   });
 
   const inputHandler = (e) => {
-    //Aqui setearemos DINÁMICAMENTE el BINDEO entre inputs y hook.
+  
     setappointment((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value
@@ -100,14 +100,7 @@ const Appointment = () => {
   };
 
   const inputHandlerDate = (e) => {
-    //console.log(e);
-    //console.log(e.$y);
-    //console.log(e.$M + 1);
-    //console.log(e.$D)
-    //console.log(e.$H);
-    //console.log(e.$m);
-    //console.log(e.$s);
-    //Aqui setearemos DINÁMICAMENTE el BINDEO entre inputs y hook.
+ 
     setappointment((prevState) => ({
       ...prevState,
       date: `${e.$y}-${e.$M + 1}-${e.$D} ${e.$H}:${e.$m}:${e.$s}`
@@ -115,11 +108,7 @@ const Appointment = () => {
     console.log(appointment);
   };
 
-  // const captureType = (e) => {
-  //   console.log(e,"hola");
-  //   setappointment(e.target.value);
-  //   console.log(appointment);
-  // };
+ 
 
   //DatePicker
 

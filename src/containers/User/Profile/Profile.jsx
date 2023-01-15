@@ -4,26 +4,25 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userout } from "../userSlice";
 import { logout, profile } from "../../../services/Apicall";
-import { AntDesignOutlined, UserOutlined,ScheduleOutlined} from "@ant-design/icons";
-
+import {
+  AntDesignOutlined,
+  UserOutlined,
+  ScheduleOutlined
+} from "@ant-design/icons";
 
 import { userData } from "../userSlice";
 import { useSelector } from "react-redux";
 import { Avatar } from "antd";
 
 const Profile = () => {
-  
   const [userInfo, setUserInfo] = useState([]);
   const [error, setError] = useState("");
   const userCredentials = useSelector(userData);
- 
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    //This function is triggered when the component is mounted for the first time.
-
     if (userCredentials?.token !== "") {
-     
       profile(userCredentials.token)
         .then((res) => {
           setUserInfo(res.data);
@@ -34,9 +33,7 @@ const Profile = () => {
     }
   }, [userCredentials]);
 
-  //if (error) {
-  //  return <h2>{error.repeat(1)} </h2>;
-  //}
+
 
   return (
     <Container className="profileDesign">
@@ -88,16 +85,11 @@ const Profile = () => {
         </Col>
       </Row>
       <Row className="mt-5">
-       
-        <button className="buttonDesign">
-         Todas mis citas
-        </button>
+        <button className="buttonDesign">Todas mis citas</button>
       </Row>
       <Row></Row>
     </Container>
   );
 };
-
-
 
 export default Profile;

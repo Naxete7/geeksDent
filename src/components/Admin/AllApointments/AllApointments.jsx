@@ -9,61 +9,58 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const AllApointments = () => {
-    
-    const [allAppointments, setAllAppointments] = useState([]);
+  const [allAppointments, setAllAppointments] = useState([]);
 
-    const [error, setError] = useState("");
+  const [error, setError] = useState("");
 
- const userCredentials = useSelector(userData);
+  const userCredentials = useSelector(userData);
 
-    const appointments = () => {
-        
-        getAllAppointments(userCredentials?.token)
-          .then((res) => {
-            console.log(res);
-            setAllAppointments(res.data.data);
-          })
-          .catch((error) => {
-            setError(
-              error.response?.data ||
-                "Solo el administrador puede ver todas las citas"
-            );
-          });
-    }
-
-    useEffect(() => {
-        appointments()
-    
-    }, []);
-
-    if (error) {
-        return <h2>{error.repeat(1)} </h2>;
-    }
-    if (allAppointments.lenght !== 0) {
-        return (
-          <Container classname="allAppointmentsDesign">
-            <Row >
-              <Col className="d-flex  flex-wrap  justify-content-center">
-                {allAppointments.map((allAppointments) => {
-                  return (
-                    <Card
-                      style={{ width: "12rem" }}
-                      className="cards"
-                      key={allAppointments.date}
-                    >
-                      <Card.Body>
-                        <Card.Title>{allAppointments.date}</Card.Title>
-                        <Card.Title>{allAppointments.usersId}</Card.Title>
-                        <Card.Title>{allAppointments.reason}</Card.Title>
-                      </Card.Body>
-                    </Card>
-                  );
-                })}
-              </Col>
-            </Row>
-          </Container>
+  const appointments = () => {
+    getAllAppointments(userCredentials?.token)
+      .then((res) => {
+        console.log(res);
+        setAllAppointments(res.data.data);
+      })
+      .catch((error) => {
+        setError(
+          error.response?.data ||
+            "Solo el administrador puede ver todas las citas"
         );
-    }
-}
+      });
+  };
+
+  useEffect(() => {
+    appointments();
+  }, []);
+
+  if (error) {
+    return <h2>{error.repeat(1)} </h2>;
+  }
+  if (allAppointments.lenght !== 0) {
+    return (
+      <Container classname="allAppointmentsDesign">
+        <Row>
+          <Col className="d-flex  flex-wrap  justify-content-center">
+            {allAppointments.map((allAppointments) => {
+              return (
+                <Card
+                  style={{ width: "12rem" }}
+                  className="cards"
+                  key={allAppointments.date}
+                >
+                  <Card.Body>
+                    <Card.Title>{allAppointments.date}</Card.Title>
+                    <Card.Title>{allAppointments.usersId}</Card.Title>
+                    <Card.Title>{allAppointments.reason}</Card.Title>
+                  </Card.Body>
+                </Card>
+              );
+            })}
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+};
 
 export default AllApointments;

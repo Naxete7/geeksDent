@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userout, userData } from "../../userSlice";
 import { logout, profile } from "../../../../services/Apicall";
-import {  UserOutlined} from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import "../../../../components/Cards/Cards.scss";
 import { useSelector } from "react-redux";
 import { Avatar } from "antd";
@@ -30,7 +30,6 @@ const Admin = () => {
     }
   }, [userCredentials]);
 
-
   return (
     <Container className="adminDesign">
       <Row className="d-flex align-content-center justify-content-center mt-5">
@@ -42,21 +41,14 @@ const Admin = () => {
             <Card.Img className="imgCards" variant="top" />
             <Card.Body>
               <Avatar size={64} icon={<UserOutlined />} styling="big" />
-              <Card.Title>
-                {userCredentials?.credentials?.name}{" "}
-                {/*{userCredentials?.credentials?.surname}*/}
-              </Card.Title>
+              <Card.Title>{userCredentials?.credentials?.name} </Card.Title>
               <Card.Text>{userCredentials?.credentials?.email}</Card.Text>
-              {/*<Card.Text>{userCredentials?.credentials?.phone}</Card.Text>*/}
             </Card.Body>
           </Card>
         </Col>
-       
       </Row>
-      
     </Container>
   );
 };
-
 
 export default Admin;

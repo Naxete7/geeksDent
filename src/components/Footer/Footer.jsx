@@ -1,7 +1,6 @@
 import React from "react";
-import "./Footer.scss"
+import "./Footer.scss";
 import Nav from "react-bootstrap/Nav";
-
 
 function BasicExample() {
   return (

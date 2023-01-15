@@ -6,11 +6,12 @@ import carru1 from "../../assets/img/carru1.jpg";
 import carru2 from "../../assets/img/carru2.jpg";
 import carru3 from "../../assets/img/carru3.jpg";
 
-
-
 function IndividualIntervalsExample() {
   return (
-    <Container fluid className="teamDesign d-flex flex-wrap align-items-center justify-content-center">
+    <Container
+      fluid
+      className="teamDesign d-flex flex-wrap align-items-center justify-content-center"
+    >
       <Row className="carouselDesign d-flex justify-content-center mb-5">
         <Col className="carouselDesign ">
           <Carousel className="carouselDesign d-flex col-12 justify-content-center">
@@ -138,7 +139,6 @@ function IndividualIntervalsExample() {
           </p>
         </Col>
       </Row>
-     
     </Container>
   );
 }

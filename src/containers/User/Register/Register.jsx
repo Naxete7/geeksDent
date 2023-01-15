@@ -7,37 +7,30 @@ import { login, userData } from "../userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import "../../../components/Button/ButtonDesign.scss";
 
-
 import { Button, Form } from "antd";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 const Register = () => {
-const userCredentials = useSelector(userData);
-
+  const userCredentials = useSelector(userData);
 
   let navigate = useNavigate();
 
-
   const dispatch = useDispatch();
 
+  const [userError, setUserError] = useState({
+    emailError: "",
+    passwordError: "",
+    LoginError: ""
+  });
 
-  
-   const [userError, setUserError] = useState({
-     emailError: "",
-     passwordError: "",
-     LoginError: ""
-   });
-
-useEffect(() => {
- 
-  if (userCredentials?.token !== "") {
-    navigate("/myAccount");
-  }
-});
+  useEffect(() => {
+    if (userCredentials?.token !== "") {
+      navigate("/myAccount");
+    }
+  });
 
   const regMe = () => {
     registerUser(user).then((res) => {
-      //console.log(res.res.message, "mensaje");
       try {
         loginUser(user).then((res) => {
           //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
@@ -47,12 +40,10 @@ useEffect(() => {
               LoginError: "El email o la contraseña son incorrectos"
             }));
           } else {
-          
             dispatch(
               login({
                 credentials: {
                   token: res.data.token
-              
                 }
               })
             );
@@ -71,10 +62,7 @@ useEffect(() => {
     });
   };
 
-
-  
   const inputHandler = (e) => {
-    //Aquí setearemos de forma DINÁMICA el BINDEO entre inputs y hook
     setUser((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value
@@ -83,26 +71,21 @@ useEffect(() => {
 
   const [user, setUser] = useState({
     name: "",
-    surname:"",
+    surname: "",
     email: "",
     password: "",
-    phone: "",
-   
+    phone: ""
   });
   const onFinish = (values) => {};
   const onFinishFailed = (errorInfo) => {};
 
-
-
-
   return (
-    <Container className="registerDesign">
-      <Row>
-        <Col>
+    <Container className="registerDesign d-flex justify-content-center">
+      <Row className=" d-flex justify-content-center mb-5 mt-2">
+        <Col className=" d-flex justify-content-center ">
           <br></br>
           <Card className="cardDesign d-flex align-items-center">
             <Form
-              //name="basic"
               labelCol={{
                 span: 12
               }}
@@ -118,8 +101,6 @@ useEffect(() => {
             >
               <h1 className=" mb-3 ">REGISTER</h1>
               <Form.Item
-                //label="Username"
-                //name="name"
                 rules={[
                   {
                     required: true,
@@ -136,8 +117,6 @@ useEffect(() => {
               </Form.Item>
 
               <Form.Item
-                //label="Username"
-                //name="surname"
                 rules={[
                   {
                     required: true,
@@ -154,7 +133,6 @@ useEffect(() => {
               </Form.Item>
 
               <Form.Item
-                //label="email"
                 name="email"
                 rules={[
                   {
@@ -172,8 +150,6 @@ useEffect(() => {
               </Form.Item>
 
               <Form.Item
-                //label="Password"
-                //name="password"
                 rules={[
                   {
                     required: true,
@@ -190,8 +166,6 @@ useEffect(() => {
               </Form.Item>
 
               <Form.Item
-                //label="Username"
-                //name="phone"
                 rules={[
                   {
                     required: true,
@@ -214,7 +188,7 @@ useEffect(() => {
                 }}
               >
                 <Button
-                  className="buttonDesign d-flex  justify-content-center align-item-center col-12  "
+                  className="buttonDesign d-flex  justify-content-center align-item-center col-8  "
                   type="primary"
                   htmlType="submit"
                   onClick={() => regMe()}

@@ -10,8 +10,7 @@ import implantes1 from "../../assets/img/implantes1.jpg";
 import ORTODONCIA from "../../assets/img/ORTODONCIA.jpg";
 import ORTODONCIA1 from "../../assets/img/ORTODONCIA1.jpg";
 import ortopedia1 from "../../assets/img/ortopedia1.jpg";
-import "../../components/Button/ButtonDesign.scss"
-
+import "../../components/Button/ButtonDesign.scss";
 
 const Treatments = () => {
   return (
@@ -45,7 +44,7 @@ const Treatments = () => {
                 necesario para que luzcas la mejor de las sonrisas, siempre con
                 el respaldo de los mejores profesionales.
               </Card.Text>
-              {/*<Button variant="primary">Go somewhere</Button>*/}
+              
             </Card.Body>
           </Card>
           <br></br>
@@ -62,7 +61,7 @@ const Treatments = () => {
                 materiales de primera calidad como los implantes STRAUMANN el
                 mejor implante del mercado.
               </Card.Text>
-              {/*<Button variant="primary">Go somewhere</Button>*/}
+             
             </Card.Body>
           </Card>
         </Col>
@@ -82,7 +81,7 @@ const Treatments = () => {
                 dientes contamos con especialistas en odontopediatria altamente
                 cualificados.
               </Card.Text>
-              {/*<Button variant="primary">Go somewhere</Button>*/}
+          
             </Card.Body>
           </Card>
 
@@ -98,7 +97,7 @@ const Treatments = () => {
                 Contamos con las últimas técnicas de alineadores invisibles como
                 Smysecret o Inviflex. Así como, ortodoncia lingual.
               </Card.Text>
-              {/*<Button variant="primary">Go somewhere</Button>*/}
+            
             </Card.Body>
           </Card>
 
@@ -114,7 +113,7 @@ const Treatments = () => {
                 transparentes donde cada férula tiene programado el movimiento
                 que ha de realizar cada diente de forma individual.
               </Card.Text>
-              {/*<Button variant="primary">Go somewhere</Button>*/}
+             
             </Card.Body>
           </Card>
         </Col>
@@ -130,14 +129,14 @@ const Treatments = () => {
                 <a href="/periodoncia">Periodoncia</a>
               </Card.Title>
               <Card.Text>Todo para el cuidado de tus encías.</Card.Text>
-              {/*<Button variant="primary">Go somewhere</Button>*/}
+             
             </Card.Body>
           </Card>
 
           <Card style={{ width: "18rem" }} className="cardStyle m-3">
             <Card.Img variant="top" src={ortopedia1} />
             <Card.Body>
-              <Card.Title >
+              <Card.Title>
                 {" "}
                 <a href="/protesis">Prótesis</a>
               </Card.Title>
@@ -145,7 +144,7 @@ const Treatments = () => {
                 Trabajamos con los mejores laboratorios protésicos para devolver
                 la función a tu boca con la máxima estética.
               </Card.Text>
-              {/*<Button variant="primary">Go somewhere</Button>*/}
+             
             </Card.Body>
           </Card>
         </Col>

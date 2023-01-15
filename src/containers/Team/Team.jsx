@@ -81,7 +81,7 @@ const Team = () => {
               <Card.Text>Higienista</Card.Text>
             </Card.Body>
           </Card>
-  
+
           <Card className="cardStyle m-4" style={{ width: "20rem" }}>
             <Card.Img variant="top" src={DOCTOR15} />
             <Card.Body>

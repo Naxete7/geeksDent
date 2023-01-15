@@ -30,9 +30,7 @@ const Update = () => {
   });
 
   const updateMe = () => {
-    updateUser(user, userCredentials?.token).then((res) => {
-      
-    });
+    updateUser(user, userCredentials?.token).then((res) => {});
   };
 
   const inputHandler = (e) => {
@@ -43,11 +41,6 @@ const Update = () => {
     }));
   };
 
-  //useEffect(() => {
-  //  if (userCredentials?.token !== "") {
-  //    navigate("/myAccount");
-  //  }
-  //});
 
   const onFinish = (values) => {};
   const onFinishFailed = (errorInfo) => {};
@@ -59,7 +52,7 @@ const Update = () => {
           <br></br>
           <Card className="d-flex align-items-center">
             <Form
-              //name="basic"
+              
               labelCol={{
                 span: 12
               }}

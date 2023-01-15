@@ -4,8 +4,7 @@ import orto1 from "../../assets/img/orto1.jpg";
 import orto2 from "../../assets/img/orto2.jpg";
 import orto3 from "../../assets/img/orto3.jpg";
 import orto4 from "../../assets/img/orto4.jpg";
-import "./Treatments.scss"
-
+import "./Treatments.scss";
 
 const Ortodoncia = () => {
   return (

@@ -31,11 +31,11 @@ const MyAccount = () => {
             <h2>Usuario</h2>
           </Row>
           <Row>
-         
             <Profile />
           </Row>
           <Row>
-          <UserAppointments/></Row>
+            <UserAppointments />
+          </Row>
         </Container>
       </div>
     );
