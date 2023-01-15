@@ -24,7 +24,7 @@ import Appointments from "./containers/User/Appointments/Appointments";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App appDesign">
       <BrowserRouter>
         <Header />
         <Routes>

@@ -5,11 +5,12 @@ import invisalign from "../../assets/img/invisalign.jpg";
 import brackets from "../../assets/img/brackets.jpg";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import ortodonciacabecera from "../../assets/img/ortodonciacabecera.jpg"
+import "./Treatments.scss";
 
 const Ortodoncia = () => {
     
     return (
-      <Container>
+      <Container fluid className="treatmentsDesign">
         <Row>
           <Col>
             <Card>
@@ -60,11 +61,17 @@ const Ortodoncia = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={ortodonciaUno} alt="ortodoncia" />
-          </Card>
+        <br></br>
+        <br></br>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card className="cardDesign">
+              <img src={ortodonciaUno} alt="ortodoncia" />
+            </Card>
+          </Col>
         </Row>
+        <br></br>
+        <br></br>
         <Row>
           <Col>
             <h3>Ortodoncia interceptiva</h3>
@@ -85,10 +92,14 @@ const Ortodoncia = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={ortodonciaInfantil} alt="infantil" />
-          </Card>
+        <br></br>
+        <br></br>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card>
+              <img src={ortodonciaInfantil} alt="infantil" />
+            </Card>
+          </Col>
         </Row>
         <Row>
           <h3>Brackets en ortodoncia</h3>
@@ -117,10 +128,14 @@ const Ortodoncia = () => {
             avalada por su amplia utilización y sus años de desarrollo.
           </p>
         </Row>
-        <Row>
-          <Card>
-            <img src={brackets} alt="brackets" />
-          </Card>
+        <br></br>
+        <br></br>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card>
+              <img src={brackets} alt="brackets" />
+            </Card>
+          </Col>
         </Row>
         <Row>
           <Col>
@@ -156,31 +171,35 @@ const Ortodoncia = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={invisalign} alt="invisalign" />
-          </Card>
+        <br></br>
+        <br></br>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card>
+              <img src={invisalign} alt="invisalign" />
+            </Card>
 
-          <h6>¿Por qué escoger alineadores Invisalign?</h6>
-          <ul>
-            <li>
-              Por que es una ortodoncia digital, es mas rápida que la ortodoncia
-              convencional y es capaz de solucionar toda clase de problemas
-              maloclusivos.
-            </li>
-            <li>
-              Es cómoda; puedes comer con total comodidad y cualquier clase de
-              alimento por que se quita y se pone.
-            </li>
-            <li>
-              Es limpia; al ser removible no acumulas placa en tus dientes y
-              éstos son mas fáciles de cepillar.
-            </li>
-            <li>
-              Es invisible; al estar fabricado con un material transparente no
-              se ve.
-            </li>
-          </ul>
+            <h6>¿Por qué escoger alineadores Invisalign?</h6>
+            <ul>
+              <li>
+                Por que es una ortodoncia digital, es mas rápida que la
+                ortodoncia convencional y es capaz de solucionar toda clase de
+                problemas maloclusivos.
+              </li>
+              <li>
+                Es cómoda; puedes comer con total comodidad y cualquier clase de
+                alimento por que se quita y se pone.
+              </li>
+              <li>
+                Es limpia; al ser removible no acumulas placa en tus dientes y
+                éstos son mas fáciles de cepillar.
+              </li>
+              <li>
+                Es invisible; al estar fabricado con un material transparente no
+                se ve.
+              </li>
+            </ul>
+          </Col>
         </Row>
       </Container>
     );

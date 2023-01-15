@@ -4,10 +4,11 @@ import periodontal from "../../assets/img/periodontal.png";
 import embarazo from "../../assets/img//embarazo.jpg";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import periodonciacabecera from "../../assets/img/periodonciacabecera.jpg"
+import "./Treatments.scss";
 
 const Periodoncia = () => {
     return (
-      <Container>
+      <Container fluid className="treatmentsDesign">
         <Row>
           <Col>
             <Card>
@@ -35,11 +36,19 @@ const Periodoncia = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={gingivitis} alt="gingivitis" />
-          </Card>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card className="cardStyle">
+              <img
+                src={gingivitis}
+                alt="carilla"
+                className="d-flex flex-wrap justify-content-center"
+              />
+            </Card>
+          </Col>
         </Row>
+        <br></br>
+        <br></br>
         <Row>
           <Col>
             <h6>Periodontitis</h6>
@@ -56,11 +65,20 @@ const Periodoncia = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={periodontal} alt="periodontal" />
-          </Card>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card className="cardStyle">
+              <img
+                src={periodontal}
+                alt="carilla"
+                className="d-flex flex-wrap justify-content-center"
+              />
+            </Card>
+          </Col>
         </Row>
+        <br></br>
+        <br></br>
+        <br></br>
         <Row>
           <Col>
             <h3>
@@ -98,15 +116,17 @@ const Periodoncia = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Card>
-            <img src={embarazo} alt="embarazo" />
-          </Card>
-          <p>
-            Las mujeres embarazadas deben someterse al tratamiento inmediato de
-            la enfermedad periodontal para reducir el riesgo de complicaciones
-            prenatales y postnatales.
-          </p>
+        <Row className=" d-flex flex-wrap justify-content-center">
+          <Col className="col-8">
+            <Card>
+              <img src={embarazo} alt="embarazo" />
+            </Card>
+            <p>
+              Las mujeres embarazadas deben someterse al tratamiento inmediato
+              de la enfermedad periodontal para reducir el riesgo de
+              complicaciones prenatales y postnatales.
+            </p>
+          </Col>
         </Row>
         <Row>
           <Col>

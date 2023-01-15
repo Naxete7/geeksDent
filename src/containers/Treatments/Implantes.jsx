@@ -8,11 +8,12 @@ import implantecarga from "../../assets/img/implantecarga.jpg";
 import elevacion from "../../assets/img/elevacion.jpg";
 import dosimplantes from "../../assets/img/dosimplantes-.jpg";
 import implantescabecera from "../../assets/img/implantescabecera.jpg"
+import "./Treatments.scss";
 
 const Implantes = () => {
     
     return (
-      <Container>
+      <Container fluid className="treatmentsDesign">
         <Row>
           <Col>
             <Card>

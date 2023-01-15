@@ -1,14 +1,31 @@
 .cardhover{
-transition: 2seg;
-    zoom: 1;
+transform: scale(1.1);
+    box-shadow: 14px 14px 20px 0 rgba(20, 20, 20, 0.3);
+    transition: 0.7s;
 }
 
-.imgDesign{
-
-    width: 20em;
-    height: 15em;
+.cardStyle{
+box-shadow: 18px 18px 10px rgba(6, 6, 6, 0.3);
+display: flex;
+justify-content: center;
+background: rgba(255, 255, 255, 0.056);
 }
-
 .subtitulos{
     text-decoration: underline;
+}
+
+.textDesign{
+    font-family: Comfortaa;
+}
+
+.treatmentsDesign {
+
+    background: url("../../assets/img/fondo2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0%;
+}
+
+.cardDesign{
+    width: 50vw;
+  
 }

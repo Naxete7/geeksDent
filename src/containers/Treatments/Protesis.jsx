@@ -2,10 +2,11 @@ import React from "react";
 import protesisDental from "../../assets/img/protesisDental.jpg";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import protesiscabecera from "../../assets/img/protesiscabecera.jpg"
+import "./Treatments.scss";
 
 const Protesis = () => {
   return (
-    <Container>
+    <Container fluid className="treatmentsDesign">
       <Row>
         <Col>
           <Card>
@@ -25,10 +26,12 @@ const Protesis = () => {
           </p>
         </Col>
       </Row>
-      <Row>
-        <Card>
-          <img src={protesisDental} alt="protesisDental" />
-        </Card>
+      <Row className=" d-flex flex-wrap justify-content-center">
+        <Col className="col-8">
+          <Card>
+            <img src={protesisDental} alt="protesisDental" />
+          </Card>
+        </Col>
       </Row>
       <Row>
         <Col>

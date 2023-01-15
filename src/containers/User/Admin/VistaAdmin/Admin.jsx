@@ -32,7 +32,7 @@ const Admin = () => {
 
 
   return (
-    <Container>
+    <Container className="adminDesign">
       <Row className="d-flex align-content-center justify-content-center mt-5">
         <h1>Administrador de Geeksdent</h1>
       </Row>

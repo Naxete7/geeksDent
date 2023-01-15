@@ -38,9 +38,9 @@ const UserAppointments = () => {
     }
     if (userAppointments.lenght !== 0) {
         return (
-          <Container>
+          <Container className="">
             <Row>
-              <Col className="d-flex col-12 wrap  justify-content-center">
+              <Col className="d-flex col-12 flex-wrap  justify-content-center">
                 {userAppointments.map((userAppointments) => {
                   return (
                     <Card

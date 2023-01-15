@@ -31,7 +31,7 @@ const MyAccount = () => {
             <h2>Usuario</h2>
           </Row>
           <Row>
-            {" "}
+         
             <Profile />
           </Row>
           <Row>
@@ -41,7 +41,7 @@ const MyAccount = () => {
     );
   } else {
     return (
-      <Container>
+      <Container className="myAccountDesign">
         <Row>
           <h2>Administrador</h2>
         </Row>

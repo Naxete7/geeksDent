@@ -16,7 +16,7 @@ const AllUsers = () => {
 const userCredentials = useSelector(userData);
 
   const deleteMe = (id) => {
-    deleteUser(userCredentials.token, id).then((res) => {
+    deleteUser(userCredentials?.token, id).then((res) => {
       getAllUsers()
         .then((res) => {
           setAllUsers(res.data);
@@ -48,7 +48,7 @@ const userCredentials = useSelector(userData);
     return (
       <Container>
         <Row>
-          <Col className="d-flex col-12 wrap  justify-content-center">
+          <Col className="d-flex col-12 flex-wrap  justify-content-center">
             {allUsers.map((allUser) => {
               return (
                 <Card
