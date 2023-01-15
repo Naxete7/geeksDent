@@ -2,6 +2,8 @@ import React from "react";
 import "./KnowUs.scss";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import conocenos from "../../assets/img/conocenos.jpg";
+import datos from "../../assets/img/datos.jpg"
+
 
 const Home = () => {
   return (
@@ -26,13 +28,12 @@ const Home = () => {
           adapte a las características y necesidades de cada caso.
         </p>
       </Row>
-      <Row className="footerKnowUsDesign">
-        <h1>Tu Clínica de confianza </h1>
-        <h4>Cada vez nos eligen más pacientes</h4>
-        <div>
-          <canvas id="radarChart"></canvas>
-          <canvas id="pieChart"></canvas>
-        </div>
+      <Row className=" d-flex flex-wrap justify-content-center">
+        <Col className="col-8">
+          <Card>
+            <img src={datos} alt="" />
+          </Card>
+        </Col>
       </Row>
     </Container>
   );

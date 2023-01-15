@@ -99,12 +99,13 @@ const Appointment = () => {
     }));
   };
 
-  // useState = ({ name, value, checked, type }) => {
-  //   this.setState(() => {
-  //     return { [name]: type === "checkbox" ? checked : value };
-  //   });
-  // };
 
+ const captureType = (e) => {
+   setappointment(e.target.value);
+   console.log(e);
+   console.log(appointment);
+ };
+  
 
   //DatePicker
 
@@ -196,7 +197,7 @@ const Appointment = () => {
             <h6>Elija su doctor</h6>
 
             <Form.Select
-              onChange={(event) => this.valueToState(event.target)}
+              onChange={(e) => captureType(e)}
               size="ml"
               name="doctorsId"
             >
@@ -211,11 +212,12 @@ const Appointment = () => {
           <Col className="col-8">
             <h6>Elija su tratamiento</h6>
             <Form.Select size="ml" name="treatmentsId">
-              {allTreatments.map((treatments) => {
+              {allTreatments.map((treatments) => { 
                 return (
                   <option
-                    onChange={(e) => inputHandler(e)}
+                    onChange={(e) => captureType(e)}
                     value={treatments.id}
+                   
                   >
                     {treatments.name}
                   </option>

@@ -16,7 +16,7 @@ function IndividualIntervalsExample() {
           <Carousel className="carouselDesign d-flex col-12 justify-content-center">
             <Carousel.Item interval={1000}>
               <img
-                className="d-block  carouselDesign fluid"
+                className="d-block w-100 d-flex justify-item-center"
                 src={carru1}
                 alt="First slide"
               />
@@ -27,14 +27,12 @@ function IndividualIntervalsExample() {
             </Carousel.Item>
             <Carousel.Item interval={500}>
               <img
-                className="d-block  carouselDesign fluid"
+                className="d-block w-100 d-flex justify-item-center"
                 src={carru2}
                 alt="Second slide"
               />
               <Carousel.Caption className="">
-                <h3 className="">
-                  En GeeksDent sientete como en casa
-                </h3>
+                <h3 className="">En GeeksDent sientete como en casa</h3>
                 <p className="">
                   Regístrate, coge cita y ven a vernos sin compromiso
                 </p>
@@ -42,7 +40,7 @@ function IndividualIntervalsExample() {
             </Carousel.Item>
             <Carousel.Item>
               <img
-                className="d-block  carouselDesign fluid"
+                className="d-block w-100 d-flex justify-item-center"
                 src={carru3}
                 alt="Third slide"
               />
