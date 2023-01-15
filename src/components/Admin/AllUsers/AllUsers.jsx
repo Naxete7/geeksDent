@@ -46,7 +46,7 @@ const userCredentials = useSelector(userData);
   }
   if (allUsers.length !== 0) {
     return (
-      <Container>
+      <Container className="allUsersDesign">
         <Row>
           <Col className="d-flex col-12 flex-wrap  justify-content-center">
             {allUsers.map((allUser) => {

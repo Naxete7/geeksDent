@@ -118,9 +118,10 @@ const Periodoncia = () => {
         </Row>
         <Row className=" d-flex flex-wrap justify-content-center">
           <Col className="col-8">
-            <Card>
+            <Card className="cardStyle">
               <img src={embarazo} alt="embarazo" />
             </Card>
+            <br></br>
             <p>
               Las mujeres embarazadas deben someterse al tratamiento inmediato
               de la enfermedad periodontal para reducir el riesgo de

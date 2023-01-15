@@ -31,7 +31,7 @@ const Update = () => {
 
   const updateMe = () => {
     updateUser(user, userCredentials?.token).then((res) => {
-      console.log(user, "estoy aqui");
+      
     });
   };
 

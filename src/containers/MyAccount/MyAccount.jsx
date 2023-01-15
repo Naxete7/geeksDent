@@ -62,7 +62,7 @@ const MyAccount = () => {
         <Row>
           <h2>Todos los usuarios</h2>
         </Row>
-        <Row>
+        <Row className="mb-5">
           {" "}
           <AllUsers />
         </Row>

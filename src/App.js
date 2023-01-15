@@ -20,7 +20,7 @@ import UpdateProfile from "./containers/User/UpdateProfile/UpdateProfile"
 import MyAccount from "./containers/MyAccount/MyAccount";
 import Appointments from "./containers/User/Appointments/Appointments";
 
-//import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -47,7 +47,7 @@ function App() {
           <Route path="/periodoncia" element={<Periodoncia />} />
           <Route path="/protesis" element={<Protesis />} />
         </Routes>
-        {/*<Footer/>*/}
+        <Footer/>
       </BrowserRouter>
     </div>
   );
