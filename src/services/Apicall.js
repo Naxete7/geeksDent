@@ -76,7 +76,7 @@ export const addAppointment = (body,token) => {
 
      return axios.post(
        `https://geeksdent-backend-production.up.railway.app/api/addAppointment`,
-       config, body
+       body, config
 
     // {"date":"2023-1-26",
     //"duration":"1 hora",
