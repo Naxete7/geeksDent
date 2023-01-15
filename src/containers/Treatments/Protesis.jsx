@@ -1,7 +1,7 @@
 import React from "react";
 import protesisDental from "../../assets/img/protesisDental.jpg";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import protesiscabecera from "../../assets/img/protesiscabecera.jpg"
+import protesiscabecera from "../../assets/img/protesiscabecera.jpg";
 import "./Treatments.scss";
 
 const Protesis = () => {

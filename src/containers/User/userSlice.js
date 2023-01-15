@@ -26,7 +26,7 @@ export const userSlice = createSlice({
 
 export const { login, userout } = userSlice.actions;
 
-//export const selectUser = (state) => state.user.user;
+
 
 export const userData = (state) => state.user;
 

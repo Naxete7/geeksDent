@@ -6,13 +6,14 @@ import carru1 from "../../assets/img/carru1.jpg";
 import carru2 from "../../assets/img/carru2.jpg";
 import carru3 from "../../assets/img/carru3.jpg";
 
-
-
 function IndividualIntervalsExample() {
   return (
-    <Container fluid className="teamDesign ">
-      <Row className="carouselDesign d-flex col-12 justify-content-center">
-        <Col className="carouselDesign col-12 d-flex justify-content-center">
+    <Container
+      fluid
+      className="teamDesign d-flex flex-wrap align-items-center justify-content-center"
+    >
+      <Row className="carouselDesign d-flex justify-content-center mb-5">
+        <Col className="carouselDesign ">
           <Carousel className="carouselDesign d-flex col-12 justify-content-center">
             <Carousel.Item interval={1000}>
               <img
@@ -55,12 +56,12 @@ function IndividualIntervalsExample() {
       <br></br>
       <br></br>
       <br></br>
-      <Row>
+      <Row className="mb-5">
         <Col>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="60"
-            height="60"
+            width="40"
+            height="40"
             fill="currentColor"
             class="bi bi-emoji-smile"
             viewBox="0 0 16 16"
@@ -79,8 +80,8 @@ function IndividualIntervalsExample() {
         <Col>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="60"
-            height="60"
+            width="40"
+            height="40"
             fill="currentColor"
             class="bi bi-clipboard2-plus"
             viewBox="0 0 16 16"
@@ -100,8 +101,8 @@ function IndividualIntervalsExample() {
         <Col>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="60"
-            height="60"
+            width="40"
+            height="40"
             fill="currentColor"
             class="bi bi-hand-thumbs-up"
             viewBox="0 0 16 16"
@@ -120,8 +121,8 @@ function IndividualIntervalsExample() {
         <Col>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="60"
-            height="60"
+            width="40"
+            height="40"
             fill="currentColor"
             class="bi bi-question-circle"
             viewBox="0 0 16 16"

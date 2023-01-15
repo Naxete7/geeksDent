@@ -30,9 +30,7 @@ const Update = () => {
   });
 
   const updateMe = () => {
-    updateUser(user, userCredentials?.token).then((res) => {
-      console.log(user, "estoy aqui");
-    });
+    updateUser(user, userCredentials?.token).then((res) => {});
   };
 
   const inputHandler = (e) => {
@@ -43,23 +41,18 @@ const Update = () => {
     }));
   };
 
-  //useEffect(() => {
-  //  if (userCredentials?.token !== "") {
-  //    navigate("/myAccount");
-  //  }
-  //});
 
   const onFinish = (values) => {};
   const onFinishFailed = (errorInfo) => {};
 
   return (
-    <Container className="upadateDesign">
+    <Container>
       <Row>
         <Col>
           <br></br>
           <Card className="d-flex align-items-center">
             <Form
-              //name="basic"
+              
               labelCol={{
                 span: 12
               }}

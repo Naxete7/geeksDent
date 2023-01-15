@@ -31,11 +31,11 @@ const MyAccount = () => {
             <h2>Usuario</h2>
           </Row>
           <Row>
-         
             <Profile />
           </Row>
           <Row>
-          <UserAppointments/></Row>
+            <UserAppointments />
+          </Row>
         </Container>
       </div>
     );
@@ -62,7 +62,7 @@ const MyAccount = () => {
         <Row>
           <h2>Todos los usuarios</h2>
         </Row>
-        <Row>
+        <Row className="mb-5">
           {" "}
           <AllUsers />
         </Row>

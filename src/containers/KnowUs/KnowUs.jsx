@@ -2,8 +2,7 @@ import React from "react";
 import "./KnowUs.scss";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import conocenos from "../../assets/img/conocenos.jpg";
-import datos from "../../assets/img/datos.jpg"
-
+import datos from "../../assets/img/datos.jpg";
 
 const Home = () => {
   return (
@@ -29,10 +28,15 @@ const Home = () => {
         </p>
       </Row>
       <Row className=" d-flex flex-wrap justify-content-center">
-        <Col className="col-8">
+        <Col className="col-10">
           <Card>
             <img src={datos} alt="" />
           </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Card></Card>
         </Col>
       </Row>
     </Container>

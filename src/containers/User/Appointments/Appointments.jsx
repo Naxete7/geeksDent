@@ -11,7 +11,7 @@ import { doctors, treatments } from "../../../services/Apicall";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+
 
 dayjs.extend(customParseFormat);
 const { RangePicker } = DatePicker;
@@ -82,30 +82,33 @@ const Appointment = () => {
   const [allTreatments, setAllTreatments] = useState([]);
   const [error, setError] = useState("");
   const userCredentials = useSelector(userData);
-  const [treatmentsId, setTreatmentsId] = useState();
+  
 
   const [appointment, setappointment] = useState({
     doctorsId: "",
     treatmentsId: "",
-    date: "",
-    reason: ""
+    reason: "",
+    date: ""
   });
 
   const inputHandler = (e) => {
-    //Aqui setearemos DINÁMICAMENTE el BINDEO entre inputs y hook.
+  
     setappointment((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value
     }));
   };
 
+  const inputHandlerDate = (e) => {
+ 
+    setappointment((prevState) => ({
+      ...prevState,
+      date: `${e.$y}-${e.$M + 1}-${e.$D} ${e.$H}:${e.$m}:${e.$s}`
+    }));
+    console.log(appointment);
+  };
 
- const captureType = (e) => {
-   setappointment(e.target.value);
-   console.log(e);
-   console.log(appointment);
- };
-  
+ 
 
   //DatePicker
 
@@ -179,7 +182,9 @@ const Appointment = () => {
 
   const createAppointment = () => {
     console.log(appointment, userCredentials?.token);
-    addAppointment(appointment, userCredentials?.token).then((res) => {});
+    addAppointment(appointment, userCredentials?.token).then((res) => {
+      navigate("/myAccount");
+    });
   };
 
   return (
@@ -190,16 +195,16 @@ const Appointment = () => {
         </Col>
       </Row>
       <br></br>
-      <Card>
+      <Card className="cardStyle">
         <Row className="d-flex align-content-center justify-content-center">
           <Col className="col-8 ">
             <br></br>
             <h6>Elija su doctor</h6>
 
             <Form.Select
-              onChange={(e) => captureType(e)}
               size="ml"
               name="doctorsId"
+              onChange={(e) => inputHandler(e)}
             >
               {allDoctors.map((doctors) => {
                 return <option value={doctors.id}>{doctors.name}</option>;
@@ -211,17 +216,13 @@ const Appointment = () => {
         <Row className="d-flex align-content-center justify-content-center">
           <Col className="col-8">
             <h6>Elija su tratamiento</h6>
-            <Form.Select size="ml" name="treatmentsId">
-              {allTreatments.map((treatments) => { 
-                return (
-                  <option
-                    onChange={(e) => captureType(e)}
-                    value={treatments.id}
-                   
-                  >
-                    {treatments.name}
-                  </option>
-                );
+            <Form.Select
+              size="ml"
+              name="treatmentsId"
+              onChange={(e) => inputHandler(e)}
+            >
+              {allTreatments.map((treatments) => {
+                return <option value={treatments.id}>{treatments.name}</option>;
               })}
             </Form.Select>
           </Col>
@@ -252,15 +253,17 @@ const Appointment = () => {
             <h6>Elija el dia y la hora que desee</h6>
             <DatePicker
               as="timpstamp"
+              value=""
               name="date"
               format="YYYY-MM-DD HH:mm:ss"
               disabledDate={disabledDate}
               disabledTime={disabledDateTime}
-              //onChange={(e) => inputHandler(e)}
+              onChange={(e) => inputHandlerDate(e)}
               showTime={{
-                defaultValue: dayjs("00:00:00", "HH:mm:ss")
+                defaultValue: dayjs("10:00:00", "HH:mm:ss")
               }}
             />
+            <h6>{appointment.date}</h6>
           </Col>
         </Row>
         <br></br>

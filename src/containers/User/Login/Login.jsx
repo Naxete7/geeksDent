@@ -11,7 +11,7 @@ import { Button } from "react-bootstrap";
 
 const Login = () => {
   let navigate = useNavigate();
-const [messageError, setMessageError] = useState("");
+  const [messageError, setMessageError] = useState("");
   const dispatch = useDispatch();
 
   const userCredentials = useSelector(userData);
@@ -30,7 +30,7 @@ const [messageError, setMessageError] = useState("");
   //Handlers
 
   const inputHandler = (e) => {
-    //Aqui setearemos DINÁMICAMENTE el BINDEO entre inputs y hook.
+   
     setUser((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value
@@ -49,7 +49,7 @@ const [messageError, setMessageError] = useState("");
   };
 
   useEffect(() => {
-    //let loged = localStorage.getItem("SAVEUSEREMAIL");
+   
 
     if (userCredentials?.token !== "") {
       navigate("/myAccount");
@@ -58,79 +58,71 @@ const [messageError, setMessageError] = useState("");
 
   //Funciones
 
-const logMe = () => {
-  //Estoy ejecutando loginUser y le paso el body (que en este caso es el hook user)
+  const logMe = () => {
+    
 
-  try {
-    loginUser(user).then((res) => {
-      
-      if (res.data.message === "Password or email is incorrect") {
-        setMessageError("Email o contraseña no válidos.")
-      } else {
-      
-        dispatch(
-          login({
-            credentials: {
-              token: res.data.token,
-             
-            }
-          })
-        );
-        const token = res.data.token;
-        profile(token)
-          .then((res) => {
-            dispatch(
-            login({token, credentials:res.data, active:true})
-          )
-        })
-
-        setUserError((prevState) => ({
-          ...prevState,
-          LoginError: ""
-        }));
-      }
-    });
-  } catch (error) {}
-};
-  
-    return (
-      <div className="loginDesign ">
-        <br></br>
-        <br></br>
-        <pre>Bienvenido de nuevo</pre>
-
-        <div className="inputsContainer">
-          <div className="errorInput">{userError.LoginError}</div>
-          <div>
-            <input
-              type="mail"
-              name="email"
-              placeholder="email"
-              onChange={(e) => inputHandler(e)}
-              onBlur={(e) =>
-                errorHandler(e.target.name, e.target.value, "email")
+    try {
+      loginUser(user).then((res) => {
+        if (res.data.message === "Password or email is incorrect") {
+          setMessageError("Email o contraseña no válidos.");
+        } else {
+          dispatch(
+            login({
+              credentials: {
+                token: res.data.token
               }
-            />
-            <div className="errorInput">{userError.mailError}</div>
-          </div>
-          <div>
-            <input
-              type="password"
-              name="password"
-              placeholder="password"
-              onChange={(e) => inputHandler(e)}
-              onBlur={(e) =>
-                errorHandler(e.target.name, e.target.value, "password")
-              }
-            />
-            <div className="errorInput">{userError.passwordError}</div>
-          </div>
-        </div>
-        <Button onClick={() => logMe()} className="buttonDesign">
-          Login me!
-        </Button>
-      </div>
-    );
+            })
+          );
+          const token = res.data.token;
+          profile(token).then((res) => {
+            dispatch(login({ token, credentials: res.data, active: true }));
+          });
+
+          setUserError((prevState) => ({
+            ...prevState,
+            LoginError: ""
+          }));
+        }
+      });
+    } catch (error) {}
   };
+
+  return (
+    <div className="loginDesign ">
+      <br></br>
+      <br></br>
+      <pre>Bienvenido de nuevo</pre>
+
+      <div className="inputsContainer">
+        <div className="errorInput">{userError.LoginError}</div>
+        <div>
+          <input
+            type="mail"
+            name="email"
+            placeholder="email"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
+          />
+          <div className="errorInput">{userError.mailError}</div>
+        </div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) =>
+              errorHandler(e.target.name, e.target.value, "password")
+            }
+          />
+          <div className="errorInput">{userError.passwordError}</div>
+        </div>
+      </div>
+      <Button onClick={() => logMe()} className="buttonDesign">
+        Login me!
+      </Button>
+    </div>
+  );
+};
 
 export default Login;

@@ -13,23 +13,21 @@ const AllUsers = () => {
 
   const [error, setError] = useState("");
 
-const userCredentials = useSelector(userData);
+  const userCredentials = useSelector(userData);
 
-  const deleteMe = (id) => {
-    deleteUser(userCredentials?.token, id).then((res) => {
-      getAllUsers()
-        .then((res) => {
-          setAllUsers(res.data);
-        })
-        .catch((error) => {
-          setError(error.response?.data || "errorrr");
-        });
-    });
-  };
+  //const deleteMe = (id) => {
+  //  deleteUser(userCredentials?.token, id).then((res) => {
+  //    getAllUsers()
+  //      .then((res) => {
+  //        setAllUsers(res.data);
+  //      })
+  //      .catch((error) => {
+  //        setError(error.response?.data || "errorrr");
+  //      });
+  //  });
+  //};
 
   useEffect(() => {
-   
-
     if (userCredentials?.token !== "") {
       getAllUsers(userCredentials.token)
         .then((res) => {
@@ -39,14 +37,14 @@ const userCredentials = useSelector(userData);
           setError(error.response?.data || "error al recuperar los usuarios");
         });
     }
-  },[userCredentials]);
+  }, [userCredentials]);
 
   if (error) {
     return <h2>{error.repeat(1)} </h2>;
   }
   if (allUsers.length !== 0) {
     return (
-      <Container>
+      <Container className="allUsersDesign">
         <Row>
           <Col className="d-flex col-12 flex-wrap  justify-content-center">
             {allUsers.map((allUser) => {
@@ -73,6 +71,6 @@ const userCredentials = useSelector(userData);
       </Container>
     );
   }
-  } 
+};
 
 export default AllUsers;

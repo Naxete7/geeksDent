@@ -14,49 +14,31 @@ import { userout, userData } from "../../containers/User/userSlice";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
 function OffcanvasExample() {
-
   const [criteria, setCriteria] = useState("");
-  //let userMailHeader = JSON.parse(localStorage.getItem("SAVEUSEREMAIL"));
   const navigate = useNavigate();
   const dispatch = useDispatch();
- const userCredentials = useSelector(userData);
+  const userCredentials = useSelector(userData);
 
   //Handlers
 
   const criteriaHandler = (e) => {
     setCriteria(e.target.value);
-  }
+  };
 
   const goProfile = () => {
-  navigate("/myAccount")
-}
+    navigate("/myAccount");
+  };
 
   //Funciones
 
   const logOut = () => {
-
-    dispatch(userout({credentials:{},token:"", active:false}))
+    dispatch(userout({ credentials: {}, token: "", active: false }));
 
     return navigate("/");
-
-
-   
-
-    //localStorage.removeItem("SAVEUSEREMAIL");
-    //localStorage.removeItem("SAVEJWT");
-    //dispatch(
-    //  userout({
-    //    credentials: {
-    //      token: "",
-    //      mail: ""
-    //    }
-    //  })
-    //);
   };
 
-  if (userCredentials?.active ) {
+  if (userCredentials?.active) {
     return (
       <>
         {["lg"].map((expand) => (
@@ -96,7 +78,9 @@ function OffcanvasExample() {
                     <Nav.Link onClick={() => goProfile()}>
                       {userCredentials?.credentials?.name}
                     </Nav.Link>
-                    <Nav.Link onClick={()=>navigate("/appointments")}>Pide tu cita</Nav.Link>
+                    <Nav.Link onClick={() => navigate("/appointments")}>
+                      Pide tu cita
+                    </Nav.Link>
                     <Nav.Link onClick={() => navigate("/team")}>
                       Nuestro Equipo
                     </Nav.Link>
@@ -225,9 +209,7 @@ function OffcanvasExample() {
                       >
                         Periodoncia
                       </NavDropdown.Item>
-                      <NavDropdown.Item
-                        onClick={() => navigate("/protesis")}
-                      >
+                      <NavDropdown.Item onClick={() => navigate("/protesis")}>
                         Prótesis
                       </NavDropdown.Item>
                     </NavDropdown>
