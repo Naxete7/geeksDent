@@ -30,7 +30,20 @@ const Update = () => {
   });
 
   const updateMe = () => {
-    updateUser(user, userCredentials?.token).then((res) => {});
+    updateUser(user, userCredentials?.token) 
+      profile(userCredentials?.token)
+        .then((res) => {
+          console.log(res)
+          setUser({
+            name: res.data.name,
+            surname: res.data.surname,
+            phone:res.data.phone
+          })
+          console.log(user)
+          dispatch(login({ credentials: res.data, active: true }));
+      })
+
+    
   };
 
   const inputHandler = (e) => {

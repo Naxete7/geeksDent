@@ -10,11 +10,11 @@ function IndividualIntervalsExample() {
   return (
     <Container
       fluid
-      className="teamDesign d-flex flex-wrap align-items-center justify-content-center"
+      className="teamDesign d-flex flex-wrap  align-items-center justify-content-center"
     >
       <Row className="carouselDesign d-flex justify-content-center mb-5">
-        <Col className="carouselDesign ">
-          <Carousel className="carouselDesign d-flex col-12 justify-content-center">
+        <Col className="carouselDesign w-80 ">
+          <Carousel className="carouselDesign d-flex justify-content-center">
             <Carousel.Item interval={1000}>
               <img
                 className="d-block w-100 d-flex justify-item-center"

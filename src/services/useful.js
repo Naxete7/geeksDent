@@ -49,5 +49,3 @@ export const errorCheck = (field, value, type) => {
       break;
   }
 };
-
-

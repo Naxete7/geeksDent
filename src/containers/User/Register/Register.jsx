@@ -6,7 +6,7 @@ import { registerUser, loginUser, profile } from "../../../services/Apicall";
 import { login, userData } from "../userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import "../../../components/Button/ButtonDesign.scss";
-
+import { errorCheck } from "../../../services/useful";
 import { Button, Form } from "antd";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
@@ -28,6 +28,17 @@ const Register = () => {
       navigate("/myAccount");
     }
   });
+
+const errorHandler = (field, value, type) => {
+  let error = "";
+
+  error = errorCheck(field, value, type);
+
+  setUserError((prevState) => ({
+    ...prevState,
+    [field + "Error"]: error
+  }));
+};
 
   const regMe = () => {
     registerUser(user).then((res) => {
@@ -146,6 +157,9 @@ const Register = () => {
                   name="email"
                   placeholder="email"
                   onChange={(e) => inputHandler(e)}
+                  onBlur={(e) =>
+                    errorHandler(e.target.name, e.target.value, "email")
+                  }
                 />
               </Form.Item>
 
@@ -162,6 +176,9 @@ const Register = () => {
                   name="password"
                   placeholder="password"
                   onChange={(e) => inputHandler(e)}
+                  onBlur={(e) =>
+                    errorHandler(e.target.name, e.target.value, "password")
+                  }
                 />
               </Form.Item>
 
@@ -178,6 +195,9 @@ const Register = () => {
                   name="phone"
                   placeholder="phone"
                   onChange={(e) => inputHandler(e)}
+                  onBlur={(e) =>
+                    errorHandler(e.target.name, e.target.value, "phone")
+                  }
                 />
               </Form.Item>
 
