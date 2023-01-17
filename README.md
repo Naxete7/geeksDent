@@ -160,9 +160,7 @@ En la vista del usuario podremos observar su ficha, y todas las citas que el pac
 
 Y por último tenemos la vista del administrador.
 En ella veremos todos los usuarios que están registrados en nuestra clínica, y todas las citas que se han solicitado.
-Para poder entrar como administrador, las credenciales son las siguientes.
-email: admin@admin.com
-contraseña: Admin1234
+
 
 ##Trello
 Para poder coordinar el trabajo hemos utilizado un tablero en Trello 
