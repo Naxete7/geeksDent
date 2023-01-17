@@ -74,6 +74,7 @@ The following tools were used in this project:
 - [Ant-Design](https://ant.design/docs/spec/introduce)
 - [Amazon Web Service](https://aws.amazon.com/es/?nc2=h_lg)
 - [Redux]
+-[Trello]
 
 ## :white_check_mark: Register ##
 
@@ -163,7 +164,10 @@ Para poder entrar como administrador, las credenciales son las siguientes.
 email: admin@admin.com
 contraseña: Admin1234
 
+##Trello
+Para poder coordinar el trabajo hemos utilizado un tablero en Trello 
 
+![trello](https://user-images.githubusercontent.com/109297564/212569970-17322fec-4dd8-4ab1-ab45-ea2dc707a61a.jpg)
 
 ## :memo: License ##
 
