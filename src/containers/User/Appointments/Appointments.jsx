@@ -188,7 +188,7 @@ const Appointment = () => {
   };
 
   return (
-    <Container className="appointmentsDesign">
+    <Container className="appointmentsDesign mb-4">
       <Row>
         <Col>
           <h2>Seleccione la cita que desee</h2>

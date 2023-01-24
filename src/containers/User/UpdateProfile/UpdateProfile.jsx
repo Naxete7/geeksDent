@@ -59,13 +59,12 @@ const Update = () => {
   const onFinishFailed = (errorInfo) => {};
 
   return (
-    <Container>
+    <Container className="mb-5">
       <Row>
         <Col>
           <br></br>
           <Card className="d-flex align-items-center">
             <Form
-              
               labelCol={{
                 span: 12
               }}

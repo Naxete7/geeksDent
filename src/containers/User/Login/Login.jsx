@@ -63,7 +63,7 @@ const Login = () => {
 
     try {
       loginUser(user).then((res) => {
-        if (res.data.message === "Password or email is incorrect") {
+        if (res.data.message === "Wrong number of segments") {
           setMessageError("Email o contraseña no válidos.");
         } else {
           dispatch(

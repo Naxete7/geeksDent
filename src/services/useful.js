@@ -1,4 +1,4 @@
-export const errorCheck = (field, value, type) => {
+export const errorCheck = (value, type) => {
   switch (type) {
     case "text":
       if (!/[a-z]/gi.test(value)) {
@@ -19,8 +19,8 @@ export const errorCheck = (field, value, type) => {
       break;
 
     case "phone":
-      //Tiene un bug
-      if (!/[\d()+-]/g.test(value)) {
+      
+      if (value.match(/[0-9]/)) {
         return "Escriba un formato de teléfono correcto";
       }
 

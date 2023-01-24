@@ -10,7 +10,6 @@ const UserAppointments = () => {
   const [userAppointments, setUserAppointments] = useState([]);
 
   const [error, setError] = useState("");
-
   const userCredentials = useSelector(userData);
 
   const appointments = () => {
@@ -31,7 +30,7 @@ const UserAppointments = () => {
   }
   if (userAppointments.lenght !== 0) {
     return (
-      <Container className="">
+      <Container className="mb-5">
         <Row>
           <Col className="d-flex col-12 flex-wrap  justify-content-center">
             {userAppointments.map((userAppointments) => {

@@ -36,7 +36,7 @@ const Profile = () => {
 
 
   return (
-    <Container className="profileDesign">
+    <Container className="profileDesign mb-5">
       <Row className="d-flex align-content-center justify-content-center mt-5">
         <h1>Perfil del paciente</h1>
       </Row>
@@ -85,7 +85,7 @@ const Profile = () => {
         </Col>
       </Row>
       <Row className="mt-5">
-        <button className="buttonDesign">Todas mis citas</button>
+        <h1>Todas mis citas</h1>
       </Row>
       <Row></Row>
     </Container>

@@ -19,21 +19,7 @@ const AllUsers = () => {
 
   const deleteMe = (id) => {
     deleteUser(userCredentials?.token, id).then((res) => {
-      //try {
-        
-      //  console.log(res);
-      //      getAllUsers()
-      //        .then((res) => {
-      //          console.log(res.data)
-      //          setAllUsers(res.data);
-      //          console.log(allUsers)
-      //        })
-
-      //}
-      //  catch(error)  {
-      //    setError(error.response?.data || "errorrr");
-      //  };
-
+    
       navigate("/login")
     });
   };
@@ -50,9 +36,7 @@ const AllUsers = () => {
     }
   }, [userCredentials]);
 
-  //useEffect(() => {
-    
-  //}, [allUsers]);
+  
 
   if (error) {
     return <h2>{error.repeat(1)} </h2>;

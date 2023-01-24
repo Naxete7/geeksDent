@@ -14,13 +14,16 @@ const Register = () => {
   const userCredentials = useSelector(userData);
 
   let navigate = useNavigate();
-
+ const [messageError, setMessageError] = useState("");
   const dispatch = useDispatch();
 
   const [userError, setUserError] = useState({
+    nameError: "",
+    surnameError:"",
     emailError: "",
     passwordError: "",
-    LoginError: ""
+    phoneError:""
+    
   });
 
   useEffect(() => {
@@ -44,7 +47,7 @@ const errorHandler = (field, value, type) => {
     registerUser(user).then((res) => {
       try {
         loginUser(user).then((res) => {
-          //Aqui procedo a guardar el token en redux, o en alguna otra parte del proyecto
+          //Aqui procedo a guardar el token en redux
           if (res.data.message === "Password or email is incorrect") {
             setUserError((prevState) => ({
               ...prevState,
@@ -95,129 +98,139 @@ const errorHandler = (field, value, type) => {
       <Row className=" d-flex justify-content-center mb-5 mt-2">
         <Col className=" d-flex justify-content-center ">
           <br></br>
-          <Card className="cardDesign d-flex align-items-center">
-            <Form
-              labelCol={{
-                span: 12
-              }}
-              wrapperCol={{
-                span: 50
-              }}
-              initialValues={{
-                remember: true
-              }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-              autoComplete="off"
+
+          <Form
+            labelCol={{
+              span: 12
+            }}
+            wrapperCol={{
+              span: 50
+            }}
+            initialValues={{
+              remember: true
+            }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
+          >
+            <h1 className=" mb-3 ">REGISTER</h1>
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your name!"
+                }
+              ]}
             >
-              <h1 className=" mb-3 ">REGISTER</h1>
-              <Form.Item
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your name!"
-                  }
-                ]}
-              >
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="name"
-                  onChange={(e) => inputHandler(e)}
-                />
-              </Form.Item>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                onChange={(e) => inputHandler(e)}
+                onBlur={(e) =>
+                  errorHandler(e.target.name, e.target.value, "name")
+                }
+              />
+              <div className="errorInput">{userError.nameError}</div>
+            </Form.Item>
 
-              <Form.Item
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your surname!"
-                  }
-                ]}
-              >
-                <input
-                  type="text"
-                  name="surname"
-                  placeholder="surname"
-                  onChange={(e) => inputHandler(e)}
-                />
-              </Form.Item>
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your surname!"
+                }
+              ]}
+            >
+              <input
+                type="text"
+                name="surname"
+                placeholder="surname"
+                onChange={(e) => inputHandler(e)}
+                onBlur={(e) =>
+                  errorHandler(e.target.name, e.target.value, "surname")
+                }
+              />
+              <div className="errorInput">{userError.surnameError}</div>
+            </Form.Item>
 
-              <Form.Item
+            <Form.Item
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your email!"
+                }
+              ]}
+            >
+              <input
+                type="mail"
                 name="email"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your email!"
-                  }
-                ]}
-              >
-                <input
-                  type="mail"
-                  name="email"
-                  placeholder="email"
-                  onChange={(e) => inputHandler(e)}
-                  onBlur={(e) =>
-                    errorHandler(e.target.name, e.target.value, "email")
-                  }
-                />
-              </Form.Item>
+                placeholder="email"
+                onChange={(e) => inputHandler(e)}
+                onBlur={(e) =>
+                  errorHandler(e.target.name, e.target.value, "email")
+                }
+              />
+              <div className="errorInput">{userError.emailError}</div>
+            </Form.Item>
 
-              <Form.Item
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your password!"
-                  }
-                ]}
-              >
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  onChange={(e) => inputHandler(e)}
-                  onBlur={(e) =>
-                    errorHandler(e.target.name, e.target.value, "password")
-                  }
-                />
-              </Form.Item>
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password!"
+                }
+              ]}
+            >
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                onChange={(e) => inputHandler(e)}
+                onBlur={(e) =>
+                  errorHandler(e.target.name, e.target.value, "password")
+                }
+              />
+              <div className="errorInput">{userError.passwordError}</div>
+            </Form.Item>
 
-              <Form.Item
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your phone!"
-                  }
-                ]}
-              >
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="phone"
-                  onChange={(e) => inputHandler(e)}
-                  onBlur={(e) =>
-                    errorHandler(e.target.name, e.target.value, "phone")
-                  }
-                />
-              </Form.Item>
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your phone!"
+                }
+              ]}
+            >
+              <input
+                type="text"
+                name="phone"
+                placeholder="phone"
+                onChange={(e) => inputHandler(e)}
+                onBlur={(e) =>
+                  errorHandler(e.target.name, e.target.value, "phone")
+                }
+              />
+              <div className="errorInput">{userError.phoneError}</div>
+            </Form.Item>
 
-              <Form.Item
-                wrapperCol={{
-                  offset: 2,
-                  span: 16
-                }}
+            <Form.Item
+              wrapperCol={{
+                offset: 2,
+                span: 16
+              }}
+            >
+              <Button
+                className="buttonDesign d-flex  justify-content-center align-item-center col-8  "
+                type="primary"
+                htmlType="submit"
+                onClick={() => regMe()}
               >
-                <Button
-                  className="buttonDesign d-flex  justify-content-center align-item-center col-8  "
-                  type="primary"
-                  htmlType="submit"
-                  onClick={() => regMe()}
-                >
-                  Submit
-                </Button>
-              </Form.Item>
-            </Form>
-          </Card>
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
         </Col>
       </Row>
     </Container>
