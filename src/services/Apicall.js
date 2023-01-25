@@ -147,8 +147,8 @@ export const deleteUser = (token, id) => {
 
 
 export const doctors = () => {
-  return axios.get(`http://localhost:8000/api/doctors`);
-  //return axios.get(`https://geeksdent-backend-production.up.railway.app/api/doctors`)
+  //return axios.get(`http://localhost:8000/api/doctors`);
+  return axios.get(`https://geeksdent-backend-production.up.railway.app/api/doctors`)
 }
 
 export const treatments = () => {
