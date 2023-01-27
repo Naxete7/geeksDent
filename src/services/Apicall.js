@@ -152,7 +152,7 @@ export const doctors = () => {
 }
 
 export const treatments = () => {
-  //return axios.get(`http://localhost:8000/api/treatments`);
-  return axios.get(`https://geeksdent-backend-production.up.railway.app/api/treatments`)
+  return axios.get(`http://localhost:8000/api/treatments`);
+  //return axios.get(`https://geeksdent-backend-production.up.railway.app/api/treatments`)
 }
 
