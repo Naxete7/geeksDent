@@ -46,7 +46,6 @@ function App() {
           <Route path="/invisalign" element={<Invisalign />} />
           <Route path="/periodoncia" element={<Periodoncia />} />
           <Route path="/protesis" element={<Protesis />} />
-          <Route path="/protesis" element={<Protesis />} />
         </Routes>
         <Footer />
       </BrowserRouter>
